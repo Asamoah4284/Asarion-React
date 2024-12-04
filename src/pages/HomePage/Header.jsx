@@ -1,46 +1,102 @@
-import React, { useState } from 'react';
-
+import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import Modal from '../../components/modal';
+// Modal
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const handleOpenModal = (event) => {
+    event.preventDefault();
+    setIsModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+  };
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 0);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
-    // Prevent scrolling when menu is open
-    document.body.style.overflow = !isMenuOpen ? 'hidden' : 'unset';
+    // Prevent scrolling when menu is open and add padding to prevent content shift
+    if (!isMenuOpen) {
+      const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
+      document.body.style.overflow = 'hidden';
+      document.body.style.paddingRight = `${scrollbarWidth}px`;
+    } else {
+      document.body.style.overflow = 'unset';
+      document.body.style.paddingRight = '0px';
+    }
   };
 
   const toggleDropdown = () => {
     setOpenDropdown(!openDropdown);
   };
 
+  const toggleContactModal = () => {
+    setIsContactModalOpen(!isContactModalOpen);
+  };
+
   return (
     <div>
-      <header className="header" data-header>
-        <div className="container py-6 md: md:px-48 ">
+      <header className={`header fixed w-full top-0 transition-all duration-500 ease-in-out ${
+        isScrolled ? 'bg-white shadow-md' : 'bg-transparent'
+      }`} data-header>
+        <div className={`container transition-all duration-500 ease-in-out ${isScrolled ? 'py-6' : 'py-6'
+        } md:px-48 flex justify-between items-center`}>
           <a href="#" className="logo">Asarion</a>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
             <a href="#home" className="navbar-link hover:text-blue-600 transition-colors">Home</a>
             <a href="#about" className="navbar-link hover:text-blue-600 transition-colors">About</a>
-            <a href="#services" className="navbar-link hover:text-blue-600 transition-colors">Services</a>
-            <a href="#features" className="navbar-link hover:text-blue-600 transition-colors">Features</a>
-            <a href="#" className="navbar-link hover:text-blue-600 transition-colors">Blog</a>
+            <Link to='pricing'><a href="#Pricing" className="navbar-link hover:text-blue-600 transition-colors">Pricing</a></Link>
+            <Link to='/team'><a href="#" className="navbar-link hover:text-blue-600 transition-colors">Team</a></Link>
             <a href="#" className="navbar-link hover:text-blue-600 transition-colors">Contact Us</a>
           </nav>
 
+          {/* Mobile Menu Button */}
+          <button 
+            className="nav-open-btn block md:hidden" 
+            onClick={toggleMenu}
+            aria-label="Toggle menu"
+          >
+            {isMenuOpen ? (
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            ) : (
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+            )}
+          </button>
+
           {/* Mobile Navigation */}
-          <nav className="mobile-navbar md:hidden" data-navbar>
+          <nav className={`fixed inset-0 md:hidden transition-opacity duration-300 ease-in-out ${
+            isMenuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
+          }`}>
             {/* Overlay */}
             <div 
-              className={`fixed inset-0 bg-gray-800 bg-opacity-50 z-40 ${isMenuOpen ? 'block' : 'hidden'}`}
+              className={`fixed inset-0 bg-gray-800 transition-opacity duration-300 ease-in-out ${
+                isMenuOpen ? 'opacity-50' : 'opacity-0'
+              }`}
               onClick={toggleMenu}
             ></div>
             
             {/* Mobile Menu Content */}
-            <div className={`fixed top-0 right-0 w-64 h-full bg-white z-50 transform transition-all duration-300 ${
-              isMenuOpen ? 'translate-x-0' : 'translate-x-full'
+            <div className={`fixed top-0 left-0 w-1/2 h-full bg-white transform transition-all duration-300 ease-in-out z-50 ${
+              isMenuOpen ? 'translate-x-0' : '-translate-x-full'
             } shadow-lg`}>
               {/* Header */}
               <div className="flex items-center justify-between p-4 border-b">
@@ -61,13 +117,13 @@ const Header = () => {
                   <a href="#about" className="block px-4 py-2 hover:bg-gray-50" data-nav-link>About</a>
                 </li>
                 
-                {/* Services Dropdown Mobile */}
+                {/* Pricing Dropdown Mobile */}
                 <li className="relative">
                   <button 
                     className="w-full flex items-center justify-between px-4 py-2 hover:bg-gray-50"
                     onClick={toggleDropdown}
                   >
-                    <span>Services</span>
+                    <span>Pricing</span>
                     <svg className={`w-4 h-4 transition-transform ${openDropdown ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
                     </svg>
@@ -88,11 +144,9 @@ const Header = () => {
                   </ul>
                 </li>
 
+               
                 <li>
-                  <a href="#features" className="block px-4 py-2 hover:bg-gray-50" data-nav-link>Features</a>
-                </li>
-                <li>
-                  <a href="#" className="block px-4 py-2 hover:bg-gray-50" data-nav-link>Blog</a>
+                  <a href="#" className="block px-4 py-2 hover:bg-gray-50" data-nav-link>Team</a>
                 </li>
                 <li>
                   <a href="#" className="block px-4 py-2 hover:bg-gray-50" data-nav-link>Contact Us</a>
@@ -101,20 +155,12 @@ const Header = () => {
             </div>
           </nav>
 
-          {/* Mobile Menu Button */}
-          <button 
-            className="nav-open-btn md:hidden" 
-            onClick={toggleMenu}
-          >
-            <svg className={`w-6 h-6 ${isMenuOpen ? 'hidden' : 'block'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" />
-            </svg>
-            <svg className={`w-6 h-6 ${isMenuOpen ? 'block' : 'hidden'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
-            </svg>
-          </button>
+          <a href="#" className="btn-outline hidden md:block" onClick={handleOpenModal}>Let's talk</a>
 
-          <a href="#" className="btn-outline hidden md:block">Let's talk</a>
+          {/* Contact Modal */}
+          {isModalOpen && (
+     <Modal isOpen={isModalOpen} onClose={handleCloseModal}/>
+      )}
         </div>
       </header>
     </div>

@@ -1,6 +1,12 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 const Hero = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const handleDiscoverMoreClick = () => {
+    setIsModalOpen(true);
+  };
+
   return (
     <div>
         <section className="section hero" id="home" aria-label="hero">
@@ -22,7 +28,7 @@ const Hero = () => {
             </p>
 
             <div className="btn-group animate-fade-in-up delay-600">
-              <a href="#" className="inline-flex items-center gap-2 bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 hover:from-pink-600 hover:via-purple-600 hover:to-blue-600 text-white px-8 py-4 rounded-full transform hover:-translate-y-1 transition-all duration-300 shadow-lg hover:shadow-xl group">
+              <a href="services" className="inline-flex items-center gap-2 bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 hover:from-pink-600 hover:via-purple-600 hover:to-blue-600 text-white px-8 py-4 rounded-full transform hover:-translate-y-1 transition-all duration-300 shadow-lg hover:shadow-xl group" onClick={handleDiscoverMoreClick}>
                 <span className="font-semibold">Discover More</span>
                 <svg className="w-5 h-5 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
@@ -47,6 +53,15 @@ const Hero = () => {
               className="img-cover"
             />
           </figure>
+
+          {isModalOpen && (
+            <div className="modal">
+              <div className="modal-content">
+                <span className="close" onClick={() => setIsModalOpen(false)}>&times;</span>
+                <p>Your modal content goes here.</p>
+              </div>
+            </div>
+          )}
 
         </div>
       </section>

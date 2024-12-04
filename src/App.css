@@ -104,9 +104,9 @@ img { height: auto; }
 
 input,
 button {
-  background: none;
+  /* background: none;
   border: none;
-  font: inherit;
+  font: inherit; */
 }
 
 input { width: 100%; }
@@ -1422,7 +1422,41 @@ body {
     transition: transform 0.3s ease-in-out;
   }
 
+  
   /* Optional: Add smooth transitions for dropdown arrows */
   [data-dropdown] svg {
     transition: transform 0.2s ease;
+  }
+
+  .loader {
+    border-top-color: #f9004d;
+    -webkit-animation: spinner 1.5s linear infinite;
+    animation: spinner 1.5s linear infinite;
+  }
+  
+  @-webkit-keyframes spinner {
+    0% {
+      -webkit-transform: rotate(0deg);
+    }
+    100% {
+      -webkit-transform: rotate(360deg);
+    }
+  }
+  
+  @keyframes spinner {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+ .call-bg{
+ 
+
+  background-image: url('../images/customer.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: right;
   }

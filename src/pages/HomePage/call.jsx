@@ -1,6 +1,21 @@
-import React from 'react'
+import React, { useState } from 'react'
+// import the  modal
+// ... existing code ...
+import Modal from '../../components/modal'
+// ... existing code ...
 
 const Call = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const handleOpenModal = (event) => {
+    event.preventDefault();
+    setIsModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+  };
+
   return <div>
     <section className="relative py-24 overflow-hidden">
       {/* Background with gradient overlay */}
@@ -25,11 +40,9 @@ const Call = () => {
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center" data-aos="fade-up" data-aos-delay="200">
             {/* Primary CTA */}
-            <a href="#contact" className="group relative inline-flex items-center justify-center px-8 py-4 bg-white text-blue-600 font-semibold rounded-full overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+            <button onClick={handleOpenModal} className="group relative inline-flex items-center justify-center px-8 py-4 bg-white text-blue-600 font-semibold rounded-full overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
               <span className="relative">Start Your Project</span>
-              {/* Hover effect */}
-              <div className="absolute inset-0 bg-gradient-to-r from-blue-100 to-blue-50 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
-            </a>
+            </button>
 
             {/* Secondary CTA */}
             <a href="#services" className="group inline-flex items-center gap-2 px-8 py-4 text-white font-semibold rounded-full border-2 border-white/30 hover:border-white transition-all duration-300 hover:-translate-y-1">
@@ -61,6 +74,11 @@ const Call = () => {
           </div>
         </div>
       </div>
+
+      {/* Modal */}
+      {isModalOpen && (
+     <Modal isOpen={isModalOpen} onClose={handleCloseModal}/>
+      )}
     </section>
   </div>;
 };

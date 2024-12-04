@@ -1,10 +1,13 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+
 import About from './pages/About'
 import Home from './pages/HomePage/Home'
-import Services from './pages/Services'
 import Contact from './pages/contact'
+import Team from './pages/TeamPage/Team'
+import Pricing from './pages/Pricing/pricing'
 
-import { useState } from 'react'
+
+
 
 import './App.css'
 
@@ -18,12 +21,16 @@ const router = createBrowserRouter([
     element: <About />,
   },
   {
-    path: "/services",
-    element: <Services />,
+    path: "/team",
+    element: <Team />,
   },
   {
     path: "/contact",
     element: <Contact />,
+  },
+  {
+    path: "/pricing",
+    element: <Pricing />,
   },
 
 ])
