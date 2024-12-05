@@ -1,5 +1,41 @@
+import React, { useState } from 'react';
+
 const Modal = ({ isOpen, onClose }) => {
     if (!isOpen) return null;
+  
+    const [formData, setFormData] = useState({
+        fullName: '',
+        email: '',
+        phoneNumber: '',
+        business: '',
+        product: ''
+    });
+  
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        setFormData({ ...formData, [name]: value });
+    };
+  
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        try {
+            const response = await fetch('/api/interested', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formData),
+            });
+            if (response.ok) {
+                console.log('Form submitted successfully');
+                onClose();
+            } else {
+                console.error('Error submitting form');
+            }
+        } catch (error) {
+            console.error('Network error:', error);
+        }
+    };
   
     return (
         <div className="fixed inset-0 flex items-center justify-center bg-gray-800 bg-opacity-50 z-50">
@@ -11,44 +47,44 @@ const Modal = ({ isOpen, onClose }) => {
             </button>
             <div className="w-full md:w-3/4 p-6">
                 <h2 className="text-2xl font-bold mb-4">Create an Account</h2>
-                <form className="space-y-4">
+                <form className="space-y-4" onSubmit={handleSubmit}>
                 <div className="mb-4">
                         <label className="flex gap-2 text-2xl font-medium text-gray-700">
                             Full Name<span className="text-red-500">*</span>
                         </label>
-                        <input type="text" className="mt-1 block w-full border border-gray-300 p-4 text-2xl rounded-lg  focus:outline-none focus:ring-1 focus:border-gray-300" required />
+                        <input type="text" name="fullName" value={formData.fullName} onChange={handleChange} className="mt-1 block w-full border border-gray-300 p-4 text-2xl rounded-lg focus:outline-none focus:ring-1 focus:border-gray-300" required />
                     </div>
                     <div className="mb-4">
                         <label className="flex gap-2 text-2xl font-medium text-gray-700">
                             Email <span className="text-red-500">*</span>
                         </label>
-                        <input type="email" className="mt-1 flex gap-2 w-full border border-gray-300 p-4 text-2xl rounded-lg  focus:outline-none focus:ring-1 focus:border-gray-300" required />
+                        <input type="email" name="email" value={formData.email} onChange={handleChange} className="mt-1 flex gap-2 w-full border border-gray-300 p-4 text-2xl rounded-lg focus:outline-none focus:ring-1 focus:border-gray-300" required />
                     </div>
                     <div className="mb-4">
                         <label className="flex gap-2 text-2xl font-medium text-gray-700">
                             Phone Number <span className="text-red-500">*</span>
                         </label>
-                        <input type="text" className="mt-1 flex gap-2 w-full border border-gray-300 p-4 text-2xl rounded-lg  focus:outline-none focus:ring-1 focus:border-gray-300" required />
+                        <input type="text" name="phoneNumber" value={formData.phoneNumber} onChange={handleChange} className="mt-1 flex gap-2 w-full border border-gray-300 p-4 text-2xl rounded-lg focus:outline-none focus:ring-1 focus:border-gray-300" required />
                     </div>
                     <div className="mb-4">
                         <label className="flex gap-2 text-2xl font-medium text-gray-700">
                             Business/Organization <span className="text-red-500">*</span>
                         </label>
-                        <input type="text" className="mt-1 flex gap-2 w-full border border-gray-300 p-4 text-2xl rounded-lg  focus:outline-none focus:ring-1 focus:border-gray-300" required />
+                        <input type="text" name="business" value={formData.business} onChange={handleChange} className="mt-1 flex gap-2 w-full border border-gray-300 p-4 text-2xl rounded-lg focus:outline-none focus:ring-1 focus:border-gray-300" required />
                     </div>
                     <div className="mb-4">
                         <label className="flex gap-2 text-2xl font-medium text-gray-700">
                             Select Product <span className="text-red-500">*</span>
                         </label>
-                        <select className="mt-1 block w-full border border-gray-300 p-4 text-2xl rounded-lg  focus:outline-none focus:ring-1 focus:border-gray-300" required>
-                            <option value="" disabled selected>Select a product</option>
+                        <select name="product" value={formData.product} onChange={handleChange} className="mt-1 block w-full border border-gray-300 p-4 text-2xl rounded-lg focus:outline-none focus:ring-1 focus:border-gray-300" required>
+                            <option value="" disabled>Select a product</option>
                             <option value="product1">Dropshipping</option>
                             <option value="product2">Website Development</option>
                             <option value="product3">Professional Voiceover</option>
-                            <option value="product3">Netflix Account</option>
+                            <option value="product4">Netflix Account</option>
                         </select>
                     </div>
-                    <button type="submit" className=" mt-10 w-full bg-blue-600 text-white px-4 py-2 rounded-lg shadow-lg hover:bg-blue-700 transition duration-200 bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 hover:from-pink-600 hover:via-purple-600 hover:to-blue-600 ">
+                    <button type="submit" className="mt-10 w-full bg-blue-600 text-white px-4 py-2 rounded-lg shadow-lg hover:bg-blue-700 transition duration-200 bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 hover:from-pink-600 hover:via-purple-600 hover:to-blue-600">
                         Submit
                     </button>
                 </form>

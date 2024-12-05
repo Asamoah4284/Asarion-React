@@ -1,6 +1,12 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 const Faq = () => {
+  const [openIndex, setOpenIndex] = useState(null);
+
+  const toggleFAQ = (index) => {
+    setOpenIndex(openIndex === index ? null : index);
+  };
+
   return <div>
     <section className="section faq relative overflow-hidden" id="faq" aria-label="faq">
         {/* Decorative background elements */}
@@ -35,7 +41,7 @@ const Faq = () => {
             <div className="space-y-6">
               {/* FAQ Items with glass morphism effect */}
               <div className="faq-item backdrop-blur-sm bg-white bg-opacity-70 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-white border-opacity-20">
-                <button className="w-full text-left px-6 py-4 focus:outline-none">
+                <button className="w-full text-left px-6 py-4 focus:outline-none" onClick={() => toggleFAQ(0)}>
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-4">
                       {/* Simplified icon container */}
@@ -46,7 +52,7 @@ const Faq = () => {
                         </svg>
                       </div>
                       {/* Simplified question text */}
-                      <h4 className="text-gray-900 font-medium">What makes your service unique?</h4>
+                      <span className="font-bold text-xl text-gray-800">What makes your service unique?</span>
                     </div>
                     {/* Simplified arrow */}
                     <svg className="w-4 h-4 text-gray-500 transform transition-transform duration-300" 
@@ -55,15 +61,15 @@ const Faq = () => {
                     </svg>
                   </div>
                 </button>
-                <div className="px-6 pb-4 hidden">
-                  <p className="text-gray-600">
+                <div className={`px-6 pb-4 ${openIndex === 0 ? '' : 'hidden'}`}>
+                  <p className="text-gray-600 text-xl">
                     We combine cutting-edge technology with personalized service. Our team of experts works closely with each client to deliver tailored solutions that meet their specific needs and exceed expectations.
                   </p>
                 </div>
               </div>
               {/* FAQ Item 2 */}
               <div className="faq-item bg-white rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-100">
-                <button className="w-full text-left px-8 py-7 focus:outline-none">
+                <button className="w-full text-left px-8 py-7 focus:outline-none" onClick={() => toggleFAQ(1)}>
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-5">
                       <span className="flex-shrink-0 w-12 h-12 bg-purple-50 rounded-full flex items-center justify-center">
@@ -78,7 +84,7 @@ const Faq = () => {
                     </svg>
                   </div>
                 </button>
-                <div className="px-8 pb-8 hidden">
+                <div className={`px-8 pb-8 ${openIndex === 1 ? '' : 'hidden'}`}>
                   <p className="text-gray-600 text-xl leading-relaxed">
                     Project timelines vary based on scope and complexity. Typically, small projects take 2-4 weeks, while larger ones may take 2-3 months. We'll provide a detailed timeline during our initial consultation.
                   </p>
@@ -90,7 +96,7 @@ const Faq = () => {
             <div className="space-y-6">
               {/* FAQ Item 3 */}
               <div className="faq-item bg-white rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-100">
-                <button className="w-full text-left px-8 py-7 focus:outline-none">
+                <button className="w-full text-left px-8 py-7 focus:outline-none" onClick={() => toggleFAQ(2)}>
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-5">
                       <span className="flex-shrink-0 w-12 h-12 bg-green-50 rounded-full flex items-center justify-center">
@@ -105,7 +111,7 @@ const Faq = () => {
                     </svg>
                   </div>
                 </button>
-                <div className="px-8 pb-8 hidden">
+                <div className={`px-8 pb-8 ${openIndex === 2 ? '' : 'hidden'}`}>
                   <p className="text-gray-600 text-xl leading-relaxed">
                     Yes! We provide comprehensive support packages including regular maintenance, updates, and technical assistance. Our team is always available to help you succeed.
                   </p>
@@ -114,7 +120,7 @@ const Faq = () => {
 
               {/* FAQ Item 4 */}
               <div className="faq-item bg-white rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-100">
-                <button className="w-full text-left px-8 py-7 focus:outline-none">
+                <button className="w-full text-left px-8 py-7 focus:outline-none" onClick={() => toggleFAQ(3)}>
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-5">
                       <span className="flex-shrink-0 w-12 h-12 bg-red-50 rounded-full flex items-center justify-center">
@@ -129,7 +135,7 @@ const Faq = () => {
                     </svg>
                   </div>
                 </button>
-                <div className="px-8 pb-8 hidden">
+                <div className={`px-8 pb-8 ${openIndex === 3 ? '' : 'hidden'}`}>
                   <p className="text-gray-600 text-xl leading-relaxed">
                     We offer flexible payment plans with a standard 50% upfront deposit and the remaining balance upon project completion. We also provide monthly payment options for ongoing services.
                   </p>
