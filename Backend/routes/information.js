@@ -19,12 +19,12 @@ router.get('/', async (req, res) => {
 
 // POST all information
 router.post('/', async (req, res) => {
-    const {fullname, email, phoneNumber, business, product } = req.body
-    try{
-        const user = await User.create({fullname, email, phoneNumber, business, product})
-        res.status(200).json(user)
-    }catch (error){
-        res.status(400).json({error: error.message})
+    const { fullname, email, phoneNumber, business, product } = req.body; // Destructure request body
+    try {
+        const user = await User.create({ fullname, email, phoneNumber, business, product }); // Create new user
+        res.status(200).json(user); // Return created user
+    } catch (error) {
+        res.status(400).json({ error: error.message }); // Handle validation errors
     }
     // Logic to add new information
 });

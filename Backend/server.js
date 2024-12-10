@@ -1,16 +1,16 @@
 require('dotenv').config()
 const express = require('express'); // Import Express
 const mongoose = require('mongoose'); // Import Mongoose
-const app = express(); // Create an Express application
 const informationRoutes = require('./routes/information')
-const cors = require('cors');
+const cors = require("cors");
 
+
+const app = express(); // Create an Express application
+app.use(cors());
 app.use(express.json()); // Middleware to parse JSON requests
-app.use(cors({
-    origin: 'http://localhost:3000' // Allow requests only from this origin
-}));
 
-const PORT = process.env.PORT || 3000; // Set the port
+
+const PORT = process.env.PORT || 5000; // Set the port
 
 
 // Connect to MongoDB
@@ -24,12 +24,18 @@ mongoose.connect(process.env.MONGODB_URI, { // Add your MongoDB URI in .env
 });
 
 // Define a basic route
-app.use('/api/interested', informationRoutes)
+app.use('/api/clients', informationRoutes)
 
+// Check if required environment variables are set
+if (!process.env.MONGODB_URI) {
+    console.error('MONGODB_URI is not defined in .env file');
+    process.exit(1); // Exit the process if the variable is not set
+}
 
-
-// Start the server
-app.listen(process.env.PORT, () => {
+// Start the server with error handling
+app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`); // Log the server status
+}).on('error', (err) => {
+    console.error('Error starting server:', err); // Log server start error
 });
 
