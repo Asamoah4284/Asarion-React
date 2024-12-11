@@ -7,9 +7,9 @@ const Service = () => {
 
           <p className="section-subtitle text-center">-What We Offer-</p>
 
-          <h2 className="h2 section-title text-center">Our Creative Services</h2>
+          <h2 className="h2-sm section-title text-center">Our Creative Services</h2>
 
-          <p className="section-text text-center">
+          <p className="section-text  header-paragraph text-center">
             Elevate your digital presence with our comprehensive suite of creative services, designed to help your business thrive in today's competitive landscape.
           </p>
 
@@ -25,8 +25,8 @@ const Service = () => {
                   </svg>
                 </figure>
                 <div className="card-content">
-                  <h3 className="h3 card-title">Dropshipping</h3>
-                  <p className="card-text">
+                  <h3 className="h2-sm card-title">Dropshipping</h3>
+                  <p className="header-paragraph card-text">
                     Launch your online business with our comprehensive dropshipping solutions. We help you set up, manage, and scale your e-commerce store with carefully selected suppliers, automated order processing, and optimized product listings.
                   </p>
                   <a href="#" className="btn-link group inline-flex items-center gap-2 text-blue-600 font-semibold hover:text-blue-700 transition-colors duration-300">
@@ -57,7 +57,7 @@ const Service = () => {
                 </figure>
                 <div className="card-content">
                   <h3 className="h3 card-title">Website Development</h3>
-                  <p className="card-text">
+                  <p className=" header-paragraph card-text">
                     Transform your vision into a powerful online presence. We build responsive, scalable websites that combine cutting-edge technology with optimized performance to help your business grow.
                   </p>
                   <a href="#" className="btn-link group inline-flex items-center gap-2 text-blue-600 font-semibold hover:text-blue-700 transition-colors duration-300">
@@ -88,7 +88,7 @@ const Service = () => {
                 </figure>
                 <div className="card-content">
                   <h3 className="h3 card-title">Professional Voice Overs</h3>
-                  <p className="card-text">
+                  <p className=" header-paragraph card-text">
                     Add a professional touch to your content with our premium voice over services. Our talented artists deliver clear, engaging narration that brings your message to life across all media platforms.
                   </p>
                   <a href="#" className="btn-link group inline-flex items-center gap-2 text-blue-600 font-semibold hover:text-blue-700 transition-colors duration-300">
@@ -121,7 +121,7 @@ const Service = () => {
                 </figure>
                 <div className="card-content">
                   <h3 className="h3 card-title">Netflix Package</h3>
-                  <p className="card-text">
+                  <p className=" header-paragraph card-text">
                     Get premium Netflix access at affordable prices starting from just 40 Ghana cedis. Enjoy unlimited streaming of movies, TV shows, and documentaries with our reliable subscription packages. Perfect for entertainment lovers!
                   </p>
                   <a href="#" className="btn-link group inline-flex items-center gap-2 text-blue-600 font-semibold hover:text-blue-700 transition-colors duration-300">

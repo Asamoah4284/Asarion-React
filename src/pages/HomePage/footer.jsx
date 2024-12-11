@@ -2,16 +2,15 @@ import React from 'react'
 
 const Footer = () => {
   return <div>
-    <footer className="footer">
+    <footer className="footer" id="footer">
 
 <div className="footer-top section">
   <div className="container md:px-40">
 
     <div className="footer-brand">
 
-      <a href="#" className="logo">Asarion</a>
-
-      <p className="footer-text">
+    <a href="#" className=" font-roboto text-transparent text-4xl bg-clip-text bg-gradient-to-r from-red-400 to-blue-500">Asarion</a>
+      <p className="footer-text header-paragraph">
          We're passionate about creating meaningful experiences that connect businesses with their audience. Let's stay stylish together.
       </p>
 
@@ -31,7 +30,7 @@ const Footer = () => {
 
     </div>
 
-    <ul className="footer-list">
+    <ul className="footer-list header-paragraph">
 
       <li>
         <p className="footer-list-title">Our Services</p>
@@ -63,7 +62,7 @@ const Footer = () => {
 
     </ul>
 
-    <ul className="footer-list">
+    <ul className="footer-list header-paragraph">
 
       <li>
         <p className="footer-list-title">Company</p>
@@ -95,7 +94,7 @@ const Footer = () => {
 
     </ul>
 
-    <ul className="footer-list">
+    <ul className="footer-list header-paragraph">
 
       <li>
         <p className="footer-list-title">Contact Us</p>
@@ -104,7 +103,7 @@ const Footer = () => {
       <li className="footer-item">
         <ion-icon name="location" aria-hidden="true"></ion-icon>
 
-        <address className="contact-link address">
+        <address className="contact-link address header-paragraph">
           univercity of Cape Coast (UCC)
         </address>
       </li>
@@ -127,28 +126,28 @@ const Footer = () => {
           <li>
             <a href="#" className="social-link">
               <i className="fab fa-facebook-f"></i>
-              <ion-icon name="logo-facebook" className="hidden"></ion-icon>
+              <ion-icon name="logo-facebook"></ion-icon>
             </a>
           </li>
 
           <li>
             <a href="#" className="social-link">
               <i className="fab fa-twitter"></i>
-              <ion-icon name="logo-twitter" className="hidden"></ion-icon>
+              <ion-icon name="logo-twitter"></ion-icon>
             </a>
           </li>
 
           <li>
             <a href="#" className="social-link">
               <i className="fab fa-instagram"></i>
-              <ion-icon name="logo-instagram" className="hidden"></ion-icon>
+              <ion-icon name="logo-instagram"></ion-icon>
             </a>
           </li>
 
           <li>
             <a href="#" className="social-link">
               <i className="fab fa-pinterest-p"></i>
-              <ion-icon name="logo-pinterest" className="hidden"></ion-icon>
+              <ion-icon name="logo-pinterest"></ion-icon>
             </a>
           </li>
 
@@ -161,7 +160,7 @@ const Footer = () => {
 </div>
 
 <div className="footer-bottom">
-  <div className="container">
+  <div className="container header-paragraph">
 
     <p className="copyright">
       &copy; 2025 Asarion | All Rights Reserved by <a href="#" className="copyright-link">Asarion Inc.</a>

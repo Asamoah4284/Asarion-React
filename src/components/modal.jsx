@@ -75,6 +75,18 @@ const Modal = ({ isOpen, onClose }) => {
                     </div>
                     <div className="mb-4">
                         <label className="flex gap-2 text-2xl font-medium text-gray-700">
+                            Select Product <span className="text-red-500">*</span>
+                        </label>
+                        <select name="product" value={formData.product} onChange={handleChange} className="mt-1 block w-full border border-gray-300 p-4 text-2xl rounded-lg focus:outline-none focus:ring-1 focus:border-gray-300" required>
+                            <option value="" disabled>Select a product</option>
+                            <option value="Dropshipping">Dropshipping</option>
+                            <option value="Website Development">Website Development</option>
+                            <option value="Professional Voiceover">Professional Voiceover</option>
+                            <option value="Netflix Account">Netflix Account</option>
+                        </select>
+                    </div>
+                    <div className="mb-4">
+                        <label className="flex gap-2 text-2xl font-medium text-gray-700">
                             Phone Number <span className="text-red-500">*</span>
                         </label>
                         <input type="text" name="phoneNumber" value={formData.phoneNumber} onChange={handleChange} className="mt-1 flex gap-2 w-full border border-gray-300 p-4 text-2xl rounded-lg focus:outline-none focus:ring-1 focus:border-gray-300" required />
@@ -85,18 +97,6 @@ const Modal = ({ isOpen, onClose }) => {
                             Business/Organization <span className="text-red-500">*</span>
                         </label>
                         <input type="text" name="business" value={formData.business} onChange={handleChange} className="mt-1 flex gap-2 w-full border border-gray-300 p-4 text-2xl rounded-lg focus:outline-none focus:ring-1 focus:border-gray-300" required />
-                    </div>
-                    <div className="mb-4">
-                        <label className="flex gap-2 text-2xl font-medium text-gray-700">
-                            Select Product <span className="text-red-500">*</span>
-                        </label>
-                        <select name="product" value={formData.product} onChange={handleChange} className="mt-1 block w-full border border-gray-300 p-4 text-2xl rounded-lg focus:outline-none focus:ring-1 focus:border-gray-300" required>
-                            <option value="" disabled>Select a product</option>
-                            <option value="Dropshipping">Dropshipping</option>
-                            <option value="Website Development">Website Development</option>
-                            <option value="Professional Voiceover">Professional Voiceover</option>
-                            <option value="Netflix Account">Netflix Account</option>
-                        </select>
                     </div>
                     <button type="submit" className="mt-10 w-full bg-blue-600 text-white px-4 py-2 rounded-lg shadow-lg hover:bg-blue-700 transition duration-200 bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 hover:from-pink-600 hover:via-purple-600 hover:to-blue-600">
                         Submit

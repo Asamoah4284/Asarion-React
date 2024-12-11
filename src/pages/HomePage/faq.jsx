@@ -30,7 +30,7 @@ const Faq = () => {
               Got Questions? We've Got Answers
             </h2>
             
-            <p className="text-gray-600 text-xl max-w-2xl mx-auto">
+            <p className="text-gray-600 header-paragraph max-w-2xl mx-auto">
               Find answers to common questions about our services, process, and support. Can't find what you're looking for? Feel free to contact us.
             </p>
           </div>
@@ -147,7 +147,7 @@ const Faq = () => {
           {/* Enhanced CTA section with new styling */}
           <div className="text-center mt-20">
             <p className="text-gray-600 text-xl mb-8">Still have questions? We're here to help!</p>
-            <a href="#" className="inline-flex items-center gap-2 bg-white bg-opacity-20 backdrop-blur-sm border border-white border-opacity-20 text-gray-800 px-8 py-4 rounded-full transform hover:-translate-y-1 transition-all duration-300 shadow-lg hover:shadow-xl group">
+            <a href="#" className="inline-flex items-center gap-2 bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 hover:from-pink-600 hover:via-purple-600 hover:to-blue-600 text-white px-8 py-4 rounded-full transform hover:-translate-y-1 transition-all duration-300 shadow-lg hover:shadow-xl group">
               <span className="font-semibold">Contact Support</span>
               <svg className="w-5 h-5 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />

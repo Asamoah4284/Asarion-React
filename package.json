@@ -14,7 +14,8 @@
     "framer-motion": "^11.12.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "react-router-dom": "^6.28.0"
+    "react-router-dom": "^6.28.0",
+    "sweetalert2": "^11.14.5"
   },
   "devDependencies": {
     "@eslint/js": "^9.15.0",
@@ -30,5 +31,11 @@
     "postcss": "^8.4.49",
     "tailwindcss": "^3.4.15",
     "vite": "^6.0.1"
+  },
+  "vite": {
+    "server": {
+      "host": "0.0.0.0",
+      "port": 4173
+    }
   }
 }

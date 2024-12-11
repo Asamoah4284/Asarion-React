@@ -54,7 +54,7 @@ const Header = () => {
       }`} data-header>
         <div className={`container transition-all duration-500 ease-in-out ${isScrolled ? 'py-6' : 'py-6'
         } md:px-48 flex justify-between items-center`}>
-          <a href="#" className="logo">Asarion</a>
+          <a href="#" className=" font-roboto text-transparent text-4xl bg-clip-text bg-gradient-to-r from-red-400 to-blue-500">Asarion</a>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
@@ -62,7 +62,7 @@ const Header = () => {
             <a href="#about" className="navbar-link hover:text-blue-600 transition-colors">About</a>
             <Link to='pricing'><a href="#Pricing" className="navbar-link hover:text-blue-600 transition-colors">Pricing</a></Link>
             <Link to='/team'><a href="#" className="navbar-link hover:text-blue-600 transition-colors">Team</a></Link>
-            <a href="#" className="navbar-link hover:text-blue-600 transition-colors">Contact Us</a>
+            <a href="#footer" className="navbar-link hover:text-blue-600 transition-colors">Contact Us</a>
           </nav>
 
           {/* Mobile Menu Button */}
@@ -100,7 +100,7 @@ const Header = () => {
             } shadow-lg`}>
               {/* Header */}
               <div className="flex items-center justify-between p-4 border-b">
-                <a href="#" className="logo">Asarion</a>
+                <a href="#" className="logo font-roboto text-blue-800">Asarion</a>
                 <button className="nav-close-btn p-2" onClick={toggleMenu}>
                   <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
@@ -149,7 +149,7 @@ const Header = () => {
                   <a href="#" className="block px-4 py-2 hover:bg-gray-50" data-nav-link>Team</a>
                 </li>
                 <li>
-                  <a href="#" className="block px-4 py-2 hover:bg-gray-50" data-nav-link>Contact Us</a>
+                  <a href="#footer-contact" className="block px-4 py-2 hover:bg-gray-50" data-nav-link>Contact Us</a>
                 </li>
               </ul>
             </div>

@@ -32,7 +32,7 @@ const Call = () => {
             Ready to Transform Your Digital Presence?
           </h2>
           
-          <p className="text-xl md:text-2xl text-white/90 mb-12 leading-relaxed" data-aos="fade-up" data-aos-delay="100">
+          <p className="header-paragraph text-white/90 mb-12 leading-relaxed" data-aos="fade-up" data-aos-delay="100">
             Join hundreds of satisfied clients who have elevated their brands with our expertise. 
             Let's create something amazing together.
           </p>

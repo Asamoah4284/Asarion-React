@@ -8,7 +8,11 @@ import Testimonials from './testimonials'
 import Faq from './faq'
 import Call from './call'
 import Footer from './footer'
+import Executives from './Executives'
+import Brands from './brands'
 const Home = () => {
+
+
   return (
       <div >
         <Header />
@@ -16,6 +20,7 @@ const Home = () => {
         <About />
         <Service />
         <Features />
+        <Executives />
         <Testimonials />
         <Faq />
         <Call />
