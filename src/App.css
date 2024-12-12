@@ -1476,3 +1476,12 @@ font-weight: 700;}
   .animate-carousel {
     animation: carousel 10s linear infinite;
   }
+
+  .fade-transition {
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out; /* Adjust duration as needed */
+  }
+  
+  .fade-transition:not(:first-child) {
+    opacity: 0; /* Start with opacity 0 for the transition */
+  }

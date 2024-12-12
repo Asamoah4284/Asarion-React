@@ -1,7 +1,23 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 
 const Hero = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  
+  const images = [
+    "/images/6.jpg",
+    "/images/7.jpg",
+    "/images/9.jpg",
+    
+  ];
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
+    }, 20000); // Change image every 5 seconds
+
+    return () => clearInterval(interval); // Cleanup on unmount
+  }, []);
 
   const handleDiscoverMoreClick = () => {
     setIsModalOpen(true);
@@ -47,11 +63,11 @@ const Hero = () => {
 
           <figure className="hero-banner has-before img-holder" 
             style={{ "--width": 650, "--height": 650 }}>
-            <img src="/images/hero-banner.png" 
+            <img src={images[currentImageIndex]} 
               width="650" 
               height="650" 
               alt="hero banner" 
-              className="img-cover"
+              className="img-cover fade-transition"
             />
           </figure>
 

@@ -1,12 +1,25 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
 const About = () => {
+  const [imageSrc, setImageSrc] = useState('/images/man.jpg');
+  const images = ['/images/8.jpg']; // Add your image paths here
+  let currentIndex = 0;
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      currentIndex = (currentIndex + 1) % images.length; // Cycle through images
+      setImageSrc(images[currentIndex]);
+    }, 20000); // Change image every 20 seconds
+
+    return () => clearInterval(interval); // Cleanup on unmount
+  }, []);
+
   return <div>
      <section className="section about" id="about" aria-label="about">
         <div className="container md:px-40">
 
           <figure className="about-banner" data-aos="fade-right" data-aos-duration="1000">
-            <img src="/images/man.jpg" 
+            <img src={imageSrc} 
                  width="500" height="654" 
                  loading="lazy" 
                  alt="about banner"

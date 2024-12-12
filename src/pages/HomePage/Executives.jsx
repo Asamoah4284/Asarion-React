@@ -21,15 +21,14 @@ const Executives = () => {
           <div className="grid grid-cols-2 col-gap-10">
   
               <div className="text-center bg-white">
-                  <img className="w-100" src="https://images.pexels.com/photos/1587014/pexels-photo-1587014.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=1&amp;w=500" style={{ width: '100%' }} />
+                  <img className="w-100 md:h-[400px] h-[250px] object-cover" src="/images/asamoah.jpg" />
                   <div className="p-4">
                       <div className="text-md">
-                          <a href="#"
-                              className="hover:text-indigo-500 text-gray-900 font-semibold transition duration-500 ease-in-out">Mehdi
-                              Mohammadi</a>
-                          <p className="text-gray-500 uppercase text-sm">Web developer</p>
+                          <p
+                              className="hover:text-indigo-500 text-gray-900 font-semibold transition duration-500 ease-in-out">Asamoah Richard</p>
+                          <p className="text-gray-500 uppercase text-sm">CHIEF TECHNOLOGY OFFICER</p>
                       </div>
-                      <div className="my-4 flex justify-center items-center">
+                      {/* <div className="my-4 flex justify-center items-center">
                           <a href="#">
   
                               <svg className="mr-3" width="18px" height="18px" viewBox="0 0 24 24"
@@ -88,20 +87,19 @@ const Executives = () => {
                               </svg></a>
   
   
-                      </div>
+                      </div> */}
                   </div>
   
               </div>
               <div className="text-center bg-white">
-                  <img className="w-100" src="https://images.pexels.com/photos/2897883/pexels-photo-2897883.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=1&amp;w=500" style={{ width: '100%' }} />
+                  <img className="w-100 md:h-[400px] h-[250px] object-cover" src="/images/orion.jpg" />
                   <div className="p-4">
                       <div className="text-md">
-                          <a href="#"
-                              className="hover:text-indigo-500 text-gray-900 font-semibold transition duration-500 ease-in-out">Yahya
-                              R. Makarim</a>
+                          <p
+                              className="hover:text-indigo-500 text-gray-900 font-semibold transition duration-500 ease-in-out">Armaah Orion</p>
                           <p className="text-gray-500 uppercase text-sm">president &amp; CEO</p>
                       </div>
-                      <div className="my-4 flex justify-center items-center">
+                      {/* <div className="my-4 flex justify-center items-center">
                           <a href="#">
   
                               <svg className="mr-3" width="18px" height="18px" viewBox="0 0 24 24"
@@ -160,20 +158,19 @@ const Executives = () => {
                               </svg></a>
   
   
-                      </div>
+                      </div> */}
                   </div>
   
               </div>
               <div className="text-center bg-white">
-                  <img className="w-100" src="https://images.pexels.com/photos/3778680/pexels-photo-3778680.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=1&amp;w=500" style={{ width: '100%' }} />
+                  <img className="w-100 md:h-[400px] h-[250px] object-cover" src="/images/Harriet.jpg"  />
                   <div className="p-4">
                       <div className="text-md">
-                          <a href="#"
-                              className="hover:text-indigo-500 text-gray-900 font-semibold transition duration-500 ease-in-out">Ahmad
-                              Sultani</a>
-                          <p className="text-gray-500 uppercase text-sm">Web designer</p>
+                          <p
+                              className="hover:text-indigo-500 text-gray-900 font-semibold transition duration-500 ease-in-out">Yeboah Harriet</p>
+                          <p className="text-gray-500 uppercase text-sm">SALES MANAGER</p>
                       </div>
-                      <div className="my-4 flex justify-center items-center">
+                      {/* <div className="my-4 flex justify-center items-center">
                           <a href="#">
   
                               <svg className="mr-3" width="18px" height="18px" viewBox="0 0 24 24"
@@ -232,20 +229,19 @@ const Executives = () => {
                               </svg></a>
   
   
-                      </div>
+                      </div> */}
                   </div>
   
               </div>
               <div className="text-center bg-white">
-                  <img className="w-100" src="https://images.pexels.com/photos/3778680/pexels-photo-3778680.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=1&amp;w=500" style={{ width: '100%' }} />
+                  <img className="w-100 md:h-[400px] h-[250px] object-cover" src="/images/law.jpg" />
                   <div className="p-4">
                       <div className="text-md">
-                          <a href="#"
-                              className="hover:text-indigo-500 text-gray-900 font-semibold transition duration-500 ease-in-out">Ahmad
-                              Sultani</a>
-                          <p className="text-gray-500 uppercase text-sm">Web designer</p>
+                          <p
+                              className="hover:text-indigo-500 text-gray-900 font-semibold transition duration-500 ease-in-out">Nkansah Lawrencia</p>
+                          <p className="text-gray-500 uppercase text-sm md:text-lg">Chief Operating Officer</p>
                       </div>
-                      <div className="my-4 flex justify-center items-center">
+                      {/* <div className="my-4 flex justify-center items-center">
                           <a href="#">
   
                               <svg className="mr-3" width="18px" height="18px" viewBox="0 0 24 24"
@@ -304,7 +300,7 @@ const Executives = () => {
                               </svg></a>
   
   
-                      </div>
+                      </div> */}
                   </div>
   
               </div>
