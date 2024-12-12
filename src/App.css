@@ -182,7 +182,7 @@ body {
 }
 
 .header-paragraph{
-  font-size: clamp(1.125rem, 0.8989rem + 1.0638vw, 1.75rem);
+  font-size: clamp(1.45rem, 0.8989rem + 1.0638vw, 1.75rem);
 }
 .h2 { font-size: var(--fs-2); }
 

@@ -31,7 +31,7 @@ const Hero = () => {
 
           <div className="hero-content">
             <p className="hero-subtitle has-before animate-fade-in-up">
-              Welcome to Our Agency
+              Welcome to Asarion
             </p>
             <h1 className="h1 hero-title animate-fade-in-up delay-200">
             Here To Inspire, Motivate and Renovate

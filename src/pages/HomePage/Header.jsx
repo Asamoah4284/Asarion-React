@@ -52,12 +52,14 @@ const Header = () => {
       <header className={`header fixed w-full top-0 transition-all duration-500 ease-in-out ${
         isScrolled ? 'bg-white shadow-md' : 'bg-transparent'
       }`} data-header>
-        <div className={`container transition-all duration-500 ease-in-out ${isScrolled ? 'py-4' : 'py-6'
-        } md:px-48 flex justify-between items-center`}>
-          <a href="#" className=" font-roboto text-transparent text-4xl bg-clip-text bg-gradient-to-r from-red-400 to-blue-500">Asarion</a>
+        <div className={`container transition-all duration-500 ease-in-out ${isScrolled ? '' : ''
+        } md:px-60 flex justify-center items-center`}>
+          <a href="#" className="flex justify-center items-center">
+            <img src="images/logo.png" className='w-32 pt-6 md:pt-0 md:mr-20 md:mt-1 md:ml-10px' alt="" />
+          </a>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-8">
+          <nav className="hidden md:flex items-center space-x-8 justify-center">
             <a href="#home" className="navbar-link hover:text-blue-600 transition-colors">Home</a>
             <a href="#about" className="navbar-link hover:text-blue-600 transition-colors">About</a>
             <Link to='pricing'><a href="#Pricing" className="navbar-link hover:text-blue-600 transition-colors">Services</a></Link>
