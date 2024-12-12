@@ -52,7 +52,7 @@ const Header = () => {
       <header className={`header fixed w-full top-0 transition-all duration-500 ease-in-out ${
         isScrolled ? 'bg-white shadow-md' : 'bg-transparent'
       }`} data-header>
-        <div className={`container transition-all duration-500 ease-in-out ${isScrolled ? 'py-6' : 'py-6'
+        <div className={`container transition-all duration-500 ease-in-out ${isScrolled ? 'py-4' : 'py-6'
         } md:px-48 flex justify-between items-center`}>
           <a href="#" className=" font-roboto text-transparent text-4xl bg-clip-text bg-gradient-to-r from-red-400 to-blue-500">Asarion</a>
 
@@ -60,7 +60,7 @@ const Header = () => {
           <nav className="hidden md:flex items-center space-x-8">
             <a href="#home" className="navbar-link hover:text-blue-600 transition-colors">Home</a>
             <a href="#about" className="navbar-link hover:text-blue-600 transition-colors">About</a>
-            <Link to='pricing'><a href="#Pricing" className="navbar-link hover:text-blue-600 transition-colors">Pricing</a></Link>
+            <Link to='pricing'><a href="#Pricing" className="navbar-link hover:text-blue-600 transition-colors">Services</a></Link>
             <Link to='/team'><a href="#" className="navbar-link hover:text-blue-600 transition-colors">Team</a></Link>
             <a href="#footer" className="navbar-link hover:text-blue-600 transition-colors">Contact Us</a>
           </nav>
@@ -95,13 +95,12 @@ const Header = () => {
             ></div>
             
             {/* Mobile Menu Content */}
-            <div className={`fixed top-0 left-0 w-1/2 h-full bg-white transform transition-all duration-300 ease-in-out z-50 ${
-              isMenuOpen ? 'translate-x-0' : '-translate-x-full'
+            <div className={`fixed top-0 right-0 w-3/4 h-full bg-white transform transition-all duration-300 ease-in-out z-50 ${
+              isMenuOpen ? 'translate-x-0' : 'translate-x-full'
             } shadow-lg`}>
               {/* Header */}
               <div className="flex items-center justify-between p-4 border-b">
-                <a href="#" className="logo font-roboto text-blue-800">Asarion</a>
-                <button className="nav-close-btn p-2" onClick={toggleMenu}>
+                <button className="nav-close-btn p-2" onClick={toggleMenu} aria-label="Close menu">
                   <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
                   </svg>
@@ -109,53 +108,55 @@ const Header = () => {
               </div>
 
               {/* Navigation Links */}
-              <ul className="py-4">
-                <li>
-                  <a href="#home" className="block px-4 py-2 hover:bg-gray-50" data-nav-link>Home</a>
+              <ul className="p-12 flex flex-col gap-8">
+                <li className="border-b border-gray-300">
+                  <a href="#home" className="block px-4 py-2 hover:bg-blue-500 hover:text-white transition-colors duration-300 rounded" data-nav-link>Home</a>
                 </li>
-                <li>
-                  <a href="#about" className="block px-4 py-2 hover:bg-gray-50" data-nav-link>About</a>
+                <li className="border-b border-gray-300">
+                  <a href="#about" className="block px-4 py-2 hover:bg-blue-500 hover:text-white transition-colors duration-300 rounded" data-nav-link>About</a>
                 </li>
                 
                 {/* Pricing Dropdown Mobile */}
-                <li className="relative">
+                <li className="relative border-b border-gray-300">
                   <button 
-                    className="w-full flex items-center justify-between px-4 py-2 hover:bg-gray-50"
+                    className="w-full flex items-center justify-between px-4 py-2 hover:bg-blue-500 hover:text-white transition-colors duration-300 rounded"
                     onClick={toggleDropdown}
                   >
-                    <span>Pricing</span>
+                    <span>Services</span>
                     <svg className={`w-4 h-4 transition-transform ${openDropdown ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
                     </svg>
                   </button>
                   <ul className={`bg-gray-50 py-2 ${openDropdown ? 'block' : 'hidden'}`}>
-                    <li>
-                      <a href="#web-development" className="block px-8 py-2 hover:bg-gray-100" data-nav-link>Web Development</a>
+                    <li className="border-b border-gray-200">
+                      <a href="#web-development" className="block px-8 py-2 hover:bg-blue-100 transition-colors duration-300 rounded" data-nav-link>Web Development</a>
                     </li>
-                    <li>
-                      <a href="#app-development" className="block px-8 py-2 hover:bg-gray-100" data-nav-link>App Development</a>
+                    <li className="border-b border-gray-200">
+                      <a href="#app-development" className="block px-8 py-2 hover:bg-blue-100 transition-colors duration-300 rounded" data-nav-link>App Development</a>
                     </li>
-                    <li>
-                      <a href="#ui-design" className="block px-8 py-2 hover:bg-gray-100" data-nav-link>UI/UX Design</a>
+                    <li className="border-b border-gray-200">
+                      <a href="#ui-design" className="block px-8 py-2 hover:bg-blue-100 transition-colors duration-300 rounded" data-nav-link>UI/UX Design</a>
                     </li>
-                    <li>
-                      <a href="#digital-marketing" className="block px-8 py-2 hover:bg-gray-100" data-nav-link>Digital Marketing</a>
+                    <li className="border-b border-gray-200">
+                      <a href="#digital-marketing" className="block px-8 py-2 hover:bg-blue-100 transition-colors duration-300 rounded" data-nav-link>Digital Marketing</a>
                     </li>
                   </ul>
                 </li>
 
+                <li className="border-b border-gray-300">
+                  <Link to='/team'>
+                  <a className="block px-4 py-2 hover:bg-blue-500 hover:text-white transition-colors duration-300 rounded" data-nav-link>Team</a></Link>
+                </li>
+                <li className="border-b border-gray-300">
+                  <a href="#footer" className="block px-4 py-2 hover:bg-blue-500 hover:text-white transition-colors duration-300 rounded" data-nav-link>Contact Us</a>
+                </li>
+                <button onClick={handleOpenModal}  className="inline-flex items-center w-1/2 bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 hover:from-pink-600 hover:via-purple-600 hover:to-blue-600 text-white px-8 py-4 rounded-full transform hover:-translate-y-1 transition-all duration-300 shadow-lg hover:shadow-xl group" >Let's Talk</button>
                
-                <li>
-                  <a href="#" className="block px-4 py-2 hover:bg-gray-50" data-nav-link>Team</a>
-                </li>
-                <li>
-                  <a href="#footer-contact" className="block px-4 py-2 hover:bg-gray-50" data-nav-link>Contact Us</a>
-                </li>
               </ul>
             </div>
           </nav>
 
-          <a href="#" className="btn-outline hidden md:block" onClick={handleOpenModal}>Let's talk</a>
+          <a href="#" className="btn-outline" onClick={handleOpenModal}>Let's talk</a>
 
           {/* Contact Modal */}
           {isModalOpen && (

@@ -3,11 +3,11 @@ import React, { useState, useEffect } from 'react';
 const Testimonials = () => {
   // Add state for current slide
   const [currentSlide, setCurrentSlide] = useState(0);
-  const totalSlides = 4; // Changed from 6 to 5
+  const totalSlides = 2; // Ensure this matches the actual number of testimonials
 
   // Function to handle next slide
   const nextSlide = () => {
-    setCurrentSlide((prev) => (prev === totalSlides - 1 ? 0 : prev + 1));
+    setCurrentSlide((prev) => (prev + 1) % totalSlides);
   };
 
   // Function to handle previous slide
@@ -63,15 +63,15 @@ const Testimonials = () => {
                     
                     {/* Testimonial Content */}
                     <p className="text-gray-600 text-2xl mb-6 italic">
-                      "Professional, creative, and responsive. Asarion understood our vision and turned it into reality. Highly recommended!"
+                    "I was thoroughly impressed with the service! I strongly endorse Asarion for their remarkable support.
                     </p>
                     
                     {/* Author Info */}
                     <div className="flex items-center">
-                      <img src="https://randomuser.me/api/portraits/women/32.jpg" alt="Sarah Johnson" 
+                      <img src="/images/Harriet.jpg" alt="Sarah Johnson" 
                            className="w-12 h-12 rounded-full object-cover mr-4"/>
                       <div>
-                        <h4 className="font-semibold text-gray-900">Vasty Konadu</h4>
+                        <h4 className="font-semibold text-gray-900">Harriet Yeboah</h4>
                         <p className="text-gray-500">Sales Manager, UCC</p>
                       </div>
                     </div>
@@ -87,13 +87,13 @@ const Testimonials = () => {
                       </svg>
                     </div>
                     <p className="text-gray-600 text-2xl mb-6 italic">
-                      "Professional, creative, and responsive. Asarion understood our vision and turned it into reality. Highly recommended!"
+                    "The level of service was remarkable! I definitely recommend Asarion for their outstanding assistance."
                     </p>
                     <div className="flex items-center">
-                      <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="Michael Chen" 
+                      <img src="/images/orion.jpg" alt="Michael Chen" 
                            className="w-12 h-12 rounded-full object-cover mr-4" />
                       <div>
-                        <h4 className="font-semibold text-gray-900">Victoria</h4>
+                        <h4 className="font-semibold text-gray-900">Armaah Thersa</h4>
                         <p className="text-gray-500">Marketing Director, GrowthCo</p>
                       </div>
                     </div>
@@ -109,10 +109,10 @@ const Testimonials = () => {
                       </svg>
                     </div>
                     <p className="text-gray-600 text-2xl mb-6 italic">
-                      "Professional, creative, and responsive. Asarion understood our vision and turned it into reality. Highly recommended!"
+                    "The service was outstanding! I wholeheartedly recommend Asarion for their excellent support."
                     </p>
                     <div className="flex items-center">
-                      <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Emma Thompson" 
+                      <img src="/images/asamoah.jpg" alt="Emma Thompson" 
                            className="w-12 h-12 rounded-full object-cover mr-4" />
                       <div>
                         <h4 className="font-semibold text-gray-900">Asamoah Richard</h4>
@@ -121,6 +121,7 @@ const Testimonials = () => {
                     </div>
                   </div>
                 </div>
+                {/* Testimonial 4 */}
                 <div className="testimonial-card w-full md:w-1/2 lg:w-1/3 flex-shrink-0 px-4">
                   <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300">
                     <div className="mb-6">
@@ -129,10 +130,10 @@ const Testimonials = () => {
                       </svg>
                     </div>
                     <p className="text-gray-600 text-2xl mb-6 italic">
-                      "Professional, creative, and responsive. Asarion understood our vision and turned it into reality. Highly recommended!"
+                      "The service was exceptional! I highly recommend Asarion for their outstanding support."
                     </p>
                     <div className="flex items-center">
-                      <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Emma Thompson" 
+                      <img src="/images/law.jpg" alt="Emma Thompson" 
                            className="w-12 h-12 rounded-full object-cover mr-4" />
                       <div>
                         <h4 className="font-semibold text-gray-900">Lawrencia Nkansah</h4>
@@ -141,46 +142,7 @@ const Testimonials = () => {
                     </div>
                   </div>
                 </div>
-                <div className="testimonial-card w-full md:w-1/2 lg:w-1/3 flex-shrink-0 px-4">
-                  <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300">
-                    <div className="mb-6">
-                      <svg className="w-12 h-12 text-blue-500 opacity-20" fill="currentColor" viewBox="0 0 32 32">
-                        <path d="M10 8c-3.3 0-6 2.7-6 6v10h10V14H6c0-2.2 1.8-4 4-4V8zm14 0c-3.3 0-6 2.7-6 6v10h10V14h-8c0-2.2 1.8-4 4-4V8z"/>
-                      </svg>
-                    </div>
-                    <p className="text-gray-600 text-2xl mb-6 italic">
-                      "Professional, creative, and responsive. Asarion understood our vision and turned it into reality. Highly recommended!"
-                    </p>
-                    <div className="flex items-center">
-                      <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Emma Thompson" 
-                           className="w-12 h-12 rounded-full object-cover mr-4" />
-                      <div>
-                        <h4 className="font-semibold text-gray-900">Seth Akowuah</h4>
-                        <p className="text-gray-500">Social Media Manager, TechHub</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="testimonial-card w-full md:w-1/2 lg:w-1/3 flex-shrink-0 px-4">
-                  <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300">
-                    <div className="mb-6">
-                      <svg className="w-12 h-12 text-blue-500 opacity-20" fill="currentColor" viewBox="0 0 32 32">
-                        <path d="M10 8c-3.3 0-6 2.7-6 6v10h10V14H6c0-2.2 1.8-4 4-4V8zm14 0c-3.3 0-6 2.7-6 6v10h10V14h-8c0-2.2 1.8-4 4-4V8z"/>
-                      </svg>
-                    </div>
-                    <p className="text-gray-600 text-2xl mb-6 italic">
-                      "Professional, creative, and responsive. Asarion understood our vision and turned it into reality. Highly recommended!"
-                    </p>
-                    <div className="flex items-center">
-                      <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Emma Thompson" 
-                           className="w-12 h-12 rounded-full object-cover mr-4" />
-                      <div>
-                        <h4 className="font-semibold text-gray-900">Obiri Yeboah Harriet</h4>
-                        <p className="text-gray-500">Sales Manager, Garden City</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+             
               </div>
             </div>
 

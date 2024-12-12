@@ -19,9 +19,9 @@ router.get('/', async (req, res) => {
 
 // POST all information
 router.post('/', async (req, res) => {
-    const { fullname, email, phoneNumber, business, product } = req.body; // Destructure request body
+    const { fullname, email, phoneNumber, business, product, birth } = req.body; // Destructure request body
     try {
-        const user = await User.create({ fullname, email, phoneNumber, business, product }); // Create new user
+        const user = await User.create({ fullname, email, phoneNumber, business, product, birth }); // Create new user
         res.status(200).json(user); // Return created user
     } catch (error) {
         res.status(400).json({ error: error.message }); // Handle validation errors

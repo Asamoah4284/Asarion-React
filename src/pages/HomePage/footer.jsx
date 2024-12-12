@@ -104,7 +104,7 @@ const Footer = () => {
         <ion-icon name="location" aria-hidden="true"></ion-icon>
 
         <address className="contact-link address header-paragraph">
-          univercity of Cape Coast (UCC)
+          university of Cape Coast (UCC)
         </address>
       </li>
 

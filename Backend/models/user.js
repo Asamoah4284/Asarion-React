@@ -27,10 +27,14 @@ const userSchema = new mongoose.Schema({
         required: true,
         
     },
+    birth: {
+        type: Date,
+        required: true,
+    },
     product: {
         type: String,
         required: true,
-        enum: ['Dropshipping', 'Website Development', 'Professional Voiceover', 'Netflix Account'],
+        enum: ['Dropshipping', 'Website Development', 'Professional Voiceover', 'Netflix Account', 'Branding', 'Graphic Design'],
        
     },
     // ... other fields can be added here

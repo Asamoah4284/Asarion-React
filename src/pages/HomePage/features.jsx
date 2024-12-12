@@ -41,7 +41,7 @@ const Features = () => {
                 <span className="text-7xl font-bold text-blue-600/20">01</span>
                 <div className="mt-6">
                   <h3 className="text-2xl font-bold text-gray-900 mb-4">Comprehensive Seminars</h3>
-                  <p className="text-gray-600 header-paragraph leading-relaxed">Access our extensive library of premium icons, templates, and design resources.</p>
+                  <p className="text-gray-600 header-paragraph leading-relaxed">Join our engaging seminars where industry leaders collaborate with brands to share insights and strategies.</p>
                 </div>
               </div>
             </div>
@@ -54,7 +54,7 @@ const Features = () => {
                 <span className="text-7xl font-bold text-purple-600/20">02</span>
                 <div className="mt-6">
                   <h3 className="text-2xl font-bold text-gray-900 mb-4">Extended Support</h3>
-                  <p className="text-gray-600 header-paragraph leading-relaxed">Enjoy 6 months of dedicated support from our expert team for your projects.</p>
+                  <p className="text-gray-600 header-paragraph leading-relaxed">Enjoy 4 to 6weeks of dedicated support from our expert team for your projects.</p>
                 </div>
               </div>
             </div>
@@ -114,14 +114,18 @@ const Features = () => {
 
           {/* Call to Action */}
           <div className="text-center mt-20">
-            <button href="#" 
+            <button 
+               onClick={handleOpenModal}
                className="inline-flex items-center gap-2 bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 hover:from-pink-600 hover:via-purple-600 hover:to-blue-600 text-white px-8 py-4 rounded-full transform hover:-translate-y-1 transition-all duration-300 shadow-lg hover:shadow-xl group" 
-               onClick={handleOpenModal}>
+               >
               <span className="font-semibold">Get Started Today</span>
               <svg className="w-5 h-5 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
               </svg>
             </button>
+            {isModalOpen && (
+     <Modal isOpen={isModalOpen} onClose={handleCloseModal}/>
+      )}
           </div>
         </div>
       </section>

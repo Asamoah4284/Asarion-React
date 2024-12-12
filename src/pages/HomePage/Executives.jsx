@@ -7,9 +7,9 @@ const Executives = () => {
     <div className="text-center mb-20">
       <h3 className="text-4xl font-bold text-gray-800 mb-6">Meet Our Executives</h3>
       <div className="flex justify-center gap-2">
-        <span className="h-1 w-4 bg-blue-600 rounded-full"></span>
+        <span className="h-1 w-4 bg-[#f9004d] rounded-full"></span>
         <span className="h-1 w-12 bg-blue-600 rounded-full"></span>
-        <span className="h-1 w-4 bg-blue-600 rounded-full"></span>
+        <span className="h-1 w-4 bg-[#f9004d] rounded-full"></span>
       </div>
     </div>
 
