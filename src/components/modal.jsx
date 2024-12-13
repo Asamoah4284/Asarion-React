@@ -29,7 +29,7 @@ const Modal = ({ isOpen, onClose }) => {
         setEmailError('');
         setPhoneError('');
         try {
-            const response = await fetch('https://asarion-backend.onrender.com', {
+            const response = await fetch('https://asarion-backend.onrender.com/api/clients', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
