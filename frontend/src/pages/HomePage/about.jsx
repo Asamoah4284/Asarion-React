@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 
 const About = () => {
-  const [imageSrc, setImageSrc] = useState('/images/man.jpg');
-  const images = ['/images/8.jpg']; // Add your image paths here
+  const [imageSrc, setImageSrc] = useState('/images/4.jpg');
+  const images = ['/images/6.jpg', '/images/4.jpg']; // Add your image paths here
   let currentIndex = 0;
 
   useEffect(() => {
@@ -18,19 +18,20 @@ const About = () => {
      <section className="section about" id="about" aria-label="about">
         <div className="container md:px-40">
 
-          <figure className="about-banner" data-aos="fade-right" data-aos-duration="1000">
+          <figure className="about-banner" >
             <img src={imageSrc} 
                  width="500" height="654" 
                  loading="lazy" 
                  alt="about banner"
-                 className="w-100 transform transition-transform duration-500" />
+                 className="w-100 h-[500px]
+                 object-cover transform transition-transform duration-500" />
             
             {/* Using Font Awesome icons instead of images */}
             <i className="fa-solid fa-circle shape shape-1 animate-float"></i>
             <i className="fa-solid fa-circle shape shape-3 animate-float-delayed"></i>
           </figure>
 
-          <div className="flex  flex-col items-center justify-center px-10" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
+          <div className="flex  flex-col items-center justify-center px-10">
             <h2 className="h2-sm section-title mb-8 transition-colors duration-300">
               Building Powerful Digital Brands That Leave Lasting Impressions
             </h2>

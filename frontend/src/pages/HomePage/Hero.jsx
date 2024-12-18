@@ -5,16 +5,15 @@ const Hero = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   
   const images = [
-    "/images/6.jpg",
-    "/images/7.jpg",
-    "/images/9.jpg",
+    "/images/2.jpg",
+    "/images/1.jpg",
     
   ];
 
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
-    }, 20000); // Change image every 5 seconds
+    }, 10000); // Change image every 5 seconds
 
     return () => clearInterval(interval); // Cleanup on unmount
   }, []);
@@ -45,7 +44,7 @@ const Hero = () => {
 
             <div className="btn-group animate-fade-in-up delay-600">
               <a className="inline-flex items-center gap-2 bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 hover:from-pink-600 hover:via-purple-600 hover:to-blue-600 text-white px-8 py-4 rounded-full transform hover:-translate-y-1 transition-all duration-300 shadow-lg hover:shadow-xl group" >
-                <span className="header-paragraph">Discover More</span>
+                <a href="#services" className="header-paragraph">Discover More</a>
                 <svg className="w-5 h-5 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
                 </svg>
@@ -55,7 +54,7 @@ const Hero = () => {
                 <div className="btn-icon animate-pulse">
                   <ion-icon name="play" aria-hidden="true"></ion-icon>     
                 </div>
-                <span className="span header-paragraph">How it works</span>
+                <span className="span header-paragraph">Get 1GB Free</span>
                   
               </button>
             </div>

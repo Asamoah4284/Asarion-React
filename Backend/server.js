@@ -2,6 +2,7 @@ require('dotenv').config()
 const express = require('express'); // Import Express
 const mongoose = require('mongoose'); // Import Mongoose
 const informationRoutes = require('./routes/information')
+const dataRoutes = require('./routes/data')
 const cors = require("cors");
 
 
@@ -25,6 +26,7 @@ mongoose.connect(process.env.MONGODB_URI, { // Add your MongoDB URI in .env
 
 // Define a basic route
 app.use('/api/clients', informationRoutes)
+app.use('/api/data', dataRoutes)
 
 // Check if required environment variables are set
 if (!process.env.MONGODB_URI) {

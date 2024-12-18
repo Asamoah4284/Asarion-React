@@ -1,4 +1,5 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
+import AOS from 'aos'; // Import AOS
 // import the  modal
 // ... existing code ...
 import Modal from '../../components/modal'
@@ -16,8 +17,12 @@ const Call = () => {
     setIsModalOpen(false);
   };
 
+  useEffect(() => {
+    AOS.init();
+  }, []);
+
   return <div>
-    <section className="relative py-24 overflow-hidden">
+    <section id="call" className="relative py-24 overflow-hidden">
       {/* Background with gradient overlay */}
       <div className="absolute inset-0 bg-gradient-to-br from-blue-600 to-purple-700 opacity-90"></div>
       
@@ -28,7 +33,7 @@ const Call = () => {
       <div className="container relative md:px-40 mx-auto px-4">
         <div className="max-w-4xl mx-auto text-center">
           {/* Main content */}
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6" data-aos="fade-up">
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 " data-aos="fade-up">
             Ready to Transform Your Digital Presence?
           </h2>
           

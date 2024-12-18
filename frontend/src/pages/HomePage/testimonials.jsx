@@ -49,7 +49,7 @@ const Testimonials = () => {
               {/* Update carousel inner div with transform based on currentSlide */}
               <div 
                 className="carousel-inner flex transition-transform duration-500 ease-out"
-                style={{ transform: `translateX(-${currentSlide * (100 / 3)}%)` }}
+                style={{ transform: `translateX(-${currentSlide * (100 / totalSlides)}%)` }}
               >
                 {/* Testimonial 1 */}
                 <div className="testimonial-card w-full md:w-1/2 lg:w-1/3 flex-shrink-0 px-4">

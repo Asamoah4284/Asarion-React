@@ -1,9 +1,15 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import Modal from '../../components/modal';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const Faq = () => {
   const [openIndex, setOpenIndex] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
+
+  useEffect(() => {
+    AOS.init();
+  }, []);
 
   const handleOpenModal = (event) => {
     event.preventDefault();
@@ -19,7 +25,7 @@ const Faq = () => {
   };
 
   return <div>
-    <section className="section faq relative overflow-hidden" id="faq" aria-label="faq">
+    <section className="section faq relative overflow-hidden" id="faq" aria-label="faq" data-aos="fade-up">
         {/* Decorative background elements */}
         <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50"></div>
         
@@ -51,7 +57,7 @@ const Faq = () => {
             {/* Left Column */}
             <div className="space-y-6">
               {/* FAQ Items with glass morphism effect */}
-              <div className="faq-item backdrop-blur-sm bg-white bg-opacity-70 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-white border-opacity-20">
+              <div className="faq-item backdrop-blur-sm bg-white bg-opacity-70 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-white border-opacity-20" data-aos="fade-right">
                 <button className="w-full text-left px-6 py-4 focus:outline-none" onClick={() => toggleFAQ(0)}>
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-4">
@@ -79,7 +85,7 @@ const Faq = () => {
                 </div>
               </div>
               {/* FAQ Item 2 */}
-              <div className="faq-item bg-white rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-100">
+              <div className="faq-item bg-white rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-100" data-aos="fade-right">
                 <button className="w-full text-left px-8 py-7 focus:outline-none" onClick={() => toggleFAQ(1)}>
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-5">
@@ -106,7 +112,7 @@ const Faq = () => {
             {/* Right Column */}
             <div className="space-y-6">
               {/* FAQ Item 3 */}
-              <div className="faq-item bg-white rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-100">
+              <div className="faq-item bg-white rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-100" data-aos="fade-left">
                 <button className="w-full text-left px-8 py-7 focus:outline-none" onClick={() => toggleFAQ(2)}>
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-5">
@@ -130,7 +136,7 @@ const Faq = () => {
               </div>
 
               {/* FAQ Item 4 */}
-              <div className="faq-item bg-white rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-100">
+              <div className="faq-item bg-white rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-100" data-aos="fade-left">
                 <button className="w-full text-left px-8 py-7 focus:outline-none" onClick={() => toggleFAQ(3)}>
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-5">
@@ -152,11 +158,12 @@ const Faq = () => {
                   </p>
                 </div>
               </div>
+                {/* <img src="/images/1.jpg" alt="" /> */}
             </div>
           </div>
 
           {/* Enhanced CTA section with new styling */}
-          <div className="text-center mt-20">
+          <div className="text-center">
             <p className="text-gray-600 text-xl mb-8">Still have questions? We're here to help!</p>
             <button onClick={handleOpenModal} className="inline-flex items-center gap-2 bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 hover:from-pink-600 hover:via-purple-600 hover:to-blue-600 text-white px-8 py-4 rounded-full transform hover:-translate-y-1 transition-all duration-300 shadow-lg hover:shadow-xl group">
               <span className="font-semibold">Contact Support</span>

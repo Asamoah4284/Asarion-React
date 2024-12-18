@@ -52,10 +52,10 @@ const Header = () => {
       <header className={`header fixed w-full top-0 transition-all duration-500 ease-in-out ${
         isScrolled ? 'bg-white shadow-md' : 'bg-transparent'
       }`} data-header>
-        <div className={`container transition-all duration-500 ease-in-out ${isScrolled ? '' : ''
+        <div className={`container transition-all pt-10 duration-500 ease-in-out ${isScrolled ? 'md:py-1 py-6' : ''
         } md:px-60 flex justify-center items-center`}>
           <a href="#" className="flex justify-center items-center">
-            <img src="images/logo.png" className='w-32 pt-6 md:pt-0 md:mr-20 md:mt-1 md:ml-10px' alt="" />
+           
           </a>
 
           {/* Desktop Navigation */}
