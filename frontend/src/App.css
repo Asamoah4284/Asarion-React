@@ -1468,6 +1468,12 @@ font-weight: 700;}
   background-size: cover;
   background-position: right;
   }
+ .one-bg{
+  background-image: url('../images/1gb.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: right;
+  }
 
   @keyframes carousel {
     0% { transform: translateX(0); }

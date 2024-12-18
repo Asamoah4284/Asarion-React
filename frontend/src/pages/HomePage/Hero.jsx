@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import Modal1gb from '../../components/modal-1gb';
 
 const Hero = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -18,8 +19,12 @@ const Hero = () => {
     return () => clearInterval(interval); // Cleanup on unmount
   }, []);
 
-  const handleDiscoverMoreClick = () => {
+  const handleDataModal = () => {
     setIsModalOpen(true);
+  };
+
+  const handleModalClose = () => {
+    setIsModalOpen(false);
   };
 
   return (
@@ -50,11 +55,11 @@ const Hero = () => {
                 </svg>
               </a>
 
-              <button className="flex-btn transition-all duration-300 hover:scale-105" id="play-video">
+              <button onClick={handleDataModal} className="flex-btn transition-all duration-300 hover:scale-105" id="play-video">
                 <div className="btn-icon animate-pulse">
                   <ion-icon name="play" aria-hidden="true"></ion-icon>     
                 </div>
-                <span className="span header-paragraph">Get 1GB Free</span>
+                <span  className="span header-paragraph">Get 1GB Free</span>
                   
               </button>
             </div>
@@ -69,15 +74,10 @@ const Hero = () => {
               className="img-cover fade-transition"
             />
           </figure>
-
-          {isModalOpen && (
-            <div className="modal">
-              <div className="modal-content">
-                <span className="close" onClick={() => setIsModalOpen(false)}>&times;</span>
-                <p>Your modal content goes here.</p>
-              </div>
-            </div>
-          )}
+     {/* Contact Modal */}
+     {isModalOpen && (
+     <Modal1gb isOpen={isModalOpen} onClose={handleModalClose}/>
+      )}
 
         </div>
       </section>
