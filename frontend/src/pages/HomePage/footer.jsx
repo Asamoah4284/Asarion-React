@@ -23,7 +23,7 @@ const Footer = () => {
           className="email-field"
         />
 
-        <button type="submit" className="form-btn">
+        <button type="submit" className="form-btn" aria-label="Submit newsletter">
           <ion-icon name="paper-plane" aria-hidden="true"></ion-icon>
         </button>
       </form>
@@ -49,7 +49,7 @@ const Footer = () => {
       </li>
 
       <li>
-        <a href="#" className="footer-link">Digital Merketing</a>
+        <a href="#" className="footer-link">Digital Marketing</a>
       </li>
 
       <li>
@@ -69,7 +69,7 @@ const Footer = () => {
       </li>
 
       <li>
-        <a href="#" className="footer-link">About Company</a>
+        <a href="#" className="footer-link">About Us</a>
       </li>
 
       <li>
@@ -111,41 +111,41 @@ const Footer = () => {
       <li className="footer-item">
         <ion-icon name="call" aria-hidden="true"></ion-icon>
 
-        <a href="tel:+7894631546876" className="contact-link">+233542343069</a>
+        <a href="tel:+7894631546876" className="contact-link">Call Us: +233542343069</a>
       </li>
 
       <li className="footer-item">
         <ion-icon name="mail" aria-hidden="true"></ion-icon>
 
-        <a href="mailto:info@Asarion.com" className="contact-link">info@Asarion.com</a>
+        <a href="mailto:richardasamoah284@gmail.com" className="contact-link">Email Us: info@Asarion.com</a>
       </li>
 
       <li className="footer-item">
         <ul className="social-list">
 
           <li>
-            <a href="#" className="social-link">
+            <a href="#" className="social-link" aria-label="Facebook">
               <i className="fab fa-facebook-f"></i>
               <ion-icon name="logo-facebook"></ion-icon>
             </a>
           </li>
 
           <li>
-            <a href="#" className="social-link">
+            <a href="#" className="social-link" aria-label="Twitter">
               <i className="fab fa-twitter"></i>
               <ion-icon name="logo-twitter"></ion-icon>
             </a>
           </li>
 
           <li>
-            <a href="#" className="social-link">
+            <a href="#" className="social-link" aria-label="Instagram">
               <i className="fab fa-instagram"></i>
               <ion-icon name="logo-instagram"></ion-icon>
             </a>
           </li>
 
           <li>
-            <a href="#" className="social-link">
+            <a href="#" className="social-link" aria-label="Pinterest">
               <i className="fab fa-pinterest-p"></i>
               <ion-icon name="logo-pinterest"></ion-icon>
             </a>

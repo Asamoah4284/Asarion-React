@@ -1,186 +1,231 @@
-import React, { useState, useEffect } from 'react';
 
 const Testimonials = () => {
-  // Add state for current slide
-  const [currentSlide, setCurrentSlide] = useState(0);
-  const totalSlides = 2; // Ensure this matches the actual number of testimonials
 
-  // Function to handle next slide
-  const nextSlide = () => {
-    setCurrentSlide((prev) => (prev + 1) % totalSlides);
-  };
 
-  // Function to handle previous slide
-  const prevSlide = () => {
-    setCurrentSlide((prev) => (prev === 0 ? totalSlides - 1 : prev - 1));
-  };
-
-  // Function to handle dot navigation
-  const goToSlide = (slideIndex) => {
-    setCurrentSlide(slideIndex);
-  };
-
-  // Auto-play functionality (optional)
-  useEffect(() => {
-    const timer = setInterval(() => {
-      nextSlide();
-    }, 2000); // Change slide every 2 seconds
-
-    return () => clearInterval(timer);
-  }, []);
 
   return (
-    <div>
-      <section className="section testimonials bg-gray-50 py-24" aria-label="testimonials">
-        <div className="container md:px-40">
-          {/* Section Header */}
-          <div className="text-center mb-20">
-            <p className="text-blue-600 font-semibold mb-4">TESTIMONIALS</p>
-            <h2 className="h2-sm font-bold text-gray-900 mb-6">What Our Clients Say</h2>
-            <p className="text-gray-600 header-paragraph max-w-3xl mx-auto">
-              Don't just take our word for it. Here's what our clients have to say about their experience working with us.
-            </p>
-          </div>
+   <div>
+    <section className="bg-white py-20">
+  <div className="mx-auto max-w-screen-xl px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
+    <h2 className="text-center text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl">
+      Read trusted reviews from our customers
+    </h2>
 
-          {/* Testimonial Carousel */}
-          <div className="testimonial-carousel relative">
-            {/* Carousel Container */}
-            <div className="overflow-hidden">
-              {/* Update carousel inner div with transform based on currentSlide */}
-              <div 
-                className="carousel-inner flex transition-transform duration-500 ease-out"
-                style={{ transform: `translateX(-${currentSlide * (100 / totalSlides)}%)` }}
+    <div className="mt-8 grid grid-cols-1 gap-4 md:grid-cols-3 md:gap-8">
+      <blockquote className="rounded-lg bg-gray-50 p-6 shadow-sm sm:p-8">
+        <div className="flex items-center gap-4">
+          <img
+            alt=""
+            src="https://images.unsplash.com/photo-1595152772835-219674b2a8a6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1180&q=80"
+            className="size-14 rounded-full object-cover"
+          />
+
+          <div>
+            <div className="flex justify-center gap-0.5 text-green-500">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="size-5"
+                viewBox="0 0 20 20"
+                fill="#f9004d"
               >
-                {/* Testimonial 1 */}
-                <div className="testimonial-card w-full md:w-1/2 lg:w-1/3 flex-shrink-0 px-4">
-                  <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300">
-                    {/* Quote Icon */}
-                    <div className="mb-6">
-                      <svg className="w-12 h-12 text-blue-500 opacity-20" fill="currentColor" viewBox="0 0 32 32">
-                        <path d="M10 8c-3.3 0-6 2.7-6 6v10h10V14H6c0-2.2 1.8-4 4-4V8zm14 0c-3.3 0-6 2.7-6 6v10h10V14h-8c0-2.2 1.8-4 4-4V8z"/>
-                      </svg>
-                    </div>
-                    
-                    {/* Testimonial Content */}
-                    <p className="text-gray-600 text-2xl mb-6 italic">
-                    "I was thoroughly impressed with the service! I strongly endorse Asarion for their remarkable support.
-                    </p>
-                    
-                    {/* Author Info */}
-                    <div className="flex items-center">
-                      <img src="/images/Harriet.jpg" alt="Sarah Johnson" 
-                           className="w-12 h-12 rounded-full object-cover mr-4"/>
-                      <div>
-                        <h4 className="font-semibold text-gray-900">Harriet Yeboah</h4>
-                        <p className="text-gray-500">Sales Manager, UCC</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Testimonial 2 */}
-                <div className="testimonial-card w-full md:w-1/2 lg:w-1/3 flex-shrink-0 px-4">
-                  <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300">
-                    <div className="mb-6">
-                      <svg className="w-12 h-12 text-blue-500 opacity-20" fill="currentColor" viewBox="0 0 32 32">
-                        <path d="M10 8c-3.3 0-6 2.7-6 6v10h10V14H6c0-2.2 1.8-4 4-4V8zm14 0c-3.3 0-6 2.7-6 6v10h10V14h-8c0-2.2 1.8-4 4-4V8z"/>
-                      </svg>
-                    </div>
-                    <p className="text-gray-600 text-2xl mb-6 italic">
-                    "The level of service was remarkable! I definitely recommend Asarion for their outstanding assistance."
-                    </p>
-                    <div className="flex items-center">
-                      <img src="/images/orion.jpg" alt="Michael Chen" 
-                           className="w-12 h-12 rounded-full object-cover mr-4" />
-                      <div>
-                        <h4 className="font-semibold text-gray-900">Armaah Thersa</h4>
-                        <p className="text-gray-500">Marketing Director, GrowthCo</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Testimonial 3 */}
-                <div className="testimonial-card w-full md:w-1/2 lg:w-1/3 flex-shrink-0 px-4">
-                  <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300">
-                    <div className="mb-6">
-                      <svg className="w-12 h-12 text-blue-500 opacity-20" fill="currentColor" viewBox="0 0 32 32">
-                        <path d="M10 8c-3.3 0-6 2.7-6 6v10h10V14H6c0-2.2 1.8-4 4-4V8zm14 0c-3.3 0-6 2.7-6 6v10h10V14h-8c0-2.2 1.8-4 4-4V8z"/>
-                      </svg>
-                    </div>
-                    <p className="text-gray-600 text-2xl mb-6 italic">
-                    "The service was outstanding! I wholeheartedly recommend Asarion for their excellent support."
-                    </p>
-                    <div className="flex items-center">
-                      <img src="/images/asamoah.jpg" alt="Emma Thompson" 
-                           className="w-12 h-12 rounded-full object-cover mr-4" />
-                      <div>
-                        <h4 className="font-semibold text-gray-900">Asamoah Richard</h4>
-                        <p className="text-gray-500">Founder & CEO, Asarion Inc.</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                {/* Testimonial 4 */}
-                <div className="testimonial-card w-full md:w-1/2 lg:w-1/3 flex-shrink-0 px-4">
-                  <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300">
-                    <div className="mb-6">
-                      <svg className="w-12 h-12 text-blue-500 opacity-20" fill="currentColor" viewBox="0 0 32 32">
-                        <path d="M10 8c-3.3 0-6 2.7-6 6v10h10V14H6c0-2.2 1.8-4 4-4V8zm14 0c-3.3 0-6 2.7-6 6v10h10V14h-8c0-2.2 1.8-4 4-4V8z"/>
-                      </svg>
-                    </div>
-                    <p className="text-gray-600 text-2xl mb-6 italic">
-                      "The service was exceptional! I highly recommend Asarion for their outstanding support."
-                    </p>
-                    <div className="flex items-center">
-                      <img src="/images/law.jpg" alt="Emma Thompson" 
-                           className="w-12 h-12 rounded-full object-cover mr-4" />
-                      <div>
-                        <h4 className="font-semibold text-gray-900">Lawrencia Nkansah</h4>
-                        <p className="text-gray-500">COO, Asarion Inc.</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-             
-              </div>
-            </div>
-
-            {/* Update navigation buttons with click handlers */}
-            <button 
-              onClick={prevSlide}
-              className="absolute top-1/2 -left-4 transform -translate-y-1/2 bg-white p-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 focus:outline-none prev-btn z-10"
-            >
-              <svg className="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 19l-7-7 7-7" />
-              </svg>
-            </button>
-            
-            <button 
-              onClick={nextSlide}
-              className="absolute top-1/2 -right-4 transform -translate-y-1/2 bg-white p-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 focus:outline-none next-btn z-10"
-            >
-              <svg className="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" />
-              </svg>
-            </button>
-
-            {/* Update dots navigation */}
-            <div className="flex justify-center mt-8 space-x-3">
-              {[...Array(totalSlides)].map((_, index) => (
-                <button
-                  key={index}
-                  onClick={() => goToSlide(index)}
-                  className={`w-3 h-3 rounded-full transition-colors duration-300 ${
-                    currentSlide === index ? 'bg-blue-500' : 'bg-gray-300 hover:bg-gray-400'
-                  }`}
+                <path
+                  d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
                 />
-              ))}
+              </svg>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="size-5"
+                viewBox="0 0 20 20"
+                fill="#f9004d"
+              >
+                <path
+                  d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                />
+              </svg>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="size-5"
+                viewBox="0 0 20 20"
+                fill="#f9004d"
+              >
+                <path
+                  d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                />
+              </svg>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="size-5"
+                viewBox="0 0 20 20"
+                fill="#f9004d"
+              >
+                <path
+                  d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                />
+              </svg>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="size-5"
+                viewBox="0 0 20 20"
+                fill="#f9004d"
+              >
+                <path
+                  d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                />
+              </svg>
             </div>
+
+            <p className="mt-0.5 text-lg font-medium text-gray-900">Gifty Mensah</p>
           </div>
         </div>
-      </section>
+
+        <p className="mt-4 text-gray-700 header-paragraph">
+        Asarion's expertise is unparalleled. Their tailored strategies not only increased our online visibility but also significantly boosted our conversions. Their professionalism and results-oriented approach are truly commendable!
+        </p>
+      </blockquote>
+
+      <blockquote className="rounded-lg bg-gray-50 p-6 shadow-sm sm:p-8">
+        <div className="flex items-center gap-4">
+          <img
+            alt="Customer"
+            src="https://images.unsplash.com/photo-1595152772835-219674b2a8a6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1180&q=80"
+            className="size-14 rounded-full object-cover"
+          />
+          <div>
+            <div className="flex justify-center gap-0.5 text-green-500">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="size-5"
+                viewBox="0 0 20 20"
+                fill="#f9004d"
+              >
+                <path
+                  d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                />
+              </svg>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="size-5"
+                viewBox="0 0 20 20"
+                fill="#f9004d"
+              >
+                <path
+                  d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                />
+              </svg>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="size-5"
+                viewBox="0 0 20 20"
+                fill="#f9004d"
+              >
+                <path
+                  d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                />
+              </svg>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="size-5"
+                viewBox="0 0 20 20"
+                fill="#f9004d"
+              >
+                <path
+                  d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                />
+              </svg>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="size-5"
+                viewBox="0 0 20 20"
+                fill="#f9004d"
+              >
+                <path
+                  d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                />
+              </svg>
+            </div>
+
+            <p className="mt-0.5 text-lg font-medium text-gray-900">Paul Addo</p>
+          </div>
+        </div>
+
+        <p className="mt-4 text-gray-700 header-paragraph">
+        Working with Asarion has been a game-changer for our business. Their creative solutions and dedicated support have exceeded all expectations, driving incredible growth and making a real impact on our brand’s success!</p>
+      </blockquote>
+
+      <blockquote className="rounded-lg bg-gray-50 p-6 shadow-sm sm:p-8">
+        <div className="flex items-center gap-4">
+          <img
+            alt=""
+            src="https://images.unsplash.com/photo-1595152772835-219674b2a8a6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1180&q=80"
+            className="size-14 rounded-full object-cover"
+          />
+
+          <div>
+            <div className="flex justify-center gap-0.5 text-green-500">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="size-5"
+                viewBox="0 0 20 20"
+                fill="#f9004d"
+              >
+                <path
+                  d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                />
+              </svg>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="size-5"
+                viewBox="0 0 20 20"
+                fill="#f9004d"
+              >
+                <path
+                  d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                />
+              </svg>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="size-5"
+                viewBox="0 0 20 20"
+                fill="#f9004d"
+              >
+                <path
+                  d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                />
+              </svg>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="size-5"
+                viewBox="0 0 20 20"
+                fill="#f9004d"
+              >
+                <path
+                  d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                />
+              </svg>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="size-5"
+                viewBox="0 0 20 20"
+                fill="#f9004d"
+              >
+                <path
+                  d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                />
+              </svg>
+            </div>
+
+            <p className="mt-0.5 text-lg font-medium text-gray-900">Evans Arthur</p>
+          </div>
+        </div>
+
+        <p className="mt-4 text-gray-700 header-paragraph">
+     Asarion transformed our digital presence effortlessly. Their innovative strategies and unmatched expertise boosted our traffic and sales exponentially. We highly recommend them for their commitment, professionalism, and exceptional results!
+        </p>
+      </blockquote>
     </div>
+  </div>
+</section>
+   </div>
   );
 };
 

@@ -58,13 +58,13 @@ const Faq = () => {
             <div className="space-y-6">
               {/* FAQ Items with glass morphism effect */}
               <div className="faq-item backdrop-blur-sm bg-white bg-opacity-70 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-white border-opacity-20" data-aos="fade-right">
-                <button className="w-full text-left px-6 py-4 focus:outline-none" onClick={() => toggleFAQ(0)}>
+                <button className="w-full text-left px-6 py-4 focus:outline-none" onClick={() => toggleFAQ(0)} aria-label="Toggle FAQ about unique service">
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-4">
                       {/* Simplified icon container */}
                       <div className="text-blue-500">
                         <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" 
                             d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                         </svg>
                       </div>
@@ -74,7 +74,7 @@ const Faq = () => {
                     {/* Simplified arrow */}
                     <svg className="w-4 h-4 text-gray-500 transform transition-transform duration-300" 
                       fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
                     </svg>
                   </div>
                 </button>
@@ -86,18 +86,18 @@ const Faq = () => {
               </div>
               {/* FAQ Item 2 */}
               <div className="faq-item bg-white rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-100" data-aos="fade-right">
-                <button className="w-full text-left px-8 py-7 focus:outline-none" onClick={() => toggleFAQ(1)}>
+                <button className="w-full text-left px-8 py-7 focus:outline-none" onClick={() => toggleFAQ(1)} aria-label="Toggle FAQ about process duration">
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-5">
                       <span className="flex-shrink-0 w-12 h-12 bg-purple-50 rounded-full flex items-center justify-center">
                         <svg className="w-6 h-6 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                         </svg>
                       </span>
                       <span className="font-bold text-xl text-gray-800">How long does the process take?</span>
                     </div>
                     <svg className="w-6 h-6 text-gray-400 transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
                     </svg>
                   </div>
                 </button>
@@ -113,18 +113,18 @@ const Faq = () => {
             <div className="space-y-6">
               {/* FAQ Item 3 */}
               <div className="faq-item bg-white rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-100" data-aos="fade-left">
-                <button className="w-full text-left px-8 py-7 focus:outline-none" onClick={() => toggleFAQ(2)}>
+                <button className="w-full text-left px-8 py-7 focus:outline-none" onClick={() => toggleFAQ(2)} aria-label="Toggle FAQ about ongoing support">
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-5">
                       <span className="flex-shrink-0 w-12 h-12 bg-green-50 rounded-full flex items-center justify-center">
                         <svg className="w-6 h-6 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                         </svg>
                       </span>
                       <span className="font-bold text-xl text-gray-800">Do you offer ongoing support?</span>
                     </div>
                     <svg className="w-6 h-6 text-gray-400 transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
                     </svg>
                   </div>
                 </button>
@@ -137,18 +137,18 @@ const Faq = () => {
 
               {/* FAQ Item 4 */}
               <div className="faq-item bg-white rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-100" data-aos="fade-left">
-                <button className="w-full text-left px-8 py-7 focus:outline-none" onClick={() => toggleFAQ(3)}>
+                <button className="w-full text-left px-8 py-7 focus:outline-none" onClick={() => toggleFAQ(3)} aria-label="Toggle FAQ about payment terms">
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-5">
                       <span className="flex-shrink-0 w-12 h-12 bg-red-50 rounded-full flex items-center justify-center">
                         <svg className="w-6 h-6 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                         </svg>
                       </span>
                       <span className="font-bold text-xl text-gray-800">What are your payment terms?</span>
                     </div>
                     <svg className="w-6 h-6 text-gray-400 transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
                     </svg>
                   </div>
                 </button>
@@ -165,10 +165,10 @@ const Faq = () => {
           {/* Enhanced CTA section with new styling */}
           <div className="text-center">
             <p className="text-gray-600 text-xl mb-8">Still have questions? We're here to help!</p>
-            <button onClick={handleOpenModal} className="inline-flex items-center gap-2 bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 hover:from-pink-600 hover:via-purple-600 hover:to-blue-600 text-white px-8 py-4 rounded-full transform hover:-translate-y-1 transition-all duration-300 shadow-lg hover:shadow-xl group">
+            <button onClick={handleOpenModal} className="inline-flex items-center gap-2 bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 hover:from-pink-600 hover:via-purple-600 hover:to-blue-600 text-white px-8 py-4 rounded-full transform hover:-translate-y-1 transition-all duration-300 shadow-lg hover:shadow-xl group" aria-label="Contact support">
               <span className="font-semibold">Contact Support</span>
               <svg className="w-5 h-5 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
               </svg>
             </button>
             {isModalOpen && (

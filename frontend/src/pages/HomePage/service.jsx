@@ -20,7 +20,7 @@ const Service = () => {
                 <figure className="card-icon bg-blue-50 rounded-2xl p-6">
                   {/* Shopping cart icon */}
                   <svg className="w-20 h-20 text-blue-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" 
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeidth="1.5" 
                       d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
                   </svg>
                 </figure>
@@ -35,9 +35,9 @@ const Service = () => {
                          fill="none" 
                          stroke="currentColor" 
                          viewBox="0 0 24 24">
-                      <path stroke-linecap="round" 
-                            stroke-linejoin="round" 
-                            stroke-width="2" 
+                      <path strokelinecap="round" 
+                            strokelinejoin="round" 
+                            strokewidth="2" 
                             d="M13 7l5 5m0 0l-5 5m5-5H6" />
                     </svg>
                   </a>
@@ -51,7 +51,7 @@ const Service = () => {
                 <figure className="card-icon bg-purple-50 rounded-2xl p-6">
                   {/* Code/Website icon */}
                   <svg className="w-20 h-20 text-purple-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" 
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" 
                       d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
                   </svg>
                 </figure>
@@ -66,9 +66,9 @@ const Service = () => {
                          fill="none" 
                          stroke="currentColor" 
                          viewBox="0 0 24 24">
-                      <path stroke-linecap="round" 
-                            stroke-linejoin="round" 
-                            stroke-width="2" 
+                      <path strokeLinecap="round" 
+                            strokeLinejoin="round" 
+                            strokeWidth="2" 
                             d="M13 7l5 5m0 0l-5 5m5-5H6" />
                     </svg>
                   </a>
@@ -82,7 +82,7 @@ const Service = () => {
                 <figure className="card-icon bg-green-50 rounded-2xl p-6">
                   {/* Microphone icon */}
                   <svg className="w-20 h-20 text-green-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" 
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" 
                       d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z" />
                   </svg>
                 </figure>
@@ -97,9 +97,9 @@ const Service = () => {
                          fill="none" 
                          stroke="currentColor" 
                          viewBox="0 0 24 24">
-                      <path stroke-linecap="round" 
-                            stroke-linejoin="round" 
-                            stroke-width="2" 
+                      <path strokeLinecap="round" 
+                            strokeLinejoin="round" 
+                            strokeWidth="2" 
                             d="M13 7l5 5m0 0l-5 5m5-5H6" />
                     </svg>
                   </a>
@@ -113,9 +113,9 @@ const Service = () => {
                 <figure className="card-icon bg-red-50 rounded-2xl p-6">
                   {/* Play/Stream icon */}
                   <svg className="w-20 h-20 text-red-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" 
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" 
                       d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" 
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" 
                       d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
                 </figure>
@@ -130,9 +130,9 @@ const Service = () => {
                          fill="none" 
                          stroke="currentColor" 
                          viewBox="0 0 24 24">
-                      <path stroke-linecap="round" 
-                            stroke-linejoin="round" 
-                            stroke-width="2" 
+                      <path strokeLinecap="round" 
+                            strokeLinejoin="round" 
+                            strokeWidth="2" 
                             d="M13 7l5 5m0 0l-5 5m5-5H6" />
                     </svg>
                   </a>

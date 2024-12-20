@@ -17,21 +17,7 @@ const About = () => {
   return <div>
      <section className="section about" id="about" aria-label="about">
         <div className="container md:px-40">
-
-          <figure className="about-banner" >
-            <img src={imageSrc} 
-                 width="500" height="654" 
-                 loading="lazy" 
-                 alt="about banner"
-                 className="w-100 h-[500px]
-                 object-cover transform transition-transform duration-500" />
-            
-            {/* Using Font Awesome icons instead of images */}
-            <i className="fa-solid fa-circle shape shape-1 animate-float"></i>
-            <i className="fa-solid fa-circle shape shape-3 animate-float-delayed"></i>
-          </figure>
-
-          <div className="flex  flex-col items-center justify-center px-10">
+ <div className="flex  flex-col items-center justify-center px-10">
             <h2 className="h2-sm section-title mb-8 transition-colors duration-300">
               Building Powerful Digital Brands That Leave Lasting Impressions
             </h2>
@@ -42,7 +28,7 @@ const About = () => {
               digital landscape.
             </p>
 
-            <ul className="about-list mt-10 space-y-4">
+            <ul className="about-list mt-10">
               <li className="has-before transition-transform duration-300 cursor-pointer">
                 Strategic brand positioning and identity development
               </li>
@@ -56,6 +42,20 @@ const About = () => {
               </li>
             </ul>
           </div>
+
+          <figure className="about-banner" >
+            <img src={imageSrc} 
+                 width="500" height="654" 
+                 loading="lazy" 
+                 alt="about banner"
+                 className="w-100 md:h-[450px]
+                 object-cover transform transition-transform duration-500" />
+            
+            {/* Using Font Awesome icons instead of images */}
+            <i className="fa-solid fa-circle shape shape-1 animate-float"></i>
+            <i className="fa-solid fa-circle shape shape-3 animate-float-delayed"></i>
+          </figure>
+         
 
         </div>
       </section>

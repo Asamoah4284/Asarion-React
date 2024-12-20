@@ -45,15 +45,23 @@ const Call = () => {
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center" data-aos="fade-up" data-aos-delay="200">
             {/* Primary CTA */}
-            <button onClick={handleOpenModal} className="group relative inline-flex items-center justify-center px-8 py-4 bg-white text-blue-600 font-semibold rounded-full overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+            <button 
+              onClick={handleOpenModal} 
+              className="group relative inline-flex items-center justify-center px-8 py-4 bg-white text-blue-600 font-semibold rounded-full overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
+              aria-label="Start your project"
+            >
               <span className="relative">Start Your Project</span>
             </button>
 
             {/* Secondary CTA */}
-            <a href="#services" className="group inline-flex items-center gap-2 px-8 py-4 text-white font-semibold rounded-full border-2 border-white/30 hover:border-white transition-all duration-300 hover:-translate-y-1">
+            <a 
+              href="#services" 
+              className="group inline-flex items-center gap-2 px-8 py-4 text-white font-semibold rounded-full border-2 border-white/30 hover:border-white transition-all duration-300 hover:-translate-y-1"
+              aria-label="Explore services"
+            >
               <span>Explore Services</span>
               <svg className="w-5 h-5 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
               </svg>
             </a>
           </div>

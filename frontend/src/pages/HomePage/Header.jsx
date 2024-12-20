@@ -62,8 +62,8 @@ const Header = () => {
           <nav className="hidden md:flex items-center space-x-8 justify-center">
             <a href="#home" className="navbar-link hover:text-blue-600 transition-colors">Home</a>
             <a href="#about" className="navbar-link hover:text-blue-600 transition-colors">About</a>
-            <Link to='pricing'><a href="#Pricing" className="navbar-link hover:text-blue-600 transition-colors">Services</a></Link>
-            <Link to='/team'><a href="#" className="navbar-link hover:text-blue-600 transition-colors">Team</a></Link>
+            <Link to='pricing' className="navbar-link hover:text-blue-600 transition-colors">Services</Link>
+            <Link to='/team' className="navbar-link hover:text-blue-600 transition-colors">Team</Link>
             <a href="#footer" className="navbar-link hover:text-blue-600 transition-colors">Contact Us</a>
           </nav>
 
@@ -71,7 +71,7 @@ const Header = () => {
           <button 
             className="nav-open-btn block md:hidden" 
             onClick={toggleMenu}
-            aria-label="Toggle menu"
+            aria-label={isMenuOpen ? "Close menu" : "Open menu"}
           >
             {isMenuOpen ? (
               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -94,6 +94,7 @@ const Header = () => {
                 isMenuOpen ? 'opacity-50' : 'opacity-0'
               }`}
               onClick={toggleMenu}
+              aria-label="Close menu overlay"
             ></div>
             
             {/* Mobile Menu Content */}
@@ -102,7 +103,7 @@ const Header = () => {
             } shadow-lg`}>
               {/* Header */}
               <div className="flex items-center justify-between p-4 border-b">
-                <button className="nav-close-btn p-2" onClick={toggleMenu} aria-label="Close menu">
+                <button className="nav-close-btn p-2" onClick={toggleMenu} aria-label="Close the menu">
                   <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
                   </svg>
@@ -123,6 +124,7 @@ const Header = () => {
                   <button 
                     className="w-full flex items-center justify-between px-4 py-2 hover:bg-blue-500 hover:text-white transition-colors duration-300 rounded"
                     onClick={toggleDropdown}
+                    aria-label="Toggle services dropdown"
                   >
                     <span>Services</span>
                     <svg className={`w-4 h-4 transition-transform ${openDropdown ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -147,12 +149,19 @@ const Header = () => {
 
                 <li className="border-b border-gray-300">
                   <Link to='/team'>
-                  <a className="block px-4 py-2 hover:bg-blue-500 hover:text-white transition-colors duration-300 rounded" data-nav-link>Team</a></Link>
+                    <a className="block px-4 py-2 hover:bg-blue-500 hover:text-white transition-colors duration-300 rounded" data-nav-link>Team</a>
+                  </Link>
                 </li>
                 <li className="border-b border-gray-300">
                   <a href="#footer" className="block px-4 py-2 hover:bg-blue-500 hover:text-white transition-colors duration-300 rounded" data-nav-link>Contact Us</a>
                 </li>
-                <button onClick={handleOpenModal}  className="inline-flex items-center w-1/2 bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 hover:from-pink-600 hover:via-purple-600 hover:to-blue-600 text-white px-8 py-4 rounded-full transform hover:-translate-y-1 transition-all duration-300 shadow-lg hover:shadow-xl group" >Let's Talk</button>
+                <button 
+                  onClick={handleOpenModal}  
+                  className="inline-flex items-center w-1/2 bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 hover:from-pink-600 hover:via-purple-600 hover:to-blue-600 text-white px-8 py-4 rounded-full transform hover:-translate-y-1 transition-all duration-300 shadow-lg hover:shadow-xl group" 
+                  aria-label="Open contact modal"
+                >
+                  Let's Talk
+                </button>
                
               </ul>
             </div>
