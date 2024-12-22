@@ -9,9 +9,9 @@ const Footer = () => {
 
     <div className="footer-brand">
 
-    <a href="#" className=" font-roboto text-transparent text-4xl bg-clip-text bg-gradient-to-r from-red-400 to-blue-500">Asarion</a>
+    <a href="#" className=" font-roboto text-transparent text-4xl bg-clip-text bg-gradient-to-r from-red-400 to-blue-500"></a>
       <p className="footer-text header-paragraph">
-         We're passionate about creating meaningful experiences that connect businesses with their audience. Let's stay stylish together.
+         We're passionate about creating meaningful experiences that connect businesses with their audience.
       </p>
 
       <form action="#" className="newsletter-form">
@@ -52,13 +52,7 @@ const Footer = () => {
         <a href="#" className="footer-link">Digital Marketing</a>
       </li>
 
-      <li>
-        <a href="#" className="footer-link">App Design</a>
-      </li>
-
-      <li>
-        <a href="#" className="footer-link">App Development</a>
-      </li>
+    
 
     </ul>
 
@@ -80,17 +74,13 @@ const Footer = () => {
         <a href="#" className="footer-link">Our Portfolio</a>
       </li>
 
-      <li>
-        <a href="#" className="footer-link">Our Blog</a>
-      </li>
+   
 
       <li>
         <a href="#" className="footer-link">Latest News</a>
       </li>
 
-      <li>
-        <a href="#" className="footer-link">Contact Us</a>
-      </li>
+     
 
     </ul>
 
@@ -104,7 +94,7 @@ const Footer = () => {
         <ion-icon name="location" aria-hidden="true"></ion-icon>
 
         <address className="contact-link address header-paragraph">
-          university of Cape Coast (UCC)
+          university of CapeCoast (UCC)
         </address>
       </li>
 

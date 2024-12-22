@@ -27,7 +27,7 @@ const Faq = () => {
   return <div>
     <section className="section faq relative overflow-hidden" id="faq" aria-label="faq" data-aos="fade-up">
         {/* Decorative background elements */}
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-100 via-purple-100 to-pink-100"></div>
         
         {/* Decorative shapes */}
         <div className="absolute top-0 left-0 w-96 h-96 bg-gradient-to-br from-blue-100 to-blue-50 rounded-full opacity-50 blur-3xl -translate-x-1/2 -translate-y-1/2"></div>

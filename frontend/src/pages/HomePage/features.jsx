@@ -20,7 +20,7 @@ const Features = () => {
   };
 
   return <div>
-      <section className="section features py-24 inset-0 bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50" id="features" aria-label="features">
+      <section className="section features py-24 inset-0 bg-gradient-to-br from-blue-100 via-purple-100 to-pink-100" id="features" aria-label="features">
         <div className="container md:px-40">
           {/* Enhanced Header Section */}
           <div className="text-center mb-24" data-aos="fade-up">
