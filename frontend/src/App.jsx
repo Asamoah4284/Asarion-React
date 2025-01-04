@@ -9,11 +9,14 @@ import Pricing from './pages/Pricing/pricing'
 
 
 import './App.css'
+import Blog from './pages/Blog/blog'
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Home />
+    element: <Home />,
+
+
   },
   {
     path: "/about",
@@ -27,6 +30,10 @@ const router = createBrowserRouter([
   {
     path: "/pricing",
     element: <Pricing />,
+  },
+  {
+    path: "/blog",
+    element: <Blog />,
   },
 
 ])

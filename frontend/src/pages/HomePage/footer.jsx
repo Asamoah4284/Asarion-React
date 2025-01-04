@@ -9,7 +9,7 @@ const Footer = () => {
 
     <div className="footer-brand">
 
-    <a href="#" className=" font-roboto text-transparent text-4xl bg-clip-text bg-gradient-to-r from-red-400 to-blue-500"></a>
+    <a href="#" className=" font-roboto text-transparent text-4xl bg-clip-text bg-gradient-to-r from-red-400 to-blue-500">Asarion</a>
       <p className="footer-text header-paragraph">
          We're passionate about creating meaningful experiences that connect businesses with their audience.
       </p>

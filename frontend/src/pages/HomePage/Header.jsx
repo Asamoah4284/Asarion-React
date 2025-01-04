@@ -61,29 +61,36 @@ const Header = () => {
             isScrolled ? "md:py-1 py-6" : ""
           } md:px-60 flex justify-center items-center`}
         >
-          <a href="#" className="flex justify-center items-center">
-            Asarion
+          <a href="#" className="">
+            {/* <img src="images/as.png" alt="" width={80}/> */}
+            {/* <img src="/images/logo.svg" alt="" /> */}
           </a>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8 justify-center">
-            <a
-              href="#home"
+            <Link
+              to="/"
               className="navbar-link hover:text-blue-600 transition-colors"
             >
               Home
-            </a>
+            </Link>
             <a
               href="#about"
               className="navbar-link hover:text-blue-600 transition-colors"
             >
               About
             </a>
-            <Link
-              to="pricing"
+            <a
+              href="#services"
               className="navbar-link hover:text-blue-600 transition-colors"
             >
               Services
+            </a>
+            <Link
+              to="/blog"
+              className="navbar-link hover:text-blue-600 transition-colors"
+            >
+              Blog
             </Link>
             <Link
               to="/team"
@@ -185,13 +192,13 @@ const Header = () => {
               {/* Navigation Links */}
               <ul className="p-12 flex flex-col gap-8">
                 <li className="border-b border-gray-300">
-                  <a
-                    href="#home"
+                  <Link
+                    to="/"
                     className="block px-4 py-2 hover:bg-blue-500 hover:text-white transition-colors duration-300 rounded"
                     data-nav-link
                   >
                     Home
-                  </a>
+                  </Link>
                 </li>
                 <li className="border-b border-gray-300">
                   <a
@@ -202,6 +209,14 @@ const Header = () => {
                     About
                   </a>
                 </li>
+                <li className="border-b border-gray-300">
+                <Link
+              to="/blog"
+              className="block px-4 py-2 hover:bg-blue-500 hover:text-white transition-colors duration-300 roundednavbar-link hover:text-blue-600 transition-colors"
+            >
+              Blog
+            </Link>
+            </li>
 
                 {/* Pricing Dropdown Mobile */}
                 <li className="relative border-b border-gray-300">
