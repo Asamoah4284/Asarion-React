@@ -4,6 +4,7 @@ const mongoose = require('mongoose'); // Import Mongoose
 const informationRoutes = require('./routes/information')
 const dataRoutes = require('./routes/data')
 const cors = require("cors");
+const { signup, login } = require('./controller/authController');
 
 
 const app = express(); // Create an Express application
@@ -27,6 +28,8 @@ mongoose.connect(process.env.MONGODB_URI, { // Add your MongoDB URI in .env
 // Define a basic route
 app.use('/api/clients', informationRoutes)
 app.use('/api/data', dataRoutes)
+app.use('/api/signup', signup)
+app.use('/api/login', login)
 
 // Check if required environment variables are set
 if (!process.env.MONGODB_URI) {

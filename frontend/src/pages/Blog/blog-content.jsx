@@ -1,4 +1,6 @@
 import React from 'react'
+import { Link} from 'react-router-dom';
+
 
 const BlogContent = () => {
   return (
@@ -240,9 +242,9 @@ const BlogContent = () => {
             </div>
             <div className="p-6">
               <h3 className="text-xl font-bold mb-3 transition-colors duration-200 group-hover:text-blue-600">
-                <a href="marketing/short-form-video-psychology.html">
+                <Link to="/singleBlog">
                   The Psychology of Short-Form Content
-                </a>
+                </Link>
               </h3>
               <p className="text-gray-600 mb-4 line-clamp-2">
                 Understanding why short-form videos captivate audiences and how to leverage this format for maximum engagement...
@@ -258,7 +260,7 @@ const BlogContent = () => {
                   </div>
                 </div>
                 <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-200">
-                  <a href="marketing/short-form-video-psychology.html" className="inline-flex items-center text-sm font-medium text-blue-600 hover:text-blue-700">
+                  <a className="inline-flex items-center text-sm font-medium text-blue-600 hover:text-blue-700">
                     Read More
                     <svg className="w-4 h-4 ml-1" viewBox="0 0 20 20" fill="currentColor">
                       <path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd" />
