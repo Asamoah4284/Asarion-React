@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import Modal1gb from '../../components/modal-1gb';
+import { Link } from 'react-router-dom';
 
 const Hero = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -66,7 +67,7 @@ const Hero = () => {
             </div>
           </div>
 
-          <figure className="hero-banner has-before img-holder" 
+          <Link to='/dashboard' ><figure className="hero-banner has-before img-holder" 
             style={{ "--width": 650, "--height": 650 }}>
             <img src={images[currentImageIndex]} 
               width="650" 
@@ -74,7 +75,7 @@ const Hero = () => {
               alt="hero banner" 
               className="img-cover fade-transition"
             />
-          </figure>
+          </figure></Link>
      {/* Contact Modal */}
      {isModalOpen && (
      <Modal1gb isOpen={isModalOpen} onClose={handleModalClose}/>

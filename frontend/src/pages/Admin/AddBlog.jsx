@@ -1,13 +1,251 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 const AddBlog = () => {
+  const [formData, setFormData] = useState({
+    title: '',
+    subtitle: '',
+    category: '',
+    image: null,
+    content: ''
+  });
+
+  const [previewUrl, setPreviewUrl] = useState(null);
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState(null);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    
+    try {
+      const formDataToSend = new FormData();
+      
+      // Append all fields
+      formDataToSend.append('title', formData.title);
+      formDataToSend.append('content', formData.content);
+      formDataToSend.append('subtitle', formData.subtitle);
+      formDataToSend.append('subCategory', formData.category);
+      
+      if (formData.featuredImage) {
+        formDataToSend.append('featuredImage', formData.featuredImage);
+      }
+     
+
+      const response = await fetch('http://localhost:5000/api/blog', {
+        method: 'POST',
+        body: formDataToSend,
+        // Remove the Content-Type header - it will be set automatically
+        credentials: 'include'
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to create blog post');
+      }
+
+      const data = await response.json();
+      console.log('Blog post created:', data);
+      
+      // Reset form
+      setFormData({
+        title: '',
+        subtitle: '',
+        subCategory: '',
+        featuredImage: null,
+        content: ''
+      });
+      
+      alert('Blog post created successfully!');
+      
+    } catch (error) {
+      console.error('Error creating blog post:', error);
+      alert(error.message || 'Error creating blog post');
+    }
+  };
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
+  };
+
+  const handleImageChange = (e) => {
+    const file = e.target.files[0];
+    if (file) {
+      setFormData(prev => ({ ...prev, image: file }));
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        setPreviewUrl(reader.result);
+      };
+      reader.readAsDataURL(file);
+    }
+  };
+
   return (
-    <div className="p-8">
-      <h2 className="text-xl font-semibold text-gray-800 mb-4">Add New Blog Post</h2>
-      <div className="bg-white rounded-xl shadow-lg p-6">
-        {/* Add your blog form here */}
-        <p>Add Blog form will go here</p>
+    <div className="p-8 bg-gray-50">
+      {error && (
+        <div className="mb-4 p-4 bg-red-100 text-red-700 rounded-lg">
+          {error}
+        </div>
+      )}
+      
+      <div className="flex items-center justify-between mb-8">
+        <div>
+          <h2 className="text-4xl md:text-6xl font-bold text-gray-900 mb-2">Create New Post</h2>
+          <p className="text-2xl text-gray-600">Share your thoughts with the world</p>
+        </div>
+        <button
+          type="submit"
+          form="blogForm"
+          disabled={isLoading}
+          className={`px-6 py-3 bg-blue-600 text-lg text-white rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-all duration-200 font-medium shadow-sm hover:shadow-md ${
+            isLoading ? 'opacity-50 cursor-not-allowed' : ''
+          }`}
+        >
+          {isLoading ? 'Publishing...' : 'Publish Post'}
+        </button>
       </div>
+
+      <form id="blogForm" onSubmit={handleSubmit} className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        {/* Main Content - Left Side */}
+        <div className="lg:col-span-2 space-y-8">
+          {/* Title Card */}
+          <div className="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+            <div className="p-6">
+              <label htmlFor="title" className="block text-2xl font-medium text-gray-700 mb-3">
+                Title
+              </label>
+              <input
+                type="text"
+                id="title"
+                name="title"
+                value={formData.title}
+                onChange={handleChange}
+                className="w-full text-3xl font-semibold border-2 p-5 rounded-lg mb-4"
+                placeholder="Enter your post title"
+                required
+              />
+              <label htmlFor="subtitle" className="block text-2xl font-medium text-gray-700 mb-3">
+                Subtitle
+              </label>
+              <input
+                type="text"
+                id="subtitle"
+                name="subtitle"
+                value={formData.subtitle}
+                onChange={handleChange}
+                className="w-full text-2xl border-2 p-4 rounded-lg"
+                placeholder="Enter a subtitle for your post"
+              />
+            </div>
+          </div>
+
+          {/* Content Card */}
+          <div className="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+            <div className="p-6">
+              <label htmlFor="content" className="block text-2xl font-medium text-gray-700 mb-3">
+                Content
+              </label>
+              <textarea
+                id="content"
+                name="content"
+                value={formData.content}
+                onChange={handleChange}
+                rows="12"
+                className="w-full border-2 p-4 text-gray-800 bg-gray-50 rounded-lg placeholder-gray-400 text-3xl leading-relaxed"
+                placeholder="Start writing your amazing post..."
+                required
+              ></textarea>
+            </div>
+          </div>
+        </div>
+
+        {/* Sidebar - Right Side */}
+        <div className="space-y-8">
+          {/* Category Card */}
+          <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+            <h3 className="text-2xl font-semibold text-gray-900 mb-4">Category</h3>
+            <select
+              id="category"
+              name="category"
+              value={formData.category}
+              onChange={handleChange}
+              className="w-full px-4 py-3 border border-gray-300 rounded-lg transition-all duration-200 bg-gray-50 text-gray-800 text-3xl"
+              required
+            >
+              <option value="">Select a category</option>
+              <option value="technology">Technology</option>
+              <option value="lifestyle">Lifestyle</option>
+              <option value="travel">Travel</option>
+              <option value="food">Food</option>
+            </select>
+          </div>
+
+          {/* Featured Image Card */}
+          <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+            <h3 className="text-2xl font-semibold text-gray-900 mb-4">Featured Image</h3>
+            <div 
+              className={`relative border-2 border-dashed rounded-lg ${
+                previewUrl ? 'border-transparent' : 'border-gray-300 hover:border-blue-500'
+              } transition-colors duration-200 bg-gray-50`}
+            >
+              {previewUrl ? (
+                <div className="relative group">
+                  <img 
+                    src={previewUrl} 
+                    alt="Preview" 
+                    className="w-full h-64 object-cover rounded-lg"
+                  />
+                  <div className="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-200 rounded-lg flex items-center justify-center">
+                    <button
+                      type="button"
+                      onClick={() => {
+                        setPreviewUrl(null);
+                        setFormData(prev => ({ ...prev, image: null }));
+                      }}
+                      className="text-white bg-red-500 px-6 py-3 rounded-lg hover:bg-red-600 transition-colors duration-200 font-medium text-3xl"
+                    >
+                      Remove Image
+                    </button>
+                  </div>
+                </div>
+              ) : (
+                <div className="p-8">
+                  <div className="text-center">
+                    <svg
+                      className="mx-auto h-16 w-16 text-gray-400"
+                      stroke="currentColor"
+                      fill="none"
+                      viewBox="0 0 48 48"
+                    >
+                      <path
+                        d="M28 8H12a4 4 0 00-4 4v20m32-12v8m0 0v8a4 4 0 01-4 4H12a4 4 0 01-4-4v-4m32-4l-3.172-3.172a4 4 0 00-5.656 0L28 28M8 32l9.172-9.172a4 4 0 015.656 0L28 28m0 0l4 4m4-24h8m-4-4v8m-12 4h.02"
+                        strokeWidth={2}
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                    </svg>
+                    <div className="mt-4">
+                      <label className="inline-flex items-center px-6 py-3 bg-blue-600 text-white rounded-lg cursor-pointer hover:bg-blue-700 transition-colors duration-200">
+                        <span className="text-2xl font-medium">Choose Image</span>
+                        <input
+                          id="image-upload"
+                          name="image"
+                          type="file"
+                          className="sr-only"
+                          onChange={handleImageChange}
+                          accept="image/*"
+                        />
+                      </label>
+                    </div>
+                    <p className="text-lg text-gray-500 mt-3">PNG, JPG, GIF up to 10MB</p>
+                  </div>
+                </div>
+              )}
+            </div>
+          </div>
+        </div>
+      </form>
     </div>
   );
 };

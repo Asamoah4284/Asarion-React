@@ -3,13 +3,19 @@ const express = require('express'); // Import Express
 const mongoose = require('mongoose'); // Import Mongoose
 const informationRoutes = require('./routes/information')
 const dataRoutes = require('./routes/data')
+const BlogRoutes = require('./routes/Blog')
 const cors = require("cors");
+const multer = require("multer");
 const { signup, login } = require('./controller/authController');
 
 
 const app = express(); // Create an Express application
-app.use(cors());
+app.use(cors({
+    origin: 'http://localhost:4173',
+    credentials: true
+}));
 app.use(express.json()); // Middleware to parse JSON requests
+app.use('/uploads', express.static('uploads'));
 
 
 const PORT = process.env.PORT || 5000; // Set the port
@@ -30,6 +36,8 @@ app.use('/api/clients', informationRoutes)
 app.use('/api/data', dataRoutes)
 app.use('/api/signup', signup)
 app.use('/api/login', login)
+app.use('/api/blog', BlogRoutes)
+
 
 // Check if required environment variables are set
 if (!process.env.MONGODB_URI) {

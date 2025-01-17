@@ -35,7 +35,7 @@ const Dashboard = () => {
           <div className="flex flex-col h-full">
             {/* Sidebar Header */}
             <div className="flex items-center justify-between p-4 border-b border-blue-500">
-              <h2 className="text-xl font-bold text-white">Admin Panel</h2>
+              <h2 className="text-xl font-bold text-white"></h2>
           
             </div>
 
