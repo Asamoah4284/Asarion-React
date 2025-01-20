@@ -10,13 +10,13 @@ import Pricing from './pages/Pricing/pricing'
 
 import './App.css'
 import Blog from './pages/Blog/blog'
-import SingleBlog from './pages/Blog/SingleBlog'
 import Admin from './pages/Admin/Admin'
 import Dashboard from './pages/Admin/Dashboard'
 import AddBlog from './pages/Admin/AddBlog'
 import AllBlog from './pages/Admin/AllBlog'
 import DashboardHome from './pages/Admin/DashboardHome'
-
+import EditBlog from './pages/Admin/EditBlog'
+import SingleBlogPost from './pages/Blog/singleBlog'
 const ProtectedRoute = ({ children }) => {
   const isAuthenticated = localStorage.getItem('isAuthenticated') === 'true'
   
@@ -51,10 +51,7 @@ const router = createBrowserRouter([
     path: "/blog",
     element: <Blog />,
   },
-  {
-    path: "/singleblog",
-    element: <SingleBlog/>,
-  },
+ 
   {
     path: "/admin",
     element: <Admin />,
@@ -83,9 +80,13 @@ const router = createBrowserRouter([
         path: "all-blog",
         element: <AllBlog />,
       },
+    
     ]
   },
-
+  {
+    path: "/blog/:id",
+    element: <SingleBlogPost />,
+  },
 ])
 
 function App() {

@@ -16,7 +16,7 @@ const DashboardHome = () => {
                 <div className="text-blue-500 mb-4">
                     <i className="fas fa-users text-3xl"></i>
                 </div>
-                <h2 className="text-xl font-semibold mb-4 text-gray-800">Total Users</h2>
+                <h2 className="text-3xl font-semibold mb-4 text-gray-800">Total Users</h2>
                 <p className="text-gray-600 mb-6">1,234 active users this month</p>
                 <button className="text-blue-500 hover:text-blue-600 font-medium flex items-center gap-2">
                     View Details
@@ -28,7 +28,7 @@ const DashboardHome = () => {
                 <div className="text-green-500 mb-4">
                     <i className="fas fa-chart-line text-3xl"></i>
                 </div>
-                <h2 className="text-xl font-semibold mb-4 text-gray-800">Page Views</h2>
+                <h2 className="text-3xl font-semibold mb-4 text-gray-800">Page Views</h2>
                 <p className="text-gray-600 mb-6">45.2K views in the last 30 days</p>
                 <button className="text-green-500 hover:text-green-600 font-medium flex items-center gap-2">
                     View Details
@@ -40,7 +40,7 @@ const DashboardHome = () => {
                 <div className="text-purple-500 mb-4">
                     <i className="fas fa-clock text-3xl"></i>
                 </div>
-                <h2 className="text-xl font-semibold mb-4 text-gray-800">Avg. Session</h2>
+                <h2 className="text-3xl font-semibold mb-4 text-gray-800">Avg. Session</h2>
                 <p className="text-gray-600 mb-6">4.2 minutes per user session</p>
                 <button className="text-purple-500 hover:text-purple-600 font-medium flex items-center gap-2">
                     View Details
@@ -54,11 +54,11 @@ const DashboardHome = () => {
 
           {/* Analytics Graph Section */}
           <div className="mt-8">
-            <h2 className="text-xl font-semibold text-gray-800 mb-4">Traffic Analytics</h2>
+            <h2 className="text-3xl font-semibold text-gray-800 mb-4">Traffic Analytics</h2>
             <div className="bg-white rounded-xl shadow-lg p-6">
               <div className="flex items-center justify-between mb-4">
                 
-                <select className="text-sm border rounded-md px-2 py-1 text-gray-600">
+                <select className="text-xl border rounded-md px-2 py-1 text-gray-600">
                   <option>Last 7 Days</option>
                   <option>Last 30 Days</option>
                   <option>Last 90 Days</option>
@@ -72,7 +72,7 @@ const DashboardHome = () => {
           </div>
 
           <div className="mt-8">
-            <h2 className="text-xl font-semibold text-gray-800 mb-4">Recent Posts</h2>
+            <h2 className="text-3xl font-semibold text-gray-800 mb-4">Recent Posts</h2>
             <div className="bg-white rounded-xl shadow-lg p-6">
               {recentPosts.map(post => (
                 <div key={post.id} className="flex items-center justify-between py-4 border-b border-gray-100 last:border-0">

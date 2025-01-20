@@ -44,19 +44,19 @@ const Dashboard = () => {
               <li className="px-4">
                 <Link to='overview' className="flex items-center gap-3 text-white py-3 px-4 rounded-lg bg-blue-700 hover:bg-blue-800 transition-colors">
                   <ion-icon name="grid-outline" class="text-xl"></ion-icon>
-                  <span>Overview</span>
+                  <span className='text-3xl'>Overview</span>
                 </Link>
               </li>
               <li className="px-4">
                 <Link to="add-blog" className="flex items-center gap-3 text-blue-100 py-3 px-4 rounded-lg hover:bg-blue-700 transition-colors">
                   <ion-icon name="add-circle-outline" class="text-xl"></ion-icon>
-                  <span>Add Blog</span>
+                  <span className='text-3xl'>Add Blog</span>
                   </Link> 
               </li>
               <li className="px-4">
                 <Link to='all-blog' className="flex items-center gap-3 text-blue-100 py-3 px-4 rounded-lg hover:bg-blue-700 transition-colors">
                   <ion-icon name="list-outline" class="text-xl"></ion-icon>
-                  <span>All Blogs</span>
+                  <span className='text-3xl'>All Blogs</span>
                 </Link>
               </li>
             </ul>

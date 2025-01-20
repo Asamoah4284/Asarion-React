@@ -140,7 +140,7 @@ const BlogContent = () => {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </div>
               <div className="p-6">
-                <h3 className="text-xl font-bold mb-3 transition-colors duration-200 group-hover:text-blue-600">
+                <h3 className="text-3xl font-bold mb-3 transition-colors duration-200 group-hover:text-blue-600">
                   <Link to={`/blog/${post._id}`}>
                     {post.title}
                   </Link>
