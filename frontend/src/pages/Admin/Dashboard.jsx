@@ -23,7 +23,7 @@ const Dashboard = () => {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      <div className={`h-screen ${isSidebarOpen ? 'grid' : 'block'} md:grid md:grid-cols-[250px_1fr]  grid-rows-[80px_1fr]`}>
+      <div className={`h-screen ${isSidebarOpen ? 'grid' : 'block'} md:grid md:grid-cols-[250px_1fr]  grid-rows-[80px_1fr] fixed w-full`}>
         {/* Sidebar */}
         <div className={`
           fixed md:static inset-y-0 left-0 transform 
@@ -40,22 +40,22 @@ const Dashboard = () => {
             </div>
 
             {/* Sidebar Menu */}
-            <ul className="py-4 space-y-4">
+            <ul className="py-20 space-y-6">
               <li className="px-4">
                 <Link to='overview' className="flex items-center gap-3 text-white py-3 px-4 rounded-lg bg-blue-700 hover:bg-blue-800 transition-colors">
-                  <ion-icon name="grid-outline" class="text-xl"></ion-icon>
+                  <ion-icon name="grid-outline" class="text-4xl"></ion-icon>
                   <span className='text-3xl'>Overview</span>
                 </Link>
               </li>
               <li className="px-4">
                 <Link to="add-blog" className="flex items-center gap-3 text-blue-100 py-3 px-4 rounded-lg hover:bg-blue-700 transition-colors">
-                  <ion-icon name="add-circle-outline" class="text-xl"></ion-icon>
+                  <ion-icon name="add-circle-outline" class="text-4xl"></ion-icon>
                   <span className='text-3xl'>Add Blog</span>
                   </Link> 
               </li>
               <li className="px-4">
                 <Link to='all-blog' className="flex items-center gap-3 text-blue-100 py-3 px-4 rounded-lg hover:bg-blue-700 transition-colors">
-                  <ion-icon name="list-outline" class="text-xl"></ion-icon>
+                  <ion-icon name="list-outline" class="text-4xl"></ion-icon>
                   <span className='text-3xl'>All Blogs</span>
                 </Link>
               </li>
@@ -95,9 +95,8 @@ const Dashboard = () => {
           </div>
         )}
         {/* Main Content */}
-        <div>
-
-      <Outlet/>
+        <div className="overflow-y-auto h-[calc(100vh-80px)] mt-[80px] md:mt-0">
+          <Outlet/>
         </div>
 
       </div>

@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import ReactQuill from 'react-quill';
+import 'react-quill/dist/quill.snow.css';
 
 const AddBlog = () => {
   const [formData, setFormData] = useState({
@@ -12,6 +14,62 @@ const AddBlog = () => {
   const [previewUrl, setPreviewUrl] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
+
+  // Update the modules configuration to include more styling options
+  const modules = {
+    toolbar: [
+      [{ 'header': [1, 2, 3, 4, 5, 6, false] }],
+      ['bold', 'italic', 'underline', 'strike'],
+      [{ 'list': 'ordered'}, { 'list': 'bullet' }],
+      ['blockquote', 'code-block'],
+      [{ 'align': [] }],
+      [{ 'color': [] }, { 'background': [] }],  // Add color options
+      [{ 'font': [] }],  // Add font family
+      [{ 'size': ['small', false, 'large', 'huge'] }],  // Add font size
+      ['link', 'image'],
+      ['clean']
+    ],
+  };
+
+  // Update formats to include new styling options
+  const formats = [
+    'header',
+    'bold', 'italic', 'underline', 'strike',
+    'list', 'bullet',
+    'blockquote', 'code-block',
+    'align',
+    'color', 'background',
+    'font', 'size',
+    'link', 'image'
+  ];
+
+  // Add custom CSS styles for the editor
+  const editorStyle = {
+    '.ql-editor': {
+      minHeight: '400px',
+      fontSize: '1.1rem',
+      lineHeight: '1.6',
+    },
+    '.ql-editor h1': {
+      fontSize: '2.5rem',
+      marginBottom: '1rem',
+      fontWeight: 'bold',
+    },
+    '.ql-editor h2': {
+      fontSize: '2rem',
+      marginBottom: '0.8rem',
+      fontWeight: 'bold',
+    },
+    '.ql-editor p': {
+      marginBottom: '1rem',
+    },
+    '.ql-editor blockquote': {
+      borderLeft: '4px solid #ccc',
+      paddingLeft: '1rem',
+      marginLeft: '0',
+      marginRight: '0',
+    }
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -61,12 +119,22 @@ const AddBlog = () => {
     }
   };
 
+  // Modify handleChange to handle both regular inputs and editor content
   const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({
-      ...prev,
-      [name]: value
-    }));
+    if (typeof e === 'string') {
+      // This is from the Quill editor
+      setFormData(prev => ({
+        ...prev,
+        content: e
+      }));
+    } else {
+      // This is from regular inputs
+      const { name, value } = e.target;
+      setFormData(prev => ({
+        ...prev,
+        [name]: value
+      }));
+    }
   };
 
   const handleImageChange = (e) => {
@@ -146,16 +214,16 @@ const AddBlog = () => {
               <label htmlFor="content" className="block text-2xl font-medium text-gray-700 mb-3">
                 Content
               </label>
-              <textarea
-                id="content"
-                name="content"
+              <ReactQuill
+                theme="snow"
                 value={formData.content}
                 onChange={handleChange}
-                rows="12"
-                className="w-full border-2 p-4 text-gray-800 bg-gray-50 rounded-lg placeholder-gray-400 text-3xl leading-relaxed"
+                modules={modules}
+                formats={formats}
+                className="h-96 mb-12"
+                style={editorStyle}
                 placeholder="Start writing your amazing post..."
-                required
-              ></textarea>
+              />
             </div>
           </div>
         </div>
