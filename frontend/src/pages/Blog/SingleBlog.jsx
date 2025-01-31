@@ -80,16 +80,10 @@ const SingleBlogPost = () => {
             </h2>
 
             {/* Main Content Paragraphs */}
-            <div className="space-y-6 text-lg text-gray-700">
-              {Array.isArray(post.content) 
-                ? post.content.map((paragraph, index) => (
-                    <p key={index} className="leading-relaxed">
-                      {paragraph}
-                    </p>
-                  ))
-                : <p className="leading-relaxed">{post.content}</p>
-              }
-            </div>
+            <div 
+              className="blog-content text-3xl"
+              dangerouslySetInnerHTML={{ __html: post.content }}
+            />
           </div>
         </div>
       </div>

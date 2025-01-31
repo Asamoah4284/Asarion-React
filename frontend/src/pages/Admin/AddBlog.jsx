@@ -6,8 +6,8 @@ const AddBlog = () => {
   const [formData, setFormData] = useState({
     title: '',
     subtitle: '',
-    category: '',
-    image: null,
+    subCategory: '',
+    featuredImage: null,
     content: ''
   });
 
@@ -73,6 +73,8 @@ const AddBlog = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setIsLoading(true);
+    setError(null);
     
     try {
       const formDataToSend = new FormData();
@@ -81,22 +83,26 @@ const AddBlog = () => {
       formDataToSend.append('title', formData.title);
       formDataToSend.append('content', formData.content);
       formDataToSend.append('subtitle', formData.subtitle);
-      formDataToSend.append('subCategory', formData.category);
+      formDataToSend.append('subCategory', formData.subCategory);
       
       if (formData.featuredImage) {
         formDataToSend.append('featuredImage', formData.featuredImage);
       }
-     
+
+      // Log the FormData contents for debugging
+      for (let pair of formDataToSend.entries()) {
+        console.log(pair[0] + ': ', pair[1]);
+      }
 
       const response = await fetch('http://localhost:5000/api/blog', {
         method: 'POST',
         body: formDataToSend,
-        // Remove the Content-Type header - it will be set automatically
         credentials: 'include'
       });
 
       if (!response.ok) {
-        throw new Error('Failed to create blog post');
+        const errorData = await response.json();
+        throw new Error(errorData.message || 'Failed to create blog post');
       }
 
       const data = await response.json();
@@ -115,7 +121,9 @@ const AddBlog = () => {
       
     } catch (error) {
       console.error('Error creating blog post:', error);
-      alert(error.message || 'Error creating blog post');
+      setError(error.message || 'Error creating blog post');
+    } finally {
+      setIsLoading(false);
     }
   };
 
@@ -140,7 +148,7 @@ const AddBlog = () => {
   const handleImageChange = (e) => {
     const file = e.target.files[0];
     if (file) {
-      setFormData(prev => ({ ...prev, image: file }));
+      setFormData(prev => ({ ...prev, featuredImage: file }));
       const reader = new FileReader();
       reader.onloadend = () => {
         setPreviewUrl(reader.result);
@@ -234,9 +242,9 @@ const AddBlog = () => {
           <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
             <h3 className="text-2xl font-semibold text-gray-900 mb-4">Category</h3>
             <select
-              id="category"
-              name="category"
-              value={formData.category}
+              id="subCategory"
+              name="subCategory"
+              value={formData.subCategory}
               onChange={handleChange}
               className="w-full px-4 py-3 border border-gray-300 rounded-lg transition-all duration-200 bg-gray-50 text-gray-800 text-3xl"
               required
@@ -269,7 +277,7 @@ const AddBlog = () => {
                       type="button"
                       onClick={() => {
                         setPreviewUrl(null);
-                        setFormData(prev => ({ ...prev, image: null }));
+                        setFormData(prev => ({ ...prev, featuredImage: null }));
                       }}
                       className="text-white bg-red-500 px-6 py-3 rounded-lg hover:bg-red-600 transition-colors duration-200 font-medium text-3xl"
                     >
@@ -298,7 +306,7 @@ const AddBlog = () => {
                         <span className="text-2xl font-medium">Choose Image</span>
                         <input
                           id="image-upload"
-                          name="image"
+                          name="featuredImage"
                           type="file"
                           className="sr-only"
                           onChange={handleImageChange}

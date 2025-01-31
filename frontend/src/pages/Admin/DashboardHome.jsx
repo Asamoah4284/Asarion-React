@@ -1,11 +1,61 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
 
 const DashboardHome = () => {
-  const recentPosts = [
-    { id: 1, title: 'Getting Started with React', date: '2024-03-20', views: 234 },
-    { id: 2, title: 'Modern CSS Techniques', date: '2024-03-18', views: 186 }, 
-    { id: 3, title: 'JavaScript Best Practices', date: '2024-03-15', views: 342 },
-  ];
+  const [chartData, setChartData] = useState([
+    { date: '03/14', visits: 2400 },
+    { date: '03/15', visits: 1398 },
+    { date: '03/16', visits: 9800 },
+    { date: '03/17', visits: 3908 },
+    { date: '03/18', visits: 4800 },
+    { date: '03/19', visits: 3800 },
+    { date: '03/20', visits: 4300 },
+  ]);
+
+  const [recentPosts, setRecentPosts] = useState([]);
+  const [timeRange, setTimeRange] = useState('7');
+
+  useEffect(() => {
+    // Modify the fetch function to include timeRange
+    const fetchData = async () => {
+      try {
+        const response = await fetch(`/api/analytics/traffic?days=${timeRange}`);
+        const newData = await response.json();
+        setChartData(newData);
+      } catch (error) {
+        console.error('Error fetching chart data:', error);
+      }
+    };
+
+    // Add new function to fetch recent posts
+    const fetchRecentPosts = async () => {
+      try {
+        const response = await fetch('http://localhost:5000/api/blog');
+        const data = await response.json();
+        setRecentPosts(data);
+      } catch (error) {
+        console.error('Error fetching recent posts:', error);
+        // Set empty array as fallback
+        setRecentPosts([]);
+      }
+    };
+
+    // Fetch initial data
+    fetchData();
+
+    // Fetch initial posts data
+    fetchRecentPosts();
+
+    // Set up interval to fetch data every 5 minutes
+    const chartInterval = setInterval(fetchData, 5 * 60 * 1000);
+    const postsInterval = setInterval(fetchRecentPosts, 5 * 60 * 1000);
+
+    // Cleanup interval on component unmount
+    return () => {
+      clearInterval(chartInterval);
+      clearInterval(postsInterval);
+    };
+  }, [timeRange]);
 
   return (
     <>
@@ -58,15 +108,32 @@ const DashboardHome = () => {
             <div className="bg-white rounded-xl shadow-lg p-6">
               <div className="flex items-center justify-between mb-4">
                 
-                <select className="text-xl border rounded-md px-2 py-1 text-gray-600">
-                  <option>Last 7 Days</option>
-                  <option>Last 30 Days</option>
-                  <option>Last 90 Days</option>
+                <select 
+                  className="text-xl border rounded-md px-2 py-1 text-gray-600"
+                  value={timeRange}
+                  onChange={(e) => setTimeRange(e.target.value)}
+                >
+                  <option value="7">Last 7 Days</option>
+                  <option value="30">Last 30 Days</option>
+                  <option value="90">Last 90 Days</option>
                 </select>
               </div>
               <div className="h-[250px] w-full">
-                {/* This div will be your chart container */}
-                {/* You can integrate your preferred charting library here (e.g., Chart.js, Recharts, etc.) */}
+                <ResponsiveContainer width="100%" height="100%">
+                  <LineChart data={chartData}>
+                    <CartesianGrid strokeDasharray="3 3" />
+                    <XAxis dataKey="date" />
+                    <YAxis />
+                    <Tooltip />
+                    <Line 
+                      type="monotone" 
+                      dataKey="visits" 
+                      stroke="#4F46E5" 
+                      strokeWidth={2}
+                      dot={{ fill: '#4F46E5', strokeWidth: 2 }}
+                    />
+                  </LineChart>
+                </ResponsiveContainer>
               </div>
             </div>
           </div>
@@ -74,7 +141,7 @@ const DashboardHome = () => {
           <div className="mt-8">
             <h2 className="text-3xl font-semibold text-gray-800 mb-4">Recent Posts</h2>
             <div className="bg-white rounded-xl shadow-lg p-6">
-              {recentPosts.map(post => (
+              {recentPosts.slice(0, 4).map(post => (
                 <div key={post.id} className="flex items-center justify-between py-4 border-b border-gray-100 last:border-0">
                   <div>
                     <h3 className="font-medium text-gray-800">{post.title}</h3>
