@@ -16,6 +16,7 @@ const BlogContent = () => {
     try {
       const response = await fetch('http://localhost:5000/api/blog'); // Replace with your actual API endpoint
       const data = await response.json();
+      console.log('Fetched blog posts:', blogPosts); // Log the fetched data
       setBlogPosts(data);
       setLoading(false);
     } catch (error) {
@@ -131,9 +132,10 @@ const BlogContent = () => {
                   {post.category}
                 </span>
               </div>
-              <div className="relative aspect-w-16 aspect-h-9">
+              <div className="relative aspect-w-16 aspect-h-9 h-64">
+                {console.log('Image URL:', `http://localhost:5000/${post.featuredImage}`)}
                 <img 
-                  src={post.imageUrl}
+                  src={`http://localhost:5000/${post.featuredImage}`}
                   alt={post.title} 
                   className="object-cover w-full h-full transform transition-transform duration-300 group-hover:scale-105"
                 />
@@ -151,11 +153,11 @@ const BlogContent = () => {
                 <div className="flex items-center justify-between">
                   <div className="flex items-center space-x-3">
                     <div className="w-8 h-8 rounded-full bg-gray-200 overflow-hidden">
-                      <img 
+                      {/* <img 
                         src={post.author?.avatar || '/default-avatar.png'}
                         alt={post.author?.name || 'Unknown Author'}
                         className="w-full h-full object-cover"
-                      />
+                      /> */}
                     </div>
                     <div>
                       <p className="text-sm font-medium text-gray-900">{post.author?.name || 'Unknown Author'}</p>

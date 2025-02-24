@@ -107,7 +107,7 @@ const Service = () => {
               </div>
             </li>
 
-            {/* Netflix Package Card */}
+            {/* Graphic Designing Card */}
             <li className="transform transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
               <div className="service-card has-after">
                 <figure className="card-icon bg-red-50 rounded-2xl p-6">
@@ -120,9 +120,9 @@ const Service = () => {
                   </svg>
                 </figure>
                 <div className="card-content">
-                  <h3 className="h3 card-title">Netflix Package</h3>
+                  <h3 className="h3 card-title">Graphic Design Services</h3>
                   <p className=" header-paragraph card-text">
-                    Get premium Netflix access at affordable prices starting from just 40 Ghana cedis. Enjoy unlimited streaming of movies, TV shows, and documentaries with our reliable subscription packages. Perfect for entertainment lovers!
+                    Our graphic design services offer creative solutions tailored to your brand. From logos to marketing materials, we create stunning visuals that effectively communicate your message and engage your audience.
                   </p>
                   <a href="#" className="btn-link group inline-flex items-center gap-2 text-blue-600 font-semibold hover:text-blue-700 transition-colors duration-300">
                     <span className="span">Read More</span>

@@ -62,7 +62,8 @@ const Header = () => {
           } md:px-60 flex justify-center items-center`}
         >
           <a href="#" className="">
-            {/* <img src="images/as.png" alt="" width={80}/> */}
+
+            <img src="images/as.png" alt="" className="w-[50px] md:w-[100px]"/>
             {/* <img src="/images/logo.svg" alt="" /> */}
           </a>
 
@@ -220,12 +221,16 @@ const Header = () => {
 
                 {/* Pricing Dropdown Mobile */}
                 <li className="relative border-b border-gray-300">
+                <a
+                    href="#about"
+                    className="block px-4 py-2 hover:bg-blue-500 hover:text-white transition-colors duration-300 rounded"
+                    data-nav-link
+                  >Services 
                   <button
                     className="w-full flex items-center justify-between px-4 py-2 hover:bg-blue-500 hover:text-white transition-colors duration-300 rounded"
                     onClick={toggleDropdown}
                     aria-label="Toggle services dropdown"
-                  >
-                    <span>Services</span>
+                  > 
                     <svg
                       className={`w-4 h-4 transition-transform ${
                         openDropdown ? "rotate-180" : ""
@@ -242,11 +247,12 @@ const Header = () => {
                       />
                     </svg>
                   </button>
+                    </a>
                   <ul
                     className={`bg-gray-50 py-2 ${
                       openDropdown ? "block" : "hidden"
                     }`}
-                  >
+                  > 
                     <li className="border-b border-gray-200">
                       <a
                         href="#web-development"

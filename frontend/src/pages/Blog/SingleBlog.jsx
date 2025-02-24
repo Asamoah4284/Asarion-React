@@ -64,9 +64,9 @@ const SingleBlogPost = () => {
           <div className="bg-white w-full p-8 md:p-24 text-xl md:text-2xl text-gray-800 leading-normal">
             {/* Feature Image */}
             <img 
-              src={post.featureImage} 
+               src={`http://localhost:5000/${post.featuredImage}`} 
               alt={post.title}
-              className="w-full h-96 object-cover rounded-lg mb-8"
+              className="w-full h-[450px] object-cover rounded-lg mb-8"
             />
             
             {/* Title */}
