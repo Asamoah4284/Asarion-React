@@ -167,7 +167,7 @@ const AddBlog = () => {
       
       <div className="flex items-center justify-between mb-8">
         <div>
-          <h2 className="text-4xl md:text-6xl font-bold text-gray-900 mb-2">Create New Post</h2>
+          <h2 className="text-xl md:text-6xl font-bold text-gray-900 mb-2">Create New Post</h2>
           <p className="text-2xl text-gray-600">Share your thoughts with the world</p>
         </div>
         <button
@@ -250,10 +250,10 @@ const AddBlog = () => {
               required
             >
               <option value="">Select a category</option>
-              <option value="technology">Technology</option>
-              <option value="lifestyle">Lifestyle</option>
-              <option value="travel">Travel</option>
-              <option value="food">Food</option>
+              <option value="Marketing">Marketing</option>
+              <option value="Business">Business</option>
+              <option value="Technology">Technology</option>
+              <option value="Sales">Sales</option>
             </select>
           </div>
 

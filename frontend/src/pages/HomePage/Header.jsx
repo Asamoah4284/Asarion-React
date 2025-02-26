@@ -63,7 +63,7 @@ const Header = () => {
         >
           <a href="#" className="">
 
-            <img src="images/as.png" alt="" className="w-[50px] md:w-[100px]"/>
+            <img src="images/as.png" alt="" className="w-[50px] md:w-[60px]"/>
             {/* <img src="/images/logo.svg" alt="" /> */}
           </a>
 

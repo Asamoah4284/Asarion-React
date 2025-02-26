@@ -81,9 +81,28 @@ const SingleBlogPost = () => {
 
             {/* Main Content Paragraphs */}
             <div 
-              className="blog-content text-3xl"
+              className="blog-content text-3xl custom-font"
               dangerouslySetInnerHTML={{ __html: post.content }}
             />
+
+            {/* Read Next Section */}
+            <div className="mt-12">
+              <h3 className="text-3xl font-bold mb-4">Read Next</h3>
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                <div className="bg-gray-100 p-4 rounded-lg shadow">
+                  <h4 className="font-semibold">Next Post Title 1</h4>
+                  <p className="text-gray-600">Brief description of the next post.</p>
+                </div>
+                <div className="bg-gray-100 p-4 rounded-lg shadow">
+                  <h4 className="font-semibold">Next Post Title 2</h4>
+                  <p className="text-gray-600">Brief description of the next post.</p>
+                </div>
+                <div className="bg-gray-100 p-4 rounded-lg shadow">
+                  <h4 className="font-semibold">Next Post Title 3</h4>
+                  <p className="text-gray-600">Brief description of the next post.</p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
