@@ -43,7 +43,7 @@ const Hero = () => {
             </h1>
 
             <p className="header-paragraph animate-fade-in-up delay-400">
-              At Asarion, we're passionate about elevating brands in the digital space. Our expert team combines creative strategy, 
+              At Asarion, we help your business reach a larger audeience. Our expert team combines creative strategy, 
               From brand development to 
               digital marketing, we're your partner in achieving lasting digital success.
             </p>

@@ -463,6 +463,8 @@ font-weight: 700;}
 
 .about .container {
   display: grid;
+  /* grid-template-columns: 1.5fr 2fr; */
+  /* background-color: red; */
   gap: 30px;
 }
 

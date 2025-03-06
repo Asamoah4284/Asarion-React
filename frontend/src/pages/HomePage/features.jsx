@@ -47,7 +47,7 @@ const Features = () => {
                 <span className="text-7xl font-bold text-blue-400">01</span>
                 <div className="mt-6">
                   <h3 className="text-2xl font-bold text-gray-900 mb-4">Comprehensive Seminars</h3>
-                  <p className="text-gray-600 header-paragraph leading-relaxed">Join our engaging seminars where industry leaders collaborate with brands to share insights and strategies.</p>
+                  <p className="text-gray-600  leading-relaxed">Join our engaging seminars where industry leaders collaborate with brands to share insights and strategies.</p>
                 </div>
               </div>
             </div>
@@ -60,7 +60,7 @@ const Features = () => {
                 <span className="text-7xl font-bold text-purple-400">02</span>
                 <div className="mt-6">
                   <h3 className="text-2xl font-bold text-gray-900 mb-4">Extended Support</h3>
-                  <p className="text-gray-600 header-paragraph leading-relaxed">Enjoy 4 to 6weeks of dedicated support from our expert team for your projects.</p>
+                  <p className="text-gray-600  leading-relaxed">Enjoy 4 to 6weeks of dedicated support from our expert team for your projects.</p>
                 </div>
               </div>
             </div>
@@ -73,7 +73,7 @@ const Features = () => {
                 <span className="text-7xl font-bold text-[#ec4899]">03</span>
                 <div className="mt-6">
                   <h3 className="text-2xl font-bold text-gray-900 mb-4">Strategic Approach</h3>
-                  <p className="text-gray-600 header-paragraph leading-relaxed">Custom strategies tailored to your unique business needs and goals.</p>
+                  <p className="text-gray-600  leading-relaxed">Custom strategies tailored to your unique business needs and goals.</p>
                 </div>
               </div>
             </div>
@@ -86,7 +86,7 @@ const Features = () => {
                 <span className="text-7xl font-bold ">04</span>
                 <div className="mt-6">
                   <h3 className="text-2xl font-bold text-gray-900 mb-4">Premium Assets</h3>
-                  <p className="text-gray-600 header-paragraph leading-relaxed">High-quality images and graphics to enhance your brand presence.</p>
+                  <p className="text-gray-600  leading-relaxed">High-quality images and graphics to enhance your brand presence.</p>
                 </div>
               </div>
             </div>
@@ -99,7 +99,7 @@ const Features = () => {
                 <span className="text-7xl font-bold text-red-400">05</span>
                 <div className="mt-6">
                   <h3 className="text-2xl font-bold text-gray-900 mb-4">Advanced Features</h3>
-                  <p className="text-gray-600 header-paragraph leading-relaxed">Cutting-edge tools and technologies to power your digital presence.</p>
+                  <p className="text-gray-600  leading-relaxed">Cutting-edge tools and technologies to power your digital presence.</p>
                 </div>
               </div>
             </div>
@@ -112,7 +112,7 @@ const Features = () => {
                 <span className="text-7xl font-bold text-indigo-400">06</span>
                 <div className="mt-6">
                   <h3 className="text-2xl font-bold text-gray-900 mb-4">Competitive Pricing</h3>
-                  <p className="text-gray-600 header-paragraph leading-relaxed">Affordable solutions without compromising on quality or features.</p>
+                  <p className="text-gray-600  leading-relaxed">Affordable solutions without compromising on quality or features.</p>
                 </div>
               </div>
             </div>

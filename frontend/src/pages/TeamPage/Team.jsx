@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import Header from '../HomePage/Header'
 import Footer from '../HomePage/footer'
-import Soon from '../TeamPage/soon'
 import Loader from '../../components/loader'
+import ExecutiveTeam from './soon'
 const Team = () => {
   const [isLoading, setIsLoading] = useState(true)
 
@@ -19,9 +19,10 @@ const Team = () => {
           <Loader/>
         ) : (
           <>
-            {/* <Header/> */}
-            <Soon/>
-            {/* <Footer/> */}
+            <Header/>
+            {/* <Soon/> */}
+            <ExecutiveTeam/>
+            <Footer/>
           </>
         )}
     </div>
