@@ -17,6 +17,8 @@ import AllBlog from './pages/Admin/AllBlog'
 import DashboardHome from './pages/Admin/DashboardHome'
 import EditBlog from './pages/Admin/EditBlog'
 import SingleBlogPost from './pages/Blog/singleBlog'
+import Website from './pages/Website-development/Website'
+import ScrollToTop from './ScrollTop'
 const ProtectedRoute = ({ children }) => {
   const isAuthenticated = localStorage.getItem('isAuthenticated') === 'true'
   
@@ -31,7 +33,7 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <Home />,
-
+    
 
   },
   // {
@@ -50,6 +52,10 @@ const router = createBrowserRouter([
   {
     path: "/blog",
     element: <Blog />,
+  },
+  {
+    path: "/website-development",
+    element: <Website/>,
   },
  
   {
@@ -90,6 +96,7 @@ const router = createBrowserRouter([
 ])
 
 function App() {
+<ScrollToTop/>
   return <RouterProvider router={router} />
 }
 
