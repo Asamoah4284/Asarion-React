@@ -92,7 +92,7 @@ const Service = () => {
                     Add a professional touch to your content with our premium voice over services. Our talented artists deliver clear, engaging narration that brings your message to life across all media platforms.
                   </p>
                   <a href="#" className="btn-link group inline-flex items-center gap-2 text-blue-600 font-semibold hover:text-blue-700 transition-colors duration-300">
-                    <span className="span">Read More</span>
+                    <Link to='voiceover'><span className="span">Read More</span></Link>
                     <svg className="w-5 h-5 transform transition-transform duration-300 group-hover:translate-x-1" 
                          fill="none" 
                          stroke="currentColor" 
@@ -125,7 +125,7 @@ const Service = () => {
                     Our graphic design services offer creative solutions tailored to your brand. From logos to marketing materials, we create stunning visuals that effectively communicate your message and engage your audience.
                   </p>
                   <a href="#" className="btn-link group inline-flex items-center gap-2 text-blue-600 font-semibold hover:text-blue-700 transition-colors duration-300">
-                    <span className="span">Read More</span>
+                    <Link to='graphic-design'><span className="span">Read More</span></Link>
                     <svg className="w-5 h-5 transform transition-transform duration-300 group-hover:translate-x-1" 
                          fill="none" 
                          stroke="currentColor" 

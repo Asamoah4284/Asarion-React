@@ -19,6 +19,8 @@ import EditBlog from './pages/Admin/EditBlog'
 import SingleBlogPost from './pages/Blog/singleBlog'
 import Website from './pages/Website-development/Website'
 import ScrollToTop from './ScrollTop'
+import Voiceover from './pages/Voiceover/Voiceover'
+import GraphicDesign from './pages/Graphic/Graphic-design'
 const ProtectedRoute = ({ children }) => {
   const isAuthenticated = localStorage.getItem('isAuthenticated') === 'true'
   
@@ -56,6 +58,16 @@ const router = createBrowserRouter([
   {
     path: "/website-development",
     element: <Website/>,
+  },
+ 
+  {
+    path: "/voiceover",
+    element: <Voiceover/>
+  },
+ 
+  {
+    path: "/graphic-design",
+    element: <GraphicDesign/>
   },
  
   {

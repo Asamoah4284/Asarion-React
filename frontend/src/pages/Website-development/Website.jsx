@@ -5,6 +5,7 @@ import Footer from '../HomePage/footer';
 import Header from '../HomePage/Header';
 import Hero from '../HomePage/Hero';
 import Testimonials from '../HomePage/testimonials';
+import Call from '../HomePage/call';
 
 const Website = () => {
   const projects = [
@@ -85,7 +86,7 @@ const Website = () => {
       animate={{ opacity: 1 }}
       className="py-16 bg-gradient-to-b from-gray-50 to-white"
     >
-      <div className="container mx-auto px-4">
+      <div className="container mt-28 mx-auto px-4">
         <h2 className="text-4xl font-bold text-center mb-12 text-gray-800">
           Our Web Development Services
         </h2>
@@ -183,7 +184,7 @@ const Website = () => {
       </p>
     </div>
 
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-12 max-w-[1400px] mx-auto px-6">
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-12 max-w-[1400px] mx-auto ">
       {pricingPlans.map((plan, index) => (
         <motion.div
           key={index}
@@ -304,7 +305,8 @@ const Website = () => {
   </div>
 </section>
 
-<Testimonials/>
+{/* <Testimonials/> */}
+<Call/>
 {/* Footer */}
       <Footer/>
     </>

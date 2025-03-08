@@ -58,16 +58,16 @@ const Modal = ({ isOpen, onClose }) => {
     };
   
     return (
-        <div className="fixed inset-0 flex items-center justify-center bg-gray-800 bg-opacity-50 z-100">
+        <div className="fixed inset-0 flex items-center justify-center bg-gray-800 bg-opacity-50 z-10">
         <div className="bg-white shadow-xl flex flex-col md:flex-row h-auto md:h-3/4 border-t border-l border-b-12 border-r-0 rounded-lg p-4 m-4 relative w-full md:w-3/4 lg:w-1/2">
             <button onClick={onClose} className="absolute top-4 right-4 text-gray-500 hover:text-red-700 z-50">
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                 </svg>
             </button>
-            <div className="w-full md:w-3/4 p-6">
+            <div className="w-full md:w-3/4 p-6 ">
                 <h2 className="text-2xl font-bold mb-4">Send us a message</h2>
-                <form className="space-y-2" onSubmit={handleSubmit}>
+                <form className="space-y-2 " onSubmit={handleSubmit}>
                 <div className="mb-4">
                         <label className="flex gap-2 text-2xl font-medium text-gray-700">
                             Full Name<span className="text-red-500">*</span>
