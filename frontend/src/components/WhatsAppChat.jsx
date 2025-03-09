@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const WhatsAppChat = () => {
+const Chat = () => {
     const [isOpen, setIsOpen] = useState(false);
     const [message, setMessage] = useState('');
     
@@ -64,4 +64,4 @@ const WhatsAppChat = () => {
     );
 };
 
-export default WhatsAppChat; 
+export default Chat; 

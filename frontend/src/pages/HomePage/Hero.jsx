@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import Modal1gb from '../../components/modal-1gb';
-
 import { Link } from 'react-router-dom';
-import WhatsAppChat from '../../components/WhatsAppChat';
 
 const Hero = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);

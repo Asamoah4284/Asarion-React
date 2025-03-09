@@ -74,9 +74,9 @@ const Voiceover = () => {
     return (
         <div className="min-h-screen pt-52 bg-gray-50">
             <Header />
-            <main className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <main className="container mx-auto px-4">
                 {/* Hero Section */}
-                <section className="max-w-7xl mx-auto">
+                <section className="">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                         <motion.div
                             initial={{ opacity: 0, x: -20 }}
@@ -122,13 +122,23 @@ const Voiceover = () => {
                             transition={{ duration: 0.6 }}
                             className="relative"
                         >
-                            <div className="aspect-w-4 aspect-h-3 rounded-2xl overflow-hidden shadow-2xl">
-                                <img
-                                    src="/images/voiceover.jpeg"
-                                    alt="Professional recording studio"
-                                    className="w-full h-full object-cover"
-                                />
-                                <div className="absolute inset-0 bg-gradient-to-br from-blue-600/20 to-transparent"></div>
+                            <div className="flex space-x-4">
+                                <div className="w-1/2 rounded-2xl overflow-hidden shadow-2xl">
+                                    <img
+                                        src="/images/voiceover.jpeg"
+                                        alt="Professional recording studio"
+                                        className="w-full h-[300px] object-cover"
+                                    />
+                                    <div className="absolute inset-0 bg-gradient-to-br from-blue-600/20 to-transparent"></div>
+                                </div>
+                                <div className="w-1/2 rounded-2xl overflow-hidden shadow-2xl">
+                                    <img
+                                        src="images/voice-art.jpeg"
+                                        alt="Voice artist at work"
+                                        className="w-full h-[300px] object-cover"
+                                    />
+                                    <div className="absolute inset-0 bg-gradient-to-br from-blue-600/20 to-transparent"></div>
+                                </div>
                             </div>
                         </motion.div>
                     </div>
@@ -136,7 +146,7 @@ const Voiceover = () => {
 
                 {/* Services Section */}
                 <section className="py-24 bg-gray-50">
-                    <div className="max-w-7xl mx-auto">
+                    <div className="">
                         <div className="text-center mb-16">
                             <h2 className="text-4xl font-bold text-gray-900 mb-4">
                                 Specialized Services
@@ -186,7 +196,7 @@ const Voiceover = () => {
 
                 {/* Portfolio Section */}
                 <section className="py-24 bg-gradient-to-b from-gray-50 to-white">
-                    <div className="max-w-7xl mx-auto">
+                    <div className="">
                         <div className="text-center mb-16">
                             <h2 className="text-4xl font-bold text-gray-900 mb-4">
                                 Featured Works

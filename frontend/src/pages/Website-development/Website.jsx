@@ -87,7 +87,7 @@ const Website = () => {
                animate={{ opacity: 1, x: 0 }}
                transition={{ duration: 0.8 }}
              >
-               <h1 className="text-4xl  md:text-5xl lg:text-6xl font-bold text-gray-800 mb-8 leading-relaxed">
+               <h1 className="text-4xl  md:text-5xl lg:text-6xl font-bold text-gray-800 mb-8 md:leading-relaxed">
                  Transform Your <span className="text-blue-600 ">Digital Presence</span> With Custom Websites
                </h1>
                <p className="text-lg text-gray-600 mb-8">
