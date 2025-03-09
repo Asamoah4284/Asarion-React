@@ -21,6 +21,7 @@ import Website from './pages/Website-development/Website'
 import ScrollToTop from './ScrollTop'
 import Voiceover from './pages/Voiceover/Voiceover'
 import GraphicDesign from './pages/Graphic/Graphic-design'
+import Dropshipping from './pages/Dropshipping/Dropshipping'
 const ProtectedRoute = ({ children }) => {
   const isAuthenticated = localStorage.getItem('isAuthenticated') === 'true'
   
@@ -68,6 +69,10 @@ const router = createBrowserRouter([
   {
     path: "/graphic-design",
     element: <GraphicDesign/>
+  },
+  {
+    path: "/dropshipping",
+    element: <Dropshipping/>
   },
  
   {

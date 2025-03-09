@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import Modal1gb from '../../components/modal-1gb';
+
 import { Link } from 'react-router-dom';
+import WhatsAppChat from '../../components/WhatsAppChat';
 
 const Hero = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -66,8 +68,9 @@ const Hero = () => {
               </button>
             </div>
           </div>
+  
 
-          <Link to='/dashboard' ><figure className="hero-banner has-before img-holder" 
+          <figure className="hero-banner has-before img-holder" 
             style={{ "--width": 650, "--height": 650 }}>
             <img src={images[currentImageIndex]} 
               width="650" 
@@ -75,7 +78,7 @@ const Hero = () => {
               alt="hero banner" 
               className="img-cover fade-transition"
             />
-          </figure></Link>
+          </figure>
      {/* Contact Modal */}
      {isModalOpen && (
      <Modal1gb isOpen={isModalOpen} onClose={handleModalClose}/>

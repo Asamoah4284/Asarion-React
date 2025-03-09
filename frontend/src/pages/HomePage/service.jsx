@@ -30,7 +30,7 @@ const Service = () => {
                     Launch your online business with our comprehensive dropshipping solutions. We help you set up, manage, and scale your e-commerce store with carefully selected suppliers, automated order processing, and optimized product listings.
                   </p>
                   <a href="#" className="btn-link group inline-flex items-center gap-2 text-blue-600 font-semibold hover:text-blue-700 transition-colors duration-300">
-                    <span className="span">Read More</span>
+                    <Link to='dropshipping'><span className="span">Read More</span></Link>
                     <svg className="w-5 h-5 transform transition-transform duration-300 group-hover:translate-x-1" 
                          fill="none" 
                          stroke="currentColor" 

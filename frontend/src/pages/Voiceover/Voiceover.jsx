@@ -74,7 +74,7 @@ const Voiceover = () => {
     return (
         <div className="min-h-screen pt-52 bg-gray-50">
             <Header />
-            <main className="px-8 sm:px-6 lg:px-8">
+            <main className="container mx-auto px-4 sm:px-6 lg:px-8">
                 {/* Hero Section */}
                 <section className="max-w-7xl mx-auto">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -136,7 +136,7 @@ const Voiceover = () => {
 
                 {/* Services Section */}
                 <section className="py-24 bg-gray-50">
-                    <div className="max-w-7xl mx-auto px-4">
+                    <div className="max-w-7xl mx-auto">
                         <div className="text-center mb-16">
                             <h2 className="text-4xl font-bold text-gray-900 mb-4">
                                 Specialized Services
@@ -186,7 +186,7 @@ const Voiceover = () => {
 
                 {/* Portfolio Section */}
                 <section className="py-24 bg-gradient-to-b from-gray-50 to-white">
-                    <div className="max-w-7xl mx-auto px-4">
+                    <div className="max-w-7xl mx-auto">
                         <div className="text-center mb-16">
                             <h2 className="text-4xl font-bold text-gray-900 mb-4">
                                 Featured Works
@@ -256,7 +256,7 @@ const Voiceover = () => {
 
                 {/* CTA Section */}
             </main>
-                <Call/>
+            <Call/>
             <Footer />
 
             {selectedVideo && (

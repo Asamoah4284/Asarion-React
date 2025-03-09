@@ -77,7 +77,116 @@ const Website = () => {
     <>
       <Header/>
      {/* Website development page */}
-     <Hero/>
+     <div className="bg-gradient-to-r from-gray-50 to-blue-50 pb-28 pt-48 md:pt-60 overflow-hidden">
+       <div className="container mx-auto px-4">
+         <div className="flex flex-col md:flex-row items-center">
+           {/* Left side - Text content */}
+           <div className="w-full md:w-1/2 pr-0 md:pr-12 mb-10 md:mb-0">
+             <motion.div
+               initial={{ opacity: 0, x: -50 }}
+               animate={{ opacity: 1, x: 0 }}
+               transition={{ duration: 0.8 }}
+             >
+               <h1 className="text-4xl  md:text-5xl lg:text-6xl font-bold text-gray-800 mb-8 leading-relaxed">
+                 Transform Your <span className="text-blue-600 ">Digital Presence</span> With Custom Websites
+               </h1>
+               <p className="text-lg text-gray-600 mb-8">
+                 We craft beautiful, responsive websites that drive results. From stunning designs to powerful functionality, we build digital experiences that help your business grow.
+               </p>
+               <div className="flex flex-col sm:flex-row gap-4">
+                 <button className="px-8 py-4 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+                   Get Started
+                 </button>
+                 <button className="px-8 py-4 border-2 border-blue-600 text-blue-600 font-semibold rounded-lg hover:bg-blue-50 transition-colors">
+                   View Our Work
+                 </button>
+               </div>
+               <div className="mt-10 flex items-center">
+                 <div className="flex -space-x-2">
+                   {[1, 2, 3, 4].map((i) => (
+                     <img 
+                       key={i}
+                       src={`/images/avatar-${i}.png`} 
+                       alt="Client" 
+                       className="w-10 h-10 rounded-full border-2 border-white"
+                       onError={(e) => {e.target.src = `https://ui-avatars.com/api/?name=Client+${i}&background=random`}}
+                     />
+                   ))}
+                 </div>
+                 <div className="ml-4">
+                   <div className="flex items-center">
+                     {[1, 2, 3, 4, 5].map((star) => (
+                       <svg key={star} className="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                         <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                       </svg>
+                     ))}
+                   </div>
+                   <p className="text-gray-600 text-sm">Trusted by <span className="font-bold">500+</span> clients</p>
+                 </div>
+               </div>
+             </motion.div>
+           </div>
+           
+           {/* Right side - Image */}
+           <div className="w-full md:w-1/2 relative">
+             <motion.div
+               initial={{ opacity: 0, y: 50 }}
+               animate={{ opacity: 1, y: 0 }}
+               transition={{ duration: 0.8, delay: 0.2 }}
+               className="relative z-99999"
+             >
+               <img 
+                 src="/images/web-image.jpg" 
+                 alt="Web Development" 
+                 className="w-full h-auto rounded-lg shadow-2xl"
+                 onError={(e) => {e.target.src = "https://placehold.co/600x400/e2e8f0/475569?text=Web+Development"}}
+               />
+             </motion.div>
+             
+             {/* Decorative elements */}
+             <div className="absolute -top-10 -right-10 w-40 h-40 bg-blue-200 rounded-full filter blur-3xl opacity-50"></div>
+             <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-purple-200 rounded-full filter blur-3xl opacity-50"></div>
+             
+             {/* Floating elements */}
+             <motion.div 
+               className="absolute top-10 -left-16 bg-white p-4 rounded-lg shadow-lg z-99999"
+               animate={{ 
+                 y: [0, -10, 0],
+               }}
+              
+             >
+               <div className="flex items-center">
+                 <div className="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center mr-3">
+                   <FaCode className="text-green-600" />
+                 </div>
+                 <div>
+                   <p className="font-bold text-gray-800">Clean Code</p>
+                   <p className="text-xs text-gray-500">Optimized Performance</p>
+                 </div>
+               </div>
+             </motion.div>
+             
+             <motion.div 
+               className="absolute bottom-10 -right-10 bg-white p-4 rounded-lg shadow-lg z-99999"
+               animate={{ 
+                 y: [0, 10, 0],
+               }}
+              
+             >
+               <div className="flex items-center">
+                 <div className="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center mr-3">
+                   <FaRocket className="text-blue-600" />
+                 </div>
+                 <div>
+                   <p className="font-bold text-gray-800">Fast Delivery</p>
+                   <p className="text-xs text-gray-500">Quick Turnaround</p>
+                 </div>
+               </div>
+             </motion.div>
+           </div>
+         </div>
+       </div>
+     </div>
      {/* carousel */}
 
    
@@ -86,7 +195,7 @@ const Website = () => {
       animate={{ opacity: 1 }}
       className="py-16 bg-gradient-to-b from-gray-50 to-white"
     >
-      <div className="container mt-28 mx-auto px-4">
+      <div className="container mt-16 mx-auto px-4">
         <h2 className="text-4xl font-bold text-center mb-12 text-gray-800">
           Our Web Development Services
         </h2>
