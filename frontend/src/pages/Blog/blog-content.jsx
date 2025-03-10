@@ -51,7 +51,7 @@ const BlogContent = () => {
   }
 
   return (
-    <div className="bg-gray-50 min-h-screen py-20 sm:py-48">
+    <div className="bg-gray-50 min-h-screen py-40 sm:py-48">
       <section className="max-w-[1080px] mx-auto px-4">
         {/* Featured Article Grid */}
         <div className="grid md:grid-cols-2 gap-8 mb-16">

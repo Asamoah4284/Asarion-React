@@ -36,14 +36,6 @@ const About = () => {
     }
   };
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      currentIndex = (currentIndex + 1) % images.length; // Cycle through images
-      setImageSrc(images[currentIndex]);
-    }, 20000); // Change image every 20 seconds
-
-    return () => clearInterval(interval); // Cleanup on unmount
-  }, []);
 
   return <div>
      <section className="section about" id="about" aria-label="about">
@@ -91,6 +83,7 @@ const About = () => {
                 </video>
                 <button
                   onClick={handlePlayPause}
+                  aria-label={isPlaying ? "Pause video" : "Play video"}
                   className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-red-500 w-28 h-28 bg-opacity-50 rounded-full p-4 hover:bg-opacity-70 transition-all"
                 >
                   <svg className="w-20 h-20 text-white" fill="currentColor" viewBox="0 0 24 24">

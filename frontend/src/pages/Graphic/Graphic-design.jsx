@@ -31,17 +31,17 @@ const GraphicDesign = () => {
                                 <span className="bg-gradient-to-r from-pink-400 via-purple-400 to-indigo-400 bg-clip-text text-transparent">Creative Design</span>
                             </h1>
                             
-                            <p className="text-xl text-blue-100 mb-8 max-w-lg">
+                            <p className="text-2xl text-blue-100 mb-8 max-w-lg">
                                 We transform ideas into visual masterpieces that captivate your audience and drive real business results.
                             </p>
                             
                             <div className="flex flex-wrap gap-4">
                                 <button className="px-8 py-4 bg-gradient-to-r from-pink-500 to-purple-600 text-white font-semibold rounded-full hover:shadow-lg hover:shadow-pink-500/30 transition-all duration-300 transform hover:-translate-y-1">
-                                    Start Your Project
+                                    <a href="#call">Start Your Project</a>
                                 </button>
                                 <button className="group px-8 py-4 bg-transparent border-2 border-white/30 backdrop-blur-sm text-white font-semibold rounded-full hover:bg-white/10 transition-all duration-300">
-                                    View Portfolio
-                                    <span className="inline-block ml-2 transform group-hover:translate-x-1 transition-transform">→</span>
+                                    <a href="#featured-works">View Portfolio</a> 
+                                  
                                 </button>
                             </div>
                             
@@ -200,7 +200,7 @@ const GraphicDesign = () => {
 
                 {/* Portfolio Section */}
                 <div className="mb-10 py-32">
-                <h2 className="text-3xl font-bold  text-center mb-12">Featured Works</h2>
+                <h2 id="featured-works" className="text-3xl font-bold  text-center mb-12">Featured Works</h2>
                     <div className="flex flex-wrap justify-center gap-4 mb-12">
                         <button className="px-6 py-2 rounded-full bg-blue-100 text-blue-600 font-medium hover:bg-blue-600 hover:text-white transition-colors duration-300">
                             All Projects
@@ -544,7 +544,7 @@ const GraphicDesign = () => {
                     <div className="rounded-2xl bg-white p-8 shadow-lg border border-gray-100 hover:shadow-2xl transition-shadow duration-300">
                         <h3 className="text-2xl font-bold mb-4">Basic</h3>
                         <div className="flex items-baseline mb-8">
-                            <span className="text-4xl font-bold">$499</span>
+                            <span className="text-4xl font-bold">GH₵80</span>
                             <span className="text-gray-500 ml-2">/project</span>
                         </div>
                         <ul className="space-y-4 mb-8">
@@ -568,7 +568,7 @@ const GraphicDesign = () => {
                             </li>
                         </ul>
                         <button className="w-full py-3 px-6 rounded-full bg-blue-500 text-white font-medium hover:bg-blue-600 transition-colors duration-300">
-                            Get Started
+                            <a href="#call">Get Started</a>
                         </button>
                     </div>
 
@@ -579,7 +579,7 @@ const GraphicDesign = () => {
                         </div>
                         <h3 className="text-2xl font-bold mb-4">Professional</h3>
                         <div className="flex items-baseline mb-8">
-                            <span className="text-4xl font-bold">$999</span>
+                            <span className="text-4xl font-bold">GH₵150</span>
                             <span className="text-gray-200 ml-2">/project</span>
                         </div>
                         <ul className="space-y-4 mb-8">
@@ -609,7 +609,7 @@ const GraphicDesign = () => {
                             </li>
                         </ul>
                         <button className="w-full py-3 px-6 rounded-full bg-white text-blue-600 font-medium hover:bg-gray-100 transition-colors duration-300">
-                            Get Started
+                           <a href="#call"> Get Started</a>
                         </button>
                     </div>
 
@@ -617,7 +617,7 @@ const GraphicDesign = () => {
                     <div className="rounded-2xl bg-white p-8 shadow-lg border border-gray-100 hover:shadow-2xl transition-shadow duration-300">
                         <h3 className="text-2xl font-bold mb-4">Enterprise</h3>
                         <div className="flex items-baseline mb-8">
-                            <span className="text-4xl font-bold">$1999</span>
+                            <span className="text-4xl font-bold">GH₵300</span>
                             <span className="text-gray-500 ml-2">/project</span>
                         </div>
                         <ul className="space-y-4 mb-8">
@@ -647,7 +647,7 @@ const GraphicDesign = () => {
                             </li>
                         </ul>
                         <button className="w-full py-3 px-6 rounded-full bg-blue-500 text-white font-medium hover:bg-blue-600 transition-colors duration-300">
-                            Contact Us
+                            <a href="tel:+233542343069">Contact Us</a>
                         </button>
                     </div>
                 </div>

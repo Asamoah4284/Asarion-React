@@ -63,7 +63,7 @@ const Header = () => {
         >
           <a href="#" className="">
 
-            <img src="images/as.png" alt="" className="w-[50px] md:w-[60px]"/>
+            <img src="images/as.png" alt="Asarion Logo" className="w-[50px] md:w-[60px]"/>
             {/* <img src="/images/logo.svg" alt="" /> */}
           </a>
 
@@ -87,18 +87,18 @@ const Header = () => {
             >
               Services
             </a>
-            <Link
-              to="/blog"
+            <a
+              href="/blog"
               className="navbar-link hover:text-blue-600 transition-colors"
             >
               Blog
-            </Link>
-            <Link
-              to="/team"
+            </a>
+            <a
+              href="/team"
               className="navbar-link hover:text-blue-600 transition-colors"
             >
               Team
-            </Link>
+            </a>
             <a
               href="#footer"
               className="navbar-link hover:text-blue-600 transition-colors"
@@ -111,7 +111,6 @@ const Header = () => {
           <button
             className="nav-open-btn block md:hidden"
             onClick={toggleMenu}
-            aria-label={isMenuOpen ? "Close menu" : "Open menu"}
           >
             {isMenuOpen ? (
               <svg
@@ -221,33 +220,30 @@ const Header = () => {
 
                 {/* Pricing Dropdown Mobile */}
                 <li className="relative border-b border-gray-300">
-                <a
-                    href="#about"
-                    className="block px-4 py-2 hover:bg-blue-500 hover:text-white transition-colors duration-300 rounded"
-                    data-nav-link
-                  >Services 
-                  <button
-                    className="w-full flex items-center justify-between px-4 py-2 hover:bg-blue-500 hover:text-white transition-colors duration-300 rounded"
-                    onClick={toggleDropdown}
-                    aria-label="Toggle services dropdown"
-                  > 
-                    <svg
-                      className={`w-4 h-4 transition-transform ${
-                        openDropdown ? "rotate-180" : ""
-                      }`}
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth="2"
-                        d="M19 9l-7 7-7-7"
-                      />
-                    </svg>
-                  </button>
-                    </a>
+                  <div className="block px-4 py-2 hover:bg-blue-500 hover:text-white transition-colors duration-300 rounded">
+                    <span>Services</span>
+                    <button
+                      className="ml-2 inline-flex items-center justify-between hover:bg-blue-500 hover:text-white transition-colors duration-300 rounded"
+                      onClick={toggleDropdown}
+                      aria-label="Toggle services dropdown"
+                    > 
+                      <svg
+                        className={`w-4 h-4 transition-transform ${
+                          openDropdown ? "rotate-180" : ""
+                        }`}
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth="2"
+                          d="M19 9l-7 7-7-7"
+                        />
+                      </svg>
+                    </button>
+                  </div>
                   <ul
                     className={`bg-gray-50 py-2 ${
                       openDropdown ? "block" : "hidden"
@@ -291,16 +287,14 @@ const Header = () => {
                     </li>
                   </ul>
                 </li>
-
                 <li className="border-b border-gray-300">
-                  <Link to="/team">
-                    <a
-                      className="block px-4 py-2 hover:bg-blue-500 hover:text-white transition-colors duration-300 rounded"
-                      data-nav-link
-                    >
-                      Team
-                    </a>
-                  </Link>
+                  <a
+                    href="/team"
+                    className="block px-4 py-2 hover:bg-blue-500 hover:text-white transition-colors duration-300 rounded"
+                    data-nav-link
+                  >
+                    Team
+                  </a>
                 </li>
                 <li className="border-b border-gray-300">
                   <a
@@ -311,13 +305,15 @@ const Header = () => {
                     Contact Us
                   </a>
                 </li>
-                <button
-                  onClick={handleOpenModal}
-                  className="inline-flex items-center w-[300px]  mt-10 text-center bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 hover:from-pink-600 hover:via-purple-600 hover:to-blue-600 text-white px-8 py-4 rounded-full transform hover:-translate-y-1 transition-all duration-300 shadow-lg hover:shadow-xl group"
-                  aria-label="Open contact modal"
-                >
-                  Let's Talk
-                </button>
+                <li className="border-b border-gray-300">
+                  <button
+                    onClick={handleOpenModal}
+                    className="inline-flex items-center w-[300px] mt-10 text-center bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 hover:from-pink-600 hover:via-purple-600 hover:to-blue-600 text-white px-8 py-4 rounded-full transform hover:-translate-y-1 transition-all duration-300 shadow-lg hover:shadow-xl group"
+                    aria-label="Open contact modal"
+                  >
+                    Let's Talk
+                  </button>
+                </li>
               </ul>
             </div>
           </nav>

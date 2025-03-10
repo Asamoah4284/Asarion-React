@@ -30,7 +30,7 @@ function Dropshipping() {
                         </p>
                         <div className="flex flex-col sm:flex-row gap-4 mt-8">
                             <button className="px-8 py-4 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-full hover:scale-105 transition duration-300 text-lg font-semibold shadow-lg">
-                                Start Your Journey
+                                <a href="#call">Start Your Journey</a>
                             </button>
                             <button className="px-8 py-4 bg-transparent border-2 border-white/70 text-white rounded-full hover:bg-white/10 transition duration-300 text-lg font-semibold">
                                 Watch Demo
@@ -197,7 +197,7 @@ function Dropshipping() {
                                 </li>
                             </ul>
                             <button className="bg-blue-600 text-white px-8 py-3 rounded-md hover:bg-blue-700 transition-colors inline-flex items-center">
-                                Start Your Free Trial
+                                <a href="#call">Start Your Free Trial</a>
                                 <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
                                     <path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd" />
                                 </svg>
@@ -281,7 +281,7 @@ function Dropshipping() {
                             transition={{ delay: 1.8, duration: 0.5 }}
                             className="mt-10 bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-4 rounded-lg hover:shadow-lg transition-all duration-300 flex items-center"
                         >
-                            Start Earning Today
+                            <a href="#call">Start Earning Today</a>
                             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
                                 <path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd" />
                             </svg>

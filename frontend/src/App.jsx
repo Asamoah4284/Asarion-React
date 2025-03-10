@@ -1,6 +1,6 @@
-import { createBrowserRouter, RouterProvider, Navigate } from 'react-router-dom'
+import { createBrowserRouter, RouterProvider, Navigate, ScrollRestoration } from 'react-router-dom'
+import { useEffect } from 'react'
 
-import About from './pages/About'
 import Home from './pages/HomePage/Home'
 import Team from './pages/TeamPage/Team'
 import Pricing from './pages/Pricing/pricing'
@@ -22,6 +22,7 @@ import ScrollToTop from './ScrollTop'
 import Voiceover from './pages/Voiceover/Voiceover'
 import GraphicDesign from './pages/Graphic/Graphic-design'
 import Dropshipping from './pages/Dropshipping/Dropshipping'
+
 const ProtectedRoute = ({ children }) => {
   const isAuthenticated = localStorage.getItem('isAuthenticated') === 'true'
   
@@ -32,12 +33,40 @@ const ProtectedRoute = ({ children }) => {
   return children
 }
 
+// Create a layout component that properly positions the page at the top
+const PageLayout = ({ Component }) => {
+  // This effect runs once when the component mounts
+  useEffect(() => {
+    // Set the scroll position to top immediately
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: 'auto' // Use 'auto' instead of 'smooth' to avoid animation
+    });
+    
+    // Ensure CSS isn't interfering with scroll position
+    document.body.style.scrollBehavior = 'auto';
+    document.documentElement.style.scrollBehavior = 'auto';
+    
+    // Clean up
+    return () => {
+      document.body.style.scrollBehavior = '';
+      document.documentElement.style.scrollBehavior = '';
+    };
+  }, []);
+  
+  return (
+    <>
+      <Component />
+      <ScrollRestoration />
+    </>
+  );
+};
+
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Home />,
-    
-
+    element: <PageLayout Component={Home} />,
   },
   // {
   //   path: "about",
@@ -45,34 +74,34 @@ const router = createBrowserRouter([
   // },
   {
     path: "/team",
-    element: <Team />,
+    element: <PageLayout Component={Team} />,
   },
 
   {
     path: "/pricing",
-    element: <Pricing />,
+    element: <PageLayout Component={Pricing} />,
   },
   {
     path: "/blog",
-    element: <Blog />,
+    element: <PageLayout Component={Blog} />,
   },
   {
     path: "/website-development",
-    element: <Website/>,
+    element: <PageLayout Component={Website} />,
   },
  
   {
     path: "/voiceover",
-    element: <Voiceover/>
+    element: <PageLayout Component={Voiceover} />,
   },
  
   {
     path: "/graphic-design",
-    element: <GraphicDesign/>
+    element: <PageLayout Component={GraphicDesign} />,
   },
   {
     path: "/dropshipping",
-    element: <Dropshipping/>
+    element: <PageLayout Component={Dropshipping} />,
   },
  
   {
@@ -108,12 +137,14 @@ const router = createBrowserRouter([
   },
   {
     path: "/blog/:id",
-    element: <SingleBlogPost />,
+    element: <PageLayout Component={SingleBlogPost} />,
   },
-])
+], {
+  // Disable any automatic scroll behavior at the router level
+  scrollBehavior: 'auto'
+})
 
 function App() {
-<ScrollToTop/>
   return <RouterProvider router={router} />
 }
 

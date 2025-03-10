@@ -95,7 +95,7 @@ const Website = () => {
                </p>
                <div className="flex flex-col sm:flex-row gap-4">
                  <button className="px-8 py-4 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors shadow-lg hover:shadow-xl transform hover:-translate-y-1">
-                   Get Started
+                   <a href="#call">Get Started</a>
                  </button>
                  <button className="px-8 py-4 border-2 border-blue-600 text-blue-600 font-semibold rounded-lg hover:bg-blue-50 transition-colors">
                    View Our Work
@@ -384,7 +384,8 @@ const Website = () => {
                   : 'bg-gradient-to-r from-blue-600 to-blue-700 text-white hover:from-blue-700 hover:to-blue-800'
               }`}
             >
-              Get Started Now
+              <a href="#call">Get Started Now
+              </a>
             </button>
           </div>
         </motion.div>

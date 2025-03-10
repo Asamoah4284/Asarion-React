@@ -30,14 +30,14 @@ const Service = () => {
                     Launch your online business with our comprehensive dropshipping solutions. We help you set up, manage, and scale your e-commerce store with carefully selected suppliers, automated order processing, and optimized product listings.
                   </p>
                   <a href="#" className="btn-link group inline-flex items-center gap-2 text-blue-600 font-semibold hover:text-blue-700 transition-colors duration-300">
-                    <Link to='dropshipping'><span className="span">Read More</span></Link>
+                    <a href='dropshipping' title='Launch your online store with out dropshipping package'><span className="span">Read More</span></a>
                     <svg className="w-5 h-5 transform transition-transform duration-300 group-hover:translate-x-1" 
                          fill="none" 
                          stroke="currentColor" 
                          viewBox="0 0 24 24">
-                      <path strokelinecap="round" 
+                      <path strokeLinecap="round" 
                             strokelinejoin="round" 
-                            strokewidth="2" 
+                            strokeWidth="2" 
                             d="M13 7l5 5m0 0l-5 5m5-5H6" />
                     </svg>
                   </a>
@@ -61,7 +61,7 @@ const Service = () => {
                     Transform your vision into a powerful online presence. We build responsive, scalable websites that combine cutting-edge technology with optimized performance to help your business grow.
                   </p>
                   <a href="#" className="btn-link group inline-flex items-center gap-2 text-blue-600 font-semibold hover:text-blue-700 transition-colors duration-300">
-                    <Link to="website-development"><span className="span">Read More</span></Link>
+                    <a href="website-development title='Transform Your Digital Presence With Custom Websites' "><span className="span">Read More</span></a>
                     <svg className="w-5 h-5 transform transition-transform duration-300 group-hover:translate-x-1" 
                          fill="none" 
                          stroke="currentColor" 
@@ -92,7 +92,7 @@ const Service = () => {
                     Add a professional touch to your content with our premium voice over services. Our talented artists deliver clear, engaging narration that brings your message to life across all media platforms.
                   </p>
                   <a href="#" className="btn-link group inline-flex items-center gap-2 text-blue-600 font-semibold hover:text-blue-700 transition-colors duration-300">
-                    <Link to='voiceover'><span className="span">Read More</span></Link>
+                    <a href='voiceover' title='Professional voiceover services that elevate your content with clarity, emotion, and authenticity.' ><span className="span">Read More</span></a>
                     <svg className="w-5 h-5 transform transition-transform duration-300 group-hover:translate-x-1" 
                          fill="none" 
                          stroke="currentColor" 
@@ -125,7 +125,7 @@ const Service = () => {
                     Our graphic design services offer creative solutions tailored to your brand. From logos to marketing materials, we create stunning visuals that effectively communicate your message and engage your audience.
                   </p>
                   <a href="#" className="btn-link group inline-flex items-center gap-2 text-blue-600 font-semibold hover:text-blue-700 transition-colors duration-300">
-                    <Link to='graphic-design'><span className="span">Read More</span></Link>
+                    <a href='graphic-design' title='Learn more about our Graphic Design Services'><span className="span">Read More</span></a>
                     <svg className="w-5 h-5 transform transition-transform duration-300 group-hover:translate-x-1" 
                          fill="none" 
                          stroke="currentColor" 
