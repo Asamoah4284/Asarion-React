@@ -61,7 +61,7 @@ const Service = () => {
                     Transform your vision into a powerful online presence. We build responsive, scalable websites that combine cutting-edge technology with optimized performance to help your business grow.
                   </p>
                   <a href="#" className="btn-link group inline-flex items-center gap-2 text-blue-600 font-semibold hover:text-blue-700 transition-colors duration-300">
-                    <a href="website-development title='Transform Your Digital Presence With Custom Websites' "><span className="span">Read More</span></a>
+                    <a href="website-development"><span className="span">Read More</span></a>
                     <svg className="w-5 h-5 transform transition-transform duration-300 group-hover:translate-x-1" 
                          fill="none" 
                          stroke="currentColor" 

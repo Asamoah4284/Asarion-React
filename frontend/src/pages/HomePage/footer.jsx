@@ -37,19 +37,19 @@ const Footer = () => {
       </li>
 
       <li>
-        <a href="#" className="footer-link">Strategy & Research</a>
+        <a href="blog" className="footer-link">Strategy & Research</a>
       </li>
 
       <li>
-        <a href="#" className="footer-link">Web Development</a>
+        <a href="website-development" className="footer-link">Web Development</a>
       </li>
 
       <li>
-        <a href="#" className="footer-link">Web Solution</a>
+        <a href="graphic-design" className="footer-link">Graphic Design</a>
       </li>
 
       <li>
-        <a href="#" className="footer-link">Digital Marketing</a>
+        <a href="dropshipping" className="footer-link">Digital Marketing</a>
       </li>
 
     
@@ -63,11 +63,11 @@ const Footer = () => {
       </li>
 
       <li>
-        <a href="#" className="footer-link">About Us</a>
+        <a href="/about" className="footer-link">About Us</a>
       </li>
 
       <li>
-        <a href="#" className="footer-link">Our Services</a>
+        <a href="" className="footer-link">Our Services</a>
       </li>
 
       <li>
@@ -77,7 +77,8 @@ const Footer = () => {
    
 
       <li>
-        <a href="#" className="footer-link">Latest News</a>
+        <a href="
+        blog" className="footer-link">Latest News</a>
       </li>
 
      

@@ -95,10 +95,10 @@ const Website = () => {
                </p>
                <div className="flex flex-col sm:flex-row gap-4">
                  <button className="px-8 py-4 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors shadow-lg hover:shadow-xl transform hover:-translate-y-1">
-                   <a href="#call">Get Started</a>
+                   <a href="#plan">Get Started</a>
                  </button>
                  <button className="px-8 py-4 border-2 border-blue-600 text-blue-600 font-semibold rounded-lg hover:bg-blue-50 transition-colors">
-                   View Our Work
+                   <a href="#project">View Our Work</a>
                  </button>
                </div>
                <div className="mt-10 flex items-center">
@@ -246,7 +246,7 @@ const Website = () => {
 
         {/* Projects Showcase */}
         <div className="my-48">
-          <h2 className="text-4xl font-bold text-center mb-12 text-gray-800">
+          <h2 id='project' className="text-4xl font-bold text-center mb-12 text-gray-800">
             Our Recent Projects
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-20 md-8">
@@ -285,7 +285,7 @@ const Website = () => {
 
   <div className="container mx-auto px-4 relative z-999999">
     <div className="text-center mb-16">
-      <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+      <h2 id='plan' className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
         Choose Your Perfect Plan
       </h2>
       <p className="text-lg text-gray-600 max-w-2xl mx-auto">
@@ -384,7 +384,12 @@ const Website = () => {
                   : 'bg-gradient-to-r from-blue-600 to-blue-700 text-white hover:from-blue-700 hover:to-blue-800'
               }`}
             >
-              <a href="#call">Get Started Now
+              <a 
+                href="https://wa.me/+233542343069?text=Hi,%20I'm%20interested%20in%20your%20services"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Get Started Now
               </a>
             </button>
           </div>

@@ -63,8 +63,7 @@ const Header = () => {
         >
           <a href="#" className="">
 
-            <img src="images/as.png" alt="Asarion Logo" className="w-[50px] md:w-[60px]"/>
-            {/* <img src="/images/logo.svg" alt="" /> */}
+            <img src="images/as.png" alt="Logo" className="w-[70px] md:w-[70px]"/>
           </a>
 
           {/* Desktop Navigation */}

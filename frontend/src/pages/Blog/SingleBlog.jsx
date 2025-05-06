@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import Header from '../HomePage/Header';
 import Footer from '../HomePage/footer';
+import AdsComponent from '../../components/Ads';
 
 const SingleBlogPost = () => {
   const { id } = useParams();
@@ -177,6 +178,7 @@ const SingleBlogPost = () => {
             {/* Sidebar with recent posts */}
             <div className="lg:w-1/3">
               <div className="sticky top-8">
+                {/* <AdsComponent dataAdSlot={}/> */}
                 {/* About section */}
                 <div className="bg-white rounded-xl shadow-sm p-6 mb-8">
                   <h3 className="text-xl font-bold text-gray-900 mb-4 flex items-center">

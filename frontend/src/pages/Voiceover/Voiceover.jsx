@@ -90,12 +90,12 @@ const Voiceover = () => {
                              Life
                                 <span className='text-blue-600 mt-2'>Through Voice</span>
                             </h1>
-                            <p className="text-xl text-gray-600 max-w-lg">
-                                Professional voiceover services that elevate your content with clarity, emotion, and authenticity. From commercials to documentaries, your story deserves a voice that resonates.
+                            <p className="text-xl text-gray-600">
+                                Professional voiceover services that elevate your content with clarity, emotion, and authenticity. From commercials to documentaries, your Brand deserves a voice that resonates.
                             </p>
                             <div className="flex flex-wrap gap-4">
                                 <button className="px-8 py-4 bg-blue-600 text-white rounded-full font-semibold hover:bg-blue-700 transition-colors duration-200">
-                                    Listen to Demos
+                                    <a href="#works">Listen to Demos</a>
                                 </button>
                                 <button className="px-8 py-4 border-2 border-blue-600 text-blue-600 rounded-full font-semibold hover:bg-blue-50 transition-colors duration-200">
                                     Get a Quote
@@ -199,7 +199,7 @@ const Voiceover = () => {
                 <section className="py-24">
                     <div className="">
                         <div className="text-center mb-16">
-                            <h2 className="text-4xl font-bold text-gray-900 mb-4">
+                            <h2 id='works' className="text-4xl font-bold text-gray-900 mb-4">
                                 Featured Works
                             </h2>
                             <div className="w-24 h-1 bg-blue-500 mx-auto mb-6"></div>
@@ -321,8 +321,13 @@ const Voiceover = () => {
                                         </li>
                                     </ul>
                                     <button className="w-full py-4 bg-white border-2 border-blue-500 text-blue-500 font-semibold rounded-xl hover:bg-blue-50 transition-colors duration-200">
-                                        <a href="#call">Get Started</a>
-                                    </button>
+                                    <a 
+                href="https://wa.me/+233542343069?text=Hi,%20I'm%20interested%20in%20your%20services"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Get Started
+              </a>                                    </button>
                                 </div>
                             </motion.div>
                             
@@ -379,8 +384,13 @@ const Voiceover = () => {
                                         </li>
                                     </ul>
                                     <button className="w-full py-4 bg-blue-600 text-white font-semibold rounded-xl hover:bg-blue-700 transition-colors duration-200">
-                                        <a href="#call">Get Started</a>
-                                    </button>
+                                    <a 
+                href="https://wa.me/+233542343069?text=Hi,%20I'm%20interested%20in%20your%20services"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Get Started
+              </a>                                    </button>
                                 </div>
                             </motion.div>
                             
@@ -431,8 +441,13 @@ const Voiceover = () => {
                                         </li>
                                     </ul>
                                     <button className="w-full py-4 bg-white border-2 border-blue-500 text-blue-500 font-semibold rounded-xl hover:bg-blue-50 transition-colors duration-200">
-                                        Contact Us
-                                    </button>
+                                    <a 
+                href="https://wa.me/+233542343069?text=Hi,%20I'm%20interested%20in%20your%20services"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Get Started Now
+              </a>                                    </button>
                                 </div>
                             </motion.div>
                         </div>
