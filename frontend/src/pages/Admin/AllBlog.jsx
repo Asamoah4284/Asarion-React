@@ -3,11 +3,12 @@ import React, { useState, useEffect } from 'react';
 const AllBlog = () => {
   const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(true);
+  const apiUrl = import.meta.env.VITE_API_URL;
 
   useEffect(() => {
     const fetchPosts = async () => {
       try {
-        const response = await fetch('http://localhost:5000/api/blog');
+        const response = await fetch(`${apiUrl}api/blog`);
         const data = await response.json();
         setPosts(data);
         setLoading(false);

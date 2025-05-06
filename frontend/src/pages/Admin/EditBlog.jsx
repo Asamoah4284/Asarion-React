@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 
+
+const apiUrl = import.meta.env.VITE_API_URL;
+
 const EditBlog = () => {
   const { id } = useParams();
   const navigate = useNavigate();
@@ -14,7 +17,7 @@ const EditBlog = () => {
   useEffect(() => {
     const fetchPost = async () => {
       try {
-        const response = await fetch(`http://localhost:5000/api/blog/${id}`);
+        const response = await fetch(`${apiUrl}/api/blog/${id}`);
         if (!response.ok) {
           throw new Error('Post not found');
         }
@@ -33,7 +36,7 @@ const EditBlog = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch(`http://localhost:5000/api/blog/${id}`, {
+      const response = await fetch(`${apiUrl}/api/blog/${id}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',

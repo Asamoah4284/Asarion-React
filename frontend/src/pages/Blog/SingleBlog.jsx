@@ -2,8 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import Header from '../HomePage/Header';
 import Footer from '../HomePage/footer';
-import AdsComponent from '../../components/Ads';
 
+const apiUrl = import.meta.env.VITE_API_URL;
 const SingleBlogPost = () => {
   const { id } = useParams();
   const [post, setPost] = useState(null);
@@ -18,8 +18,8 @@ const SingleBlogPost = () => {
     const fetchPost = async () => {
       try {
         const [postResponse, recentResponse] = await Promise.all([
-          fetch(`http://localhost:5000/api/blog/${id}`),
-          fetch('http://localhost:5000/api/blog/')
+          fetch(`${apiUrl}/api/blog/${id}`),
+          fetch(`${apiUrl}/api/blog/`)
         ]);
         
         const [postData, recentData] = await Promise.all([
@@ -78,7 +78,7 @@ const SingleBlogPost = () => {
         {/* Hero section with featured image */}
         <div className="relative w-full h-[50vh] overflow-hidden">
           <img 
-            src={`http://localhost:5000/${post.featuredImage}`} 
+            src={`${apiUrl}/${post.featuredImage}`} 
             alt={post.title}
             className="w-full h-full object-cover"
           />
@@ -213,7 +213,7 @@ const SingleBlogPost = () => {
                         >
                           <div className="w-24 h-24 rounded-lg bg-gray-200 flex-shrink-0 overflow-hidden">
                             <img 
-                              src={`http://localhost:5000/${recentPost.featuredImage}`}
+                              src={`${apiUrl}/${recentPost.featuredImage}`}
                               alt={recentPost.title}
                               className="w-full h-full object-cover group-hover:opacity-80 transition-opacity"
                             />

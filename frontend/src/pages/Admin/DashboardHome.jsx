@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
 
+const apiUrl = import.meta.env.VITE_API_URL;
+
 const DashboardHome = () => {
   const [chartData, setChartData] = useState([
     { date: '03/14', visits: 2400 },
@@ -30,7 +32,7 @@ const DashboardHome = () => {
     // Add new function to fetch recent posts
     const fetchRecentPosts = async () => {
       try {
-        const response = await fetch('http://localhost:5000/api/blog');
+        const response = await fetch(`${apiUrl}/api/blog`);
         const data = await response.json();
         setRecentPosts(data);
       } catch (error) {

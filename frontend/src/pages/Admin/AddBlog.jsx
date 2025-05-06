@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
 
+const apiUrl = import.meta.env.VITE_API_URL;
+
 const AddBlog = () => {
   const [formData, setFormData] = useState({
     title: '',
@@ -94,7 +96,7 @@ const AddBlog = () => {
         console.log(pair[0] + ': ', pair[1]);
       }
 
-      const response = await fetch('http://localhost:5000/api/blog', {
+      const response = await fetch(`${apiUrl}/api/blog`, {
         method: 'POST',
         body: formDataToSend,
         credentials: 'include'

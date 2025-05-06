@@ -4,7 +4,7 @@ import { useEffect } from 'react'
 import Home from './pages/HomePage/Home'
 import Team from './pages/TeamPage/Team'
 import Pricing from './pages/Pricing/pricing'
-
+import { Analytics } from "@vercel/analytics/react"
 
 
 
@@ -15,10 +15,8 @@ import Dashboard from './pages/Admin/Dashboard'
 import AddBlog from './pages/Admin/AddBlog'
 import AllBlog from './pages/Admin/AllBlog'
 import DashboardHome from './pages/Admin/DashboardHome'
-import EditBlog from './pages/Admin/EditBlog'
 import SingleBlogPost from './pages/Blog/SingleBlog'
 import Website from './pages/Website-development/Website'
-import ScrollToTop from './ScrollTop'
 import Voiceover from './pages/Voiceover/Voiceover'
 import GraphicDesign from './pages/Graphic/Graphic-design'
 import Dropshipping from './pages/Dropshipping/Dropshipping'
@@ -145,7 +143,12 @@ const router = createBrowserRouter([
 })
 
 function App() {
-  return <RouterProvider router={router} />
+  return(
+    <>
+    <Analytics/>
+<RouterProvider router={router} />
+    </>
+  ) 
 }
 
 export default App

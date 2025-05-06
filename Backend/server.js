@@ -10,8 +10,14 @@ const { signup, login } = require('./controller/authController');
 
 
 const app = express(); // Create an Express application
+
+const allowedOrigins = [
+    'http://localhost:4173',
+    'https://https://asarion-frontend.vercel.app/'
+  ];
+
 app.use(cors({
-    origin: 'http://localhost:4173',
+    origin: allowedOrigins,
     credentials: true
 }));
 app.use(express.json()); // Middleware to parse JSON requests

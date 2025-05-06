@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom';
+const apiUrl = import.meta.env.VITE_API_URL;
 
 const BlogContent = () => {
   const [blogPosts, setBlogPosts] = useState([]);
@@ -16,7 +17,7 @@ const BlogContent = () => {
 
   const fetchBlogPosts = async () => {
     try {
-      const response = await fetch('http://localhost:5000/api/blog'); // Replace with your actual API endpoint
+      const response = await fetch(`${apiUrl}/api/blog`); // Replace with your actual API endpoint
       const data = await response.json();
       console.log('Fetched blog posts:', data); // Fixed to log the fetched data, not the state
       setBlogPosts(data);
@@ -109,9 +110,9 @@ const BlogContent = () => {
                 </span>
               </div>
               <div className="relative aspect-w-16 aspect-h-9 h-64">
-                {console.log('Image URL:', `http://localhost:5000/${post.featuredImage}`)}
+                {console.log('Image URL:', `${apiUrl}/${post.featuredImage}`)}
                 <img 
-                  src={`http://localhost:5000/${post.featuredImage}`}
+                  src={`${apiUrl}/${post.featuredImage}`}
                   alt={post.title} 
                   className="object-cover w-full h-full transform transition-transform duration-300 group-hover:scale-100"
                 />
