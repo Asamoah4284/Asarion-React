@@ -3,12 +3,13 @@ import React, { useState, useEffect } from 'react';
 const AllBlog = () => {
   const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(true);
+
   const apiUrl = import.meta.env.VITE_API_URL;
 
   useEffect(() => {
     const fetchPosts = async () => {
       try {
-        const response = await fetch(`${apiUrl}api/blog`);
+        const response = await fetch(`${apiUrl}/api/blog` || 'https://asarion-backend.onrender.com/api/blog');
         const data = await response.json();
         setPosts(data);
         setLoading(false);
@@ -23,7 +24,7 @@ const AllBlog = () => {
 
   const handleDelete = async (postId) => {
     try {
-      await fetch(`http://localhost:5000/api/blog/${postId}`, {
+      await fetch(`${apiUrl}/api/blog/${postId}`, {
         method: 'DELETE',
       });
       setPosts(posts.filter(post => post._id !== postId));
