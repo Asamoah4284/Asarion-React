@@ -12,7 +12,7 @@ const app = express();
 
 const allowedOrigins = [
   'http://localhost:4173',
-  'https://asarion-frontend.vercel.app' // Corrected the URL
+  'https://asarion-frontend.vercel.app', // Corrected the URL
   'https://www.asarion.org'  // ✅ Add this
 ];
 
