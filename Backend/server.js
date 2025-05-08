@@ -27,15 +27,7 @@ app.use(express.json());
 app.use('/uploads', express.static('uploads'));
 
 
-// Serve static files from the 'public' folder
-app.use(express.static(path.join(__dirname, 'public')));
 
-// Other routes...
-
-// Make sure you have this to catch the route for sitemap.xml
-app.get('/sitemap.xml', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public', 'sitemap.xml'));
-});
 
 const PORT = process.env.PORT || 5000;
 
