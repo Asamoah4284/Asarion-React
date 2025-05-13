@@ -3,20 +3,20 @@ import React from 'react';
 const ExecutiveTeam = () => {
   const executives = [
     {
-      name: "John Doe",
+      name: "Asamoah Richard",
       position: "Chief Executive Officer",
       image: "images/2.jpg", // Replace with actual image path
       linkedin: "https://linkedin.com/in/johndoe"
     },
     {
-      name: "Jane Smith",
-      position: "Chief Technology Officer",
+      name: "Amaah Orion",
+      position: "Chief Financial Officer",
       image: "images/1.jpg", // Replace with actual image path
       linkedin: "https://linkedin.com/in/janesmith"
     },
     {
-      name: "Jane Smith",
-      position: "Chief Technology Officer",
+      name: "Emmanuel Frimpong",
+      position: "Graphi Designer",
       image: "images/1.jpg", // Replace with actual image path
       linkedin: "https://linkedin.com/in/janesmith"
     }
