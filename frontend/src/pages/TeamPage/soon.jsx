@@ -19,31 +19,8 @@ const ExecutiveTeam = () => {
       position: "Chief Technology Officer",
       image: "images/1.jpg", // Replace with actual image path
       linkedin: "https://linkedin.com/in/janesmith"
-    },
-    {
-      name: "Jane Smith",
-      position: "Chief Technology Officer",
-      image: "images/1.jpg", // Replace with actual image path
-      linkedin: "https://linkedin.com/in/janesmith"
-    },
-    {
-      name: "Jane Smith",
-      position: "Chief Technology Officer",
-      image: "images/1.jpg", // Replace with actual image path
-      linkedin: "https://linkedin.com/in/janesmith"
-    },
-    {
-      name: "Jane Smith",
-      position: "Chief Technology Officer",
-      image: "images/1.jpg", // Replace with actual image path
-      linkedin: "https://linkedin.com/in/janesmith"
-    },
-    {
-      name: "Jane Smith",
-      position: "Chief Technology Officer",
-      image: "images/1.jpg", // Replace with actual image path
-      linkedin: "https://linkedin.com/in/janesmith"
-    },
+    }
+    
     // Add more executives as needed
   ];
 
